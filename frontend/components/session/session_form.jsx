@@ -19,10 +19,6 @@ class SessionForm extends React.Component {
     };
   }
 
-  componentDidMount() {
-
-  }
-
   render() {
     const altForm = (this.props.formType === "signup") ? "login" : "signup";
 
