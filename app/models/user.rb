@@ -10,8 +10,14 @@ class User < ApplicationRecord
 
   # has_one: cart
 
-  def find_by_credentials(credentials)
-    puts credentials
+  def self.find_by_credentials(username, password)
+    user = User.find_by(username: username);
+
+    if user && user.is_password?(password)
+      user
+    else
+      nil
+    end
   end
 
   def password=(password)

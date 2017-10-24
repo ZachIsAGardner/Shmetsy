@@ -12,7 +12,7 @@ const receiveCurrentUser = (user) => {
 export const createUser = (user) => {
   return (dispatch) => {
     return API_Util.createUser(user).then((user) => {
-      dispatch(receiveUser(user));
+      dispatch(receiveCurrentUser(user));
     });
   };
 };
@@ -20,7 +20,7 @@ export const createUser = (user) => {
 export const createSession = (user) => {
   return (dispatch) => {
     return API_Util.createSession(user).then((user) => {
-      dispatch(receiveUser(user));
+      dispatch(receiveCurrentUser(user));
     });
   };
 };
@@ -28,7 +28,7 @@ export const createSession = (user) => {
 export const endSession = () => {
   return (dispatch) => {
     return API_UTIL.endSession().then(() => {
-      dispatch(receiveUser(null));
+      dispatch(receiveCurrentUser(null));
     });
   };
 };
