@@ -5,7 +5,7 @@ import { createUser, createSession, endSession } from '../../actions/session_act
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
-  const loggedIn = (state.session !== {}) ? true : false;
+  const loggedIn = (state.session.currentUser) ? true : false;
   const formType = (ownProps.location.pathname === "/signup") ? "signup" : "login";
 
   return {
