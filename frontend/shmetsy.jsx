@@ -11,9 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
 
   //test
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   window.Util = API_Util;
   //test
 
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>hello?!?</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
