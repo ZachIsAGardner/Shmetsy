@@ -34,10 +34,16 @@ Shop.create!(
   owner_id: User.find_by(username: "Charlie").id
 )
 
-# Listing.destroy_all
-# Listing.create!(
-#   title: "Kitten Mittens",
-#   description: "Great for cats that are one legged, fat, skinny, or an in-between"
-#   shop_id: Shop.find_by(shopname: "Greenman Productions"),
-#   owner_id: User.find_by(username: "Charlie"
-# )
+Listing.destroy_all
+Listing.create!(
+  title: "Kitten Mittens",
+  description: "Great for cats that are one legged, fat, skinny, or an in-between",
+  shop_id: Shop.find_by(shopname: "Greenman Productions").id,
+  owner_id: User.find_by(username: "Charlie").id
+)
+Listing.create!(
+  title: "Fight Milk",
+  description: "High in crowteen",
+  shop_id: Shop.find_by(shopname: "Greenman Productions").id,
+  owner_id: User.find_by(username: "Charlie").id
+)

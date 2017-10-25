@@ -13,7 +13,9 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     class_name: 'Shop'
 
-  # has_one: cart
+  has_many :listings, through: :shop
+
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username);
