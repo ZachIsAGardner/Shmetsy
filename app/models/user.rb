@@ -8,6 +8,11 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token!
 
+  has_one :shop,
+    primary_key: :id,
+    foreign_key: :owner_id,
+    class_name: 'Shop'
+
   # has_one: cart
 
   def self.find_by_credentials(username, password)

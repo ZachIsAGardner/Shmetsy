@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024155129) do
+ActiveRecord::Schema.define(version: 20171025171830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "listings", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description", null: false
+    t.integer "shop_id", null: false
+    t.integer "owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_listings_on_owner_id", unique: true
+    t.index ["shop_id"], name: "index_listings_on_shop_id", unique: true
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "shopname", null: false
+    t.string "description"
+    t.integer "sales"
+    t.string "location"
+    t.integer "owner_id", null: false
+    t.string "img_banner"
+    t.string "img_profile"
+    t.index ["owner_id"], name: "index_shops_on_owner_id", unique: true
+    t.index ["shopname"], name: "index_shops_on_shopname", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -21,6 +44,7 @@ ActiveRecord::Schema.define(version: 20171024155129) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img_url"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

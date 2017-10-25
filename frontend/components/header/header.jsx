@@ -14,6 +14,17 @@ export const Header = ({ currentUser, endSession }) => {
     );
   }
 
+  let shop;
+  if (currentUser && currentUser.shop) {
+    shop = (
+      <p>{ currentUser.shop.shopname }</p>
+    );
+  } else {
+    shop = (
+      <p>Sell on Shmetsy</p>
+    );
+  }
+
   return (
     <div className="header">
 
@@ -26,6 +37,7 @@ export const Header = ({ currentUser, endSession }) => {
       </div>
 
       <div className="header-right">
+        {shop}
         {form}
         <div id="header-cart">cart</div>
       </div>
