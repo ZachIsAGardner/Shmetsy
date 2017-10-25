@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_SHOP } from '../actions/shop_actions';
 
-const shopReducer = (oldState = {}, action) => {
+const ShopsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
@@ -14,4 +14,4 @@ const shopReducer = (oldState = {}, action) => {
   }
 };
 
-export default shopReducer;
+export default ShopsReducer;

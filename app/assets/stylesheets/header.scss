@@ -2,8 +2,6 @@
   width: 99%;
   height: 70px;
 
-  position: fixed;
-
   display: flex;
   justify-content: space-between;
 
@@ -18,7 +16,7 @@
   display: flex;
 }
 
-h1 {
+.header-left > h1 {
   font-family: 'Varela Round', sans-serif;
   color: #f45f48;
   font-size: 38px;

@@ -1,0 +1,10 @@
+.featured {
+  display: flex;
+  background: grey;
+  width: 99%;
+  height: 300px;
+}
+
+.featured > h1 {
+  margin: auto;
+}

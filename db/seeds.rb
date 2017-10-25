@@ -38,12 +38,16 @@ Listing.destroy_all
 Listing.create!(
   title: "Kitten Mittens",
   description: "Great for cats that are one legged, fat, skinny, or an in-between",
+  img_main: "https://vignette.wikia.nocookie.net/itsalwayssunny/images/e/e0/Kitten-mittons2.jpg/revision/latest?cb=20100708223709",
+  price: 20.10,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
   owner_id: User.find_by(username: "Charlie").id
 )
 Listing.create!(
   title: "Fight Milk",
-  description: "High in crowteen",
+  description: "High in crowteen!",
+  img_main: "https://ih1.redbubble.net/image.313586213.3959/flat,900x900,070,f.u1.jpg",
+  price: 3.50,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
   owner_id: User.find_by(username: "Charlie").id
 )
