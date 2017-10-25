@@ -28,6 +28,7 @@ Shop.create!(
   shopname: "Greenman Productions",
   img_profile: "http://vignette1.wikia.nocookie.net/itsalwayssunny/images/8/81/Greeman.jpg/revision/latest?cb=20100221015952",
   img_banner: "http://i.imgur.com/gWq7eNS.png",
+  description: "Green Man is saving your life right now, bro. Just go with the flow.",
   sales: 0,
   location: "Philadelphia, PA",
   owner_id: User.find_by(username: "Charlie").id

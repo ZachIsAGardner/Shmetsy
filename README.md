@@ -19,7 +19,7 @@ https://fonts.google.com/
 Colors:
 
 backgrounds lightest to darkest:
-* #fdf8f7
+* #f1f5f8
 
 fonts:
 * #f45f48

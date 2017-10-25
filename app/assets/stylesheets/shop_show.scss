@@ -1,8 +1,17 @@
+.shop-show {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+// ---
+
 .shop-show > .shop-banner {
   padding-top: 70px;
 
-  width: 100%;
+  background: blue;
   height: 375px;
+  width: 70px;
 
   display: flex;
 }
@@ -11,6 +20,45 @@
   margin: auto;
 }
 
+// ---
+
 .shop-show > .shop-info{
-  background: #ffffff
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: auto;
+
+  width: 80%;
+}
+
+.shop-info-personal {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+
+.shop-info-personal-sub {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 550px;
+}
+
+.shop-owner-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-owner-profile > img {
+  border-radius: 500px;
+  width: 100px;
+  height: 100px;
+}
+
+// ---
+
+.shop-reel {
+  background: #e0e7f0;
+  height: 50px;
+  width: 100%;
 }
