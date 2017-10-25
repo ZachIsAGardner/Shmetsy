@@ -22,6 +22,12 @@ class SessionForm extends React.Component {
   render() {
     const altForm = (this.props.formType === "signup") ? "login" : "signup";
 
+    const errorEls = this.props.errors.map((error) => {
+      return (
+        <li>{error}</li>
+      );
+    });
+
     return (
       <div className="signin-form">
 
@@ -50,6 +56,9 @@ class SessionForm extends React.Component {
         </form>
 
         <Link id="form-link" to={`/${altForm}`}>link to {altForm}</Link>
+        <ul>
+          {errorEls}
+        </ul>
       </div>
     );
   }

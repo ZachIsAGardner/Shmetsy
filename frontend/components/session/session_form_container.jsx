@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     loggedIn,
-    formType
+    formType,
+    errors: Object.values(state.errors.session)
   };
 };
 
