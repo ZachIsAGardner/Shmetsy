@@ -10,6 +10,16 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    if @user
+      logout
+      render "api/users/show"
+    else
+      render json: ["No one signed in"], status: 404;
+    end
+  end
+
   private
 
   def session_params

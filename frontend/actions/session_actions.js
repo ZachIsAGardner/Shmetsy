@@ -27,7 +27,7 @@ export const createSession = (user) => {
 
 export const endSession = () => {
   return (dispatch) => {
-    return API_UTIL.endSession().then(() => {
+    return API_Util.endSession().then((user) => {
       dispatch(receiveCurrentUser(null));
     });
   };

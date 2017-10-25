@@ -23,29 +23,33 @@ class SessionForm extends React.Component {
     const altForm = (this.props.formType === "signup") ? "login" : "signup";
 
     return (
-      <div>
+      <div className="signin-form">
+
+        <h2>{this.props.formType}</h2>
+
         <form onSubmit={this.handleSubmit}>
+          <div>
+            <label>Username</label>
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.handleInput('username')}>
+            </input>
+          </div>
 
-          <h2>{this.props.formType}</h2>
-
-          <label>Username</label>
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.handleInput('username')}>
-          </input>
-
-          <label>Password</label>
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.handleInput('password')}>
-          </input>
+          <div>
+            <label>Password</label>
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.handleInput('password')}>
+            </input>
+          </div>
 
           <input type="submit"></input>
         </form>
 
-        <Link to={`/${altForm}`}>link to {altForm}</Link>
+        <Link id="form-link" to={`/${altForm}`}>link to {altForm}</Link>
       </div>
     );
   }
