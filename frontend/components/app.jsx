@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 
 import HeaderContainer from './header/header_container';
@@ -11,11 +11,10 @@ import FeaturedListings from './listing/featured_listings';
 const App = () => {
   return (
     <div>
-
       <HeaderContainer />
-      <FeaturedListings />
+      <Route exact path="/" component={FeaturedListings} />
 
-      <Route exact path="/" type="recomended" render={() => (<ListingIndexContainer type="recomended"/>)} />
+      <Route exact path="/" render={() => (<ListingIndexContainer type="recomended"/>)} />
 
       <Route path="/shops" component={ShopShowContainer} />
 

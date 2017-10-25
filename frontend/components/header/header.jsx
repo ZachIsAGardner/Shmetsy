@@ -29,7 +29,7 @@ export const Header = ({ currentUser, endSession }) => {
     <div className="header">
 
       <div className="header-left">
-        <h1>Shmetsy</h1>
+        <Link to="/">Shmetsy</Link>
         <div id="search-bar">
           <input type=""></input>
           <label>Search</label>

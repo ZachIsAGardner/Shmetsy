@@ -15,8 +15,8 @@ class ShopShow extends React.Component {
       return (
         <div className="shop-show">
 
-          <section className="shop-banner">
-            <img src={this.props.shop.img_banner} alt="shop banner"></img>
+          <section className="shop-banner" style={{background: `url(${this.props.shop.img_banner})`}}>
+
           </section>
 
           <section className="shop-info">

@@ -10,6 +10,13 @@ TO RUN:
 
 * Navigate to http://localhost:3000
 
+PUSHING TO HEROKU:
+* git push heroku master
+
+* (seeding heroku database)
+* heroku run rake db:migrate (if pending migrations)
+* heroku run rake db:seed
+
 Helpful Websites:
 
 http://www.color-hex.com/
