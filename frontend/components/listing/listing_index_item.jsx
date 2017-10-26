@@ -6,17 +6,27 @@ const ListingIndexItem = ({ listing, type }) => {
   let info;
   if (type === "recomended") {
     info = (
-      <Link to={`/shops/${listing.shop.id}`}>{listing.shop.shopname}</Link>
+      <div>
+        <h3>{listing.title}</h3>
+        <Link to={`/shops/${listing.shop.id}`}>{listing.shop.shopname}</Link>
+        <h3>{`$${listing.price}`}</h3>
+      </div>
+    );
+  } else if (type === "shop"){
+    info = (
+      <div>
+        <h3>{listing.title}</h3>
+        <h3>{`$${listing.price}`}</h3>
+      </div>
     );
   }
 
   return (
-    <div className="listing-item">
-      <img src={listing.img_main} alt="listing image"></img>
+    <div className={`listing-item-main-${type}`}>
+
+      <Link className="listing-image-link" to={`/listings/${listing.id}`} style={{background: `url(${listing.img_main})`}}/>
       <div className="listing-info">
-        <h3>{listing.title}</h3>
         {info}
-        <h3>{`$${listing.price}`}</h3>
       </div>
     </div>
   );

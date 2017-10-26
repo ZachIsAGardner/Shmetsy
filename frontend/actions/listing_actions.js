@@ -25,6 +25,12 @@ export const requestListings = () => {
   };
 };
 
+//requestlistingsbyowner
+
+//requestrelevantlistings
+
+//requestfeaturedlistings
+
 export const requestListing = (id) => {
   return (dispatch) => {
     return API_Util.fetchListing(id).then((listing) => {

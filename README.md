@@ -22,6 +22,7 @@ Helpful Websites:
 http://www.color-hex.com/
 https://www.hexcolortool.com/
 https://fonts.google.com/
+http://itsalwayssunny.wikia.com/wiki/Category:Items
 
 Colors:
 
