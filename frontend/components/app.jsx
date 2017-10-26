@@ -18,8 +18,8 @@ const App = () => {
 
       <Route exact path="/" render={() => (<ListingIndexContainer type="recomended"/>)} />
 
-      <Route path="/shops" component={ShopShowContainer} />
-      <Route path="/listings/:id" component={ListingShowContainer} />
+      <Route path="/shops/:shopId" component={ShopShowContainer} />
+      <Route path="/listings/:listingId" component={ListingShowContainer} />
 
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />

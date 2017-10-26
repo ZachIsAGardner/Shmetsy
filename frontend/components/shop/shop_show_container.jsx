@@ -5,7 +5,7 @@ import { fetchShop, editShop } from '../../actions/shop_actions';
 import ShopShow from './shop_show';
 
 const mapStateToProps = (state, ownProps) => {
-
+  console.log(ownProps);
   let shopId = ownProps.location.pathname.split("/");
   shopId = shopId[shopId.length - 1];
 

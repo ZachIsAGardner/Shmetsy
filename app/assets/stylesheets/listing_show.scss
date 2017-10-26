@@ -2,17 +2,19 @@
   display: flex;
   margin: auto;
   margin-bottom: 15px;
-  text-align: center;
 
   width: 1000px;
 }
 
 .shop-profile-image {
-  display: flex;
   border-radius: 2px;
   border: 1px solid #cccccc;
-  width: 100px;
+  width: 150px;
   height: 100px;
+}
+
+.shop-profile-shopname {
+  padding-left: 20px;
 }
 
 .row {

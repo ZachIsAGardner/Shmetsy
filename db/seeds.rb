@@ -23,6 +23,8 @@ User.create!(
   img_url: "https://img.maximummedia.ie/joe_ie/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtam9lLm1heGltdW1tZWRpYS5pZS5zMy5hbWF6b25hd3MuY29tXFxcL3dwLWNvbnRlbnRcXFwvdXBsb2Fkc1xcXC8yMDE3XFxcLzA0XFxcLzI0MTExNTA0XFxcL0ZyYW5rLVJleW5vbGRzLVBJQy5wbmdcIixcIndpZHRoXCI6NjQ3LFwiaGVpZ2h0XCI6MzQwLFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cuam9lLmllXFxcL2Fzc2V0c1xcXC9pbWFnZXNcXFwvam9lXFxcL25vLWltYWdlLnBuZz92PTRcIn0iLCJoYXNoIjoiYTYwNTcyNDk1YTA0OGE0OTAzNjgxOTNjNjEwNzg4YjExYzM1ODA4NiJ9/frank-reynolds-pic.png"
 )
 
+# ---
+
 Shop.destroy_all
 Shop.create!(
   shopname: "Greenman Productions",
@@ -42,6 +44,8 @@ Shop.create!(
   location: "Philadelphia, PA",
   owner_id: User.find_by(username: "Frank").id
 )
+
+# ---
 
 Listing.destroy_all
 Listing.create!(
@@ -69,7 +73,7 @@ Listing.create!(
   owner_id: User.find_by(username: "Frank").id
 )
 Listing.create!(
-  title: "Rum Ham 3",
+  title: "Rum Ham 2",
   description: "lazy haha lol wow! ruma ha m 2",
   img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
   price: 7.50,

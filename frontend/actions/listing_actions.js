@@ -25,7 +25,21 @@ export const requestListings = () => {
   };
 };
 
-//requestlistingsbyowner
+export const requestListingsByShop = (id) => {
+  return (dispatch) => {
+    return API_Util.fetchListings({filterByShop: id}).then((listings) => {
+      dispatch(receiveListings(listings));
+    });
+  };
+};
+
+export const requestListingsByListing = (id) => {
+  return (dispatch) => {
+    return API_Util.fetchListings({filterByListing: id}).then((listings) => {
+      dispatch(receiveListings(listings));
+    });
+  };
+};
 
 //requestrelevantlistings
 
