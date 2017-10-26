@@ -68,3 +68,27 @@ Listing.create!(
   shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
   owner_id: User.find_by(username: "Frank").id
 )
+Listing.create!(
+  title: "Rum Ham 3",
+  description: "lazy haha lol wow! ruma ha m 2",
+  img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
+  price: 7.50,
+  shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
+  owner_id: User.find_by(username: "Frank").id
+)
+Listing.create!(
+  title: "Rum Ham 3",
+  description: "lazy haha lol wow! ruma ha m 3",
+  img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
+  price: 7.50,
+  shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
+  owner_id: User.find_by(username: "Frank").id
+)
+Listing.create!(
+  title: "Rum Ham 4",
+  description: "lazy haha lol wow! ruma ha m 4",
+  img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
+  price: 7.50,
+  shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
+  owner_id: User.find_by(username: "Frank").id
+)

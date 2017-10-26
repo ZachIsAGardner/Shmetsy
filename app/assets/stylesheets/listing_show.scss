@@ -1,26 +1,86 @@
 .listing-show-shop {
   display: flex;
+  margin: auto;
+  margin-bottom: 15px;
+  text-align: center;
+
+  width: 1000px;
 }
 
 .shop-profile-image {
+  display: flex;
   border-radius: 2px;
+  border: 1px solid #cccccc;
   width: 100px;
   height: 100px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 // ---
 
 .listing-show-info {
   background: white;
-  border-radius: 2px;
+  border-radius: 4px;
+  border: 1px solid #ddddde;
+
+  width: 1050px;
+  margin: auto;
 }
 
 .listing-show-image-main {
   border-radius: 2px;
-  width: 450px;
-  height: 600px;
+  width: 550px;
+  height: 650px;
 }
+
+.listing-show-info-main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.listing-show-info-main > button {
+  background: #f45f48;
+  border-radius: 3px;
+  border: 0px;
+
+  color: white;
+  font-size: 16px;
+  width: 260px;
+  height: 40px;
+
+  display: block;
+  margin: 0 auto;
+}
+
 
 .listing-show-info-sub {
   display: flex;
+  width: 95%;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #cccccc;
+
+  color: #666666;
+}
+
+.listing-show-info-sub-left {
+  width: 650px;
+}
+
+.listing-show-info-sub > section > h3 {
+  color: black;
+}
+
+// ---
+
+.listing-show-reviews {
+  border-top: 1px solid #cccccc;
 }

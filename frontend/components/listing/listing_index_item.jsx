@@ -12,7 +12,7 @@ const ListingIndexItem = ({ listing, type }) => {
         <h3>{`$${listing.price}`}</h3>
       </div>
     );
-  } else if (type === "shop"){
+  } else if (type === "shop" || type === "show"){
     info = (
       <div>
         <h3>{listing.title}</h3>
@@ -22,13 +22,12 @@ const ListingIndexItem = ({ listing, type }) => {
   }
 
   return (
-    <div className={`listing-item-main-${type}`}>
-
+    <li className={`listing-item-main-${type}`}>
       <Link className="listing-image-link" to={`/listings/${listing.id}`} style={{background: `url(${listing.img_main})`}}/>
       <div className="listing-info">
         {info}
       </div>
-    </div>
+    </li>
   );
 };
 

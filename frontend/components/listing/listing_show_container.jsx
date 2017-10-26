@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   listingId = listingId[listingId.length - 1];
 
   return {
-    listing: state.entities.listings[listingId],
+    listing: state.entities.listings[listingId] || {},
     listingId
   };
 };
