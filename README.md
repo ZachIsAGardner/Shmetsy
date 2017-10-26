@@ -1,5 +1,13 @@
 # README
 
+TO DO:
+* all
+
+QUESTION:
+
+* Mysterious error
+* Where shop owner
+
 TO RUN:
 * npm install
 * bundle install

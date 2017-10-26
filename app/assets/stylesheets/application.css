@@ -19,3 +19,7 @@ body {
   background: #f1f5f8;
   font-family: sans-serif;
 }
+
+.app {
+  min-height: calc(100vh - 200px);
+}

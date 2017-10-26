@@ -9,7 +9,7 @@ class ShopShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchShop(this.props.shopId);
+    this.props.fetchShop();
   }
 
   render() {
@@ -36,8 +36,8 @@ class ShopShow extends React.Component {
 
             <div className="shop-owner-profile">
               <h3>Shop Owner</h3>
-              <img src={this.props.shop.owner.img_url}></img>
-              <h3>{this.props.shop.owner.username}</h3>
+              <img src={this.props.owner.img_url}></img>
+              <h3>{this.props.owner.username}</h3>
             </div>
           </section>
 

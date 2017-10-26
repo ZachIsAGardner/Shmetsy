@@ -5,21 +5,23 @@ import { fetchShop, editShop } from '../../actions/shop_actions';
 import ShopShow from './shop_show';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
-  let shopId = ownProps.location.pathname.split("/");
-  shopId = shopId[shopId.length - 1];
-
-  const shop = state.entities.shops[shopId];
+  let shop;
+  let owner;
+  
+  if (state.entities.shops[ownProps.match.params.shopId]) {
+    shop = state.entities.shops[ownProps.match.params.shopId];
+    owner = state.entities.users[shop.owner_id];
+  }
 
   return {
-    shopId,
-    shop
+    shop,
+    owner
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchShop: (id) => dispatch(fetchShop(id))
+    fetchShop: () => dispatch(fetchShop(ownProps.match.params.shopId))
   };
 };
 

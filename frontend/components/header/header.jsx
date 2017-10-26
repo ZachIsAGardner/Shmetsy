@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Header = ({ currentUser, endSession }) => {
-
+export const Header = (props) => {
   let form;
-  if (currentUser) {
+
+  if (props.currentUser) {
     form = (
-      <button className="header-form" onClick={() => endSession()}>Logout</button>
+      <button className="header-form" onClick={() => props.endSession()}>Logout</button>
     );
   } else {
     form = (
@@ -15,9 +15,9 @@ export const Header = ({ currentUser, endSession }) => {
   }
 
   let shop;
-  if (currentUser && currentUser.shop) {
+  if (props.currentUser && props.shop) {
     shop = (
-      <p>{ currentUser.shop.shopname }</p>
+      <Link to={`/shops/${props.shop.id}/edit`}>{ props.shop.shopname }</Link>
     );
   } else {
     shop = (

@@ -5,8 +5,12 @@ import { endSession } from '../../actions/session_actions';
 import { Header } from './header';
 
 const mapStateToProps = (state) => {
+  let id;
+  if (state.session.currentUser) {
+    id = state.session.currentUser.id;
+  }
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.entities.users[id]
   };
 };
 

@@ -4,8 +4,8 @@ import ListingShow from './listing_show';
 import { requestListing } from '../../actions/listing_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let listingId = ownProps.location.pathname.split("/");
-  listingId = listingId[listingId.length - 1];
+  let listingId = ownProps.match.params.listingId;
+
 
   return {
     listing: state.entities.listings[listingId] || {},
@@ -14,8 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let listingId = ownProps.location.pathname.split("/");
-  listingId = listingId[listingId.length - 1];
+  let listingId = ownProps.match.params.listingId;
 
   return {
     requestListing: () => dispatch(requestListing(listingId))

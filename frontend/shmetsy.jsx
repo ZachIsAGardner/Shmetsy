@@ -12,7 +12,24 @@ import * as ListingUtil from './util/listing_api_util';
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser } };
+    const user = window.currentUser;
+    const shop = user.shop;
+    user.shop = shop.id;
+
+    const preloadedState = {
+      session: { currentUser: {
+        id: user.id, shopId: user.shop}
+      },
+      entities: {
+        users: {
+          [user.id]: user
+        },
+        shops: {
+          [shop.id]: shop
+        },
+      }
+    };
+
     store = configureStore(preloadedState);
     delete window.currentUser;
   } else {

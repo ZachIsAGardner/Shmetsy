@@ -4,6 +4,10 @@ class Api::ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
   end
 
+  def edit
+
+  end
+
   private
 
   def shop_params
