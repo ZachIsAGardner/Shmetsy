@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import ListingIndexContainer from '../listing/listing_index_container';
+
 class ShopShow extends React.Component {
   constructor(props) {
     super(props);
@@ -12,12 +14,12 @@ class ShopShow extends React.Component {
 
   render() {
     if (this.props.shop) {
+
       return (
+
         <div className="shop-show">
 
-          <section className="shop-banner" style={{background: `url(${this.props.shop.img_banner})`}}>
-
-          </section>
+          <section className="shop-banner" style={{background: `url(${this.props.shop.img_banner})`}} />
 
           <section className="shop-info">
             <img src={this.props.shop.img_profile} alt="shop profile"></img>
@@ -40,6 +42,8 @@ class ShopShow extends React.Component {
           </section>
 
           <div className="shop-reel" />
+
+          <ListingIndexContainer type="shop"/>
 
         </div>
       );

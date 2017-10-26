@@ -33,6 +33,15 @@ Shop.create!(
   location: "Philadelphia, PA",
   owner_id: User.find_by(username: "Charlie").id
 )
+Shop.create!(
+  shopname: "Paddy's Pub",
+  img_profile: "https://grizzlybomb.files.wordpress.com/2011/09/ham.jpg",
+  img_banner: "http://www.itsalways.com/wp-content/uploads/2017/09/BQrBeCN.jpg",
+  description: ".",
+  sales: 4,
+  location: "Philadelphia, PA",
+  owner_id: User.find_by(username: "Frank").id
+)
 
 Listing.destroy_all
 Listing.create!(
@@ -50,4 +59,12 @@ Listing.create!(
   price: 3.50,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
   owner_id: User.find_by(username: "Charlie").id
+)
+Listing.create!(
+  title: "Rum Ham",
+  description: "Soaked in rum as well as having pineapple rings for eyes",
+  img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
+  price: 7.50,
+  shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
+  owner_id: User.find_by(username: "Frank").id
 )

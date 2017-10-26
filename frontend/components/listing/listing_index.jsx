@@ -16,16 +16,16 @@ class ListingIndex extends React.Component {
 
     if (this.props.type === 'recomended') {
       listingMessage = "Some items you might be interested in...";
-    } 
+    }
 
     const listingEls = this.props.listings.map((listing) => {
-      return <ListingIndexItem key={listing.id} listing={listing}/>
+      return <ListingIndexItem key={listing.id} listing={listing} type={this.props.type}/>
     });
 
     return (
       <div className={this.props.type}>
         <h2>{listingMessage}</h2>
-        <ul>
+        <ul className="listing-item-container">
           {listingEls}
         </ul>
       </div>

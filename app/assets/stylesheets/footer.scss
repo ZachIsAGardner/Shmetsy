@@ -1,0 +1,43 @@
+.footer {
+  margin-top: 105px;
+  border-top: 1px solid #aaaaaa;
+  background: white;
+
+  height: 100px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+// ---
+
+.footer-left {
+  display: flex;
+}
+
+.footer-left > p {
+  margin-top: 33px;
+}
+
+.footer-left > h3 {
+  font-family: sans-serif;
+  color: #f45f48;
+  font-size: 26px;
+  font-weight: normal;
+  text-decoration: inherit;
+
+  padding-right: 25px;
+  padding-left: 20px;
+}
+
+// ---
+
+.footer-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-right > p {
+  margin-top: 33px;
+  margin-right: 10px;
+}

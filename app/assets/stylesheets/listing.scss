@@ -1,4 +1,40 @@
+.listing-item-container {
+
+  display: flex;
+  margin: auto;
+
+  width: 80%;
+}
+
+.listing-item {
+  background: white;
+  border: 1px solid #aaaaaa;
+  width: 200px;
+  height: 200px;
+
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  color: #333333;
+
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-item > .listing-info {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+
+.listing-item > .listing-info > h3 {
+  margin: 0;
+}
+
 .listing-item > img{
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 150px;
 }

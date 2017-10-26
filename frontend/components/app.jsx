@@ -7,6 +7,7 @@ import SessionFormContainer from './session/session_form_container';
 import ShopShowContainer from './shop/shop_show_container';
 import ListingIndexContainer from './listing/listing_index_container';
 import FeaturedListings from './listing/featured_listings';
+import Footer from './footer/footer';
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
 
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
+
+      <Footer />
     </div>
   );
 };
