@@ -1,6 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
+
+import { closeModal } from '../actions/modal_actions';
+import MyModal from './myModal';
 
 import HeaderContainer from './header/header_container';
 import ShopManagerShowContainer from './shop/shop_manager_show_container';
@@ -11,7 +15,8 @@ import ListingShowContainer from './listing/listing_show_container';
 import FeaturedListings from './listing/featured_listings';
 import Footer from './footer/footer';
 
-const App = () => {
+const App = (props) => {
+
   return (
     <div>
       <Switch>
@@ -22,13 +27,12 @@ const App = () => {
       <div className="app">
         <Route exact path="/" component={FeaturedListings} />
 
+        <MyModal component={SessionFormContainer} modal={props.modal} closeModal={props.closeModal}/>
+
         <Route exact path="/" render={() => (<ListingIndexContainer type="recomended"/>)} />
 
         <Route exact path="/shops/:shopId" component={ShopShowContainer} />
         <Route path="/listings/:listingId" component={ListingShowContainer} />
-
-        <AuthRoute path="/signup" component={SessionFormContainer} />
-        <AuthRoute path="/login" component={SessionFormContainer} />
       </div>
 
       <Footer />
@@ -36,4 +40,17 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = (props) => {
+  const modal = props.ui.modal;
+  return {
+    modal
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    closeModal: () => dispatch(closeModal())
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

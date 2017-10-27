@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.closeModal();
     this.props.action(this.state);
   }
 
@@ -19,10 +20,15 @@ class SessionForm extends React.Component {
     };
   }
 
+  handleFormChange(form) {
+    this.props.closeModal();
+    this.props.openModal(form);
+  }
+
   render() {
+
     const altForm = (this.props.formType === "signup") ? "login" : "signup";
     const currentForm = (this.props.formType === "signup") ? "Sign Up" : "Login";
-
     const errorEls = this.props.errors.map((error, idx) => {
       if (this.props.errors[0].length < 1) {
         return;
@@ -34,18 +40,21 @@ class SessionForm extends React.Component {
 
     const heading = (altForm === "login") ? (
       <div className="heading">
-        <Link className="unselected" to={`/${altForm}`}>Login</Link>
+        <button onClick={() => this.handleFormChange("login")}>Login</button>
         <h2 className="selected">Sign Up</h2>
       </div>
     ) : (
       <div className="heading">
         <h2 className="selected">Login</h2>
-        <Link className="unselected" to={`/${altForm}`}>Sign Up</Link>
+        <button onClick={() => this.handleFormChange("signup")}>Sign Up</button>
+
       </div>
     );
 
     return (
+
       <div className="signin-form-container">
+
         <div className="signin-form">
 
           {heading}

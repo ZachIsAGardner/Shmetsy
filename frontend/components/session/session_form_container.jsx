@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import { closeModal, openModal } from '../../actions/modal_actions';
 import { createUser, createSession } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
   const loggedIn = (state.session.currentUser) ? true : false;
-  const formType = (ownProps.location.pathname === "/signup") ? "signup" : "login";
+  const formType = ownProps.modal;
   const errors = Object.values(state.errors.session);
-  
+
   return {
     loggedIn,
     formType,
@@ -17,9 +18,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = (ownProps.location.pathname === "/signup") ? createUser : createSession;
+  const action = (ownProps.modal === "signup") ? createUser : createSession;
   return {
-    action: (user) => dispatch(action(user))
+    action: (user) => dispatch(action(user)),
+    closeModal: () => dispatch(closeModal()),
+    openModal: (modal) => dispatch(openModal(modal))
   };
 };
 

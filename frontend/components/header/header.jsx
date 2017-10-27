@@ -6,11 +6,11 @@ export const Header = (props) => {
 
   if (props.currentUser) {
     form = (
-      <button className="header-form" onClick={() => props.endSession()}>Logout</button>
+      <button className="header-form" onClick={(e) => props.endSession()}>Logout</button>
     );
   } else {
     form = (
-      <Link className="header-form" to={"/login"}>Login</Link>
+      <button className="header-form" onClick={(e) => props.openModal("signup")}>Login</button>
     );
   }
 
