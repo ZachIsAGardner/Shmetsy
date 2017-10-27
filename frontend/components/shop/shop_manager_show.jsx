@@ -14,8 +14,14 @@ class ShopManagerShow extends React.Component {
   render() {
     return (
       <div className="shop-manager">
-        <h2>{`Greetings, ${this.props.owner.username}`}</h2>
-        <ShopManagerListingsContainer props={this.props}></ShopManagerListingsContainer>
+        <aside className="shop-manager-sidebar">
+          <h2>{`Greetings, ${this.props.owner.username}`}</h2>
+          <h3>Shop Manager</h3>
+        </aside>
+
+        <main className="shop-manager-content-container">
+          <ShopManagerListingsContainer className="shop-manager-content" props={this.props}></ShopManagerListingsContainer>
+        </main>
       </div>
     );
   }

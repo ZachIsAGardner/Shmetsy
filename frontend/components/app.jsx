@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       <Switch>
-        <Route path="/shops/:shopId/edit" component={ShopManagerShowContainer}/>
+        <Route path="/shops/:shopId/manage" component={ShopManagerShowContainer}/>
         <HeaderContainer />
       </Switch>
 

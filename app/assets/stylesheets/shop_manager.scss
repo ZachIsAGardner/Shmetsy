@@ -1,0 +1,40 @@
+.shop-manager {
+  display: flex;
+  width: 100%;
+}
+
+.shop-manager-sidebar {
+  background: white;
+  border-right: 1px solid #aaaaaa;
+  height: 100%;
+  width: 225px;
+  position: fixed;
+}
+
+.shop-manager-content-container {
+  width: 100%;
+  margin-left: 225px;
+}
+
+.shop-manager-listings-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  background: white;
+  margin-top: 0;
+  padding: 15px;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.shop-manager-listings-header > a {
+  margin: auto;
+  border-radius: 5px;
+  text-decoration: none;
+  background: #f45f48;
+  padding: 15px;
+  color: white;
+}
+.shop-manager-listings-header > a:hover {
+  background: #ff6f58;
+}

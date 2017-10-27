@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import * as TimeUtil from '../../util/time_util';
+
 const ListingIndexItem = ({ listing, type }) => {
 
   let info;
+
   if (type === "recomended") {
     info = (
       <div>
@@ -19,6 +22,18 @@ const ListingIndexItem = ({ listing, type }) => {
         <h3>{`$${listing.price}`}</h3>
       </div>
     );
+  } else if (type === "shop-manager") {
+    info = (
+      <div>
+        <h3>{listing.title}</h3>
+        <p>{`Updated on ${TimeUtil.readTime(listing.updated_at).fullDate}`}</p>
+        <section className="listing-item-section">
+          <p>{`${listing.stock} in stock`}</p>
+          <h3>{`$${listing.price}`}</h3>
+        </section>
+        <Link to={`/listings/${listing.id}/edit`}>Edit</Link>
+      </div>
+    )
   }
 
   return (

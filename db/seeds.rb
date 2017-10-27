@@ -53,6 +53,7 @@ Listing.create!(
   description: "Great for cats that are one legged, fat, skinny, or an in-between",
   img_main: "https://vignette.wikia.nocookie.net/itsalwayssunny/images/e/e0/Kitten-mittons2.jpg/revision/latest?cb=20100708223709",
   price: 20.10,
+  stock: 7,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
   owner_id: User.find_by(username: "Charlie").id
 )
@@ -61,6 +62,7 @@ Listing.create!(
   description: "High in crowteen!",
   img_main: "https://ih1.redbubble.net/image.313586213.3959/flat,900x900,070,f.u1.jpg",
   price: 3.50,
+  stock: 40,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
   owner_id: User.find_by(username: "Charlie").id
 )
@@ -68,7 +70,8 @@ Listing.create!(
   title: "Rum Ham",
   description: "Soaked in rum as well as having pineapple rings for eyes",
   img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
-  price: 7.50,
+  price: 7.51,
+  stock: 1,
   shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
   owner_id: User.find_by(username: "Frank").id
 )
@@ -76,7 +79,8 @@ Listing.create!(
   title: "Rum Ham 2",
   description: "lazy haha lol wow! ruma ha m 2",
   img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
-  price: 7.50,
+  price: 7.52,
+  stock: 2,
   shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
   owner_id: User.find_by(username: "Frank").id
 )
@@ -84,7 +88,8 @@ Listing.create!(
   title: "Rum Ham 3",
   description: "lazy haha lol wow! ruma ha m 3",
   img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
-  price: 7.50,
+  price: 7.53,
+  stock: 3,
   shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
   owner_id: User.find_by(username: "Frank").id
 )
@@ -92,7 +97,8 @@ Listing.create!(
   title: "Rum Ham 4",
   description: "lazy haha lol wow! ruma ha m 4",
   img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
-  price: 7.50,
+  price: 7.54,
+  stock: 4,
   shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
   owner_id: User.find_by(username: "Frank").id
 )

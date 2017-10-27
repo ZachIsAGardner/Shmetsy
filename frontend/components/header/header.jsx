@@ -17,7 +17,7 @@ export const Header = (props) => {
   let shop;
   if (props.currentUser && props.shop) {
     shop = (
-      <Link to={`/shops/${props.shop.id}/edit`}>{ props.shop.shopname }</Link>
+      <Link to={`/shops/${props.shop.id}/manage`}>{ props.shop.shopname }</Link>
     );
   } else {
     shop = (

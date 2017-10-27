@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Switch, Link, Route } from 'react-router-dom';
 
+import ListingsHeader from './shop_manager_listings_header';
 import ListingIndexContainer from '../listing/listing_index_container';
+import ListingFormContainer from '../listing/listing_form_container';
 
 class ShopManagerListings extends React.Component {
   constructor(props) {
@@ -15,9 +17,13 @@ class ShopManagerListings extends React.Component {
   render() {
     return (
       <div className="shop-manager-listings">
-        <h1>Listings</h1>
-        <ListingIndexContainer type="shop"></ListingIndexContainer>
-        <Link to={`/shops/${this.props.shop.id}/addlisting`}>Add Listing</Link>
+
+        <Route exact path="/shops/:shopId/manage/" render={() => (<ListingsHeader props={this.props}/>)}></Route>
+        <Switch>
+          <Route path="/shops/:shopId/manage/addlisting" component={ListingFormContainer}></Route>
+          <Route path="/shops/:shopId/manage/" render={() => (<ListingIndexContainer type="shop-manager"/>)}></Route>
+        </Switch>
+
       </div>
     );
   }

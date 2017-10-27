@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import * as TimeUtil from '../../util/time_util';
+
 import ListingIndexContainer from '../listing/listing_index_container';
 
 class ShopShow extends React.Component {
@@ -30,7 +32,7 @@ class ShopShow extends React.Component {
               <div className="shop-info-personal-sub">
                 <p>{`${this.props.shop.location}`}</p>
                 <p>{`${this.props.shop.sales} sales`}</p>
-                <p>{`On Shmetsy since ${this.props.shop.created_at}`}</p>
+                <p>{`On Shmetsy since ${TimeUtil.readTime(this.props.shop.created_at).fullDate}`}</p>
               </div>
             </div>
 
