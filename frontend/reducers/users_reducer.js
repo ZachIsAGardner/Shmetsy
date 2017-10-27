@@ -13,7 +13,9 @@ const UsersReducer = (oldState = {}, action) => {
         return oldState;
       }
       const newUser = Object.assign({}, action.user);
-      newUser.shop = newUser.shop.id || {};
+      if (newUser.shop) {
+        newUser.shop = newUser.shop.id;
+      }
 
       const newState = Object.assign({}, oldState);
       newState[newUser.id] = newUser;
@@ -25,7 +27,7 @@ const UsersReducer = (oldState = {}, action) => {
       newUser2.shop = action.shop.id;
 
       const newState2 = Object.assign({}, oldState);
-      newState2[newUser2.id] = newUser2; 
+      newState2[newUser2.id] = newUser2;
 
       return newState2;
 

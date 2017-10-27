@@ -14,21 +14,36 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser) {
     const user = window.currentUser;
     const shop = user.shop;
-    user.shop = shop.id;
+    user.shop = (shop) ? shop.id : {};
 
-    const preloadedState = {
-      session: { currentUser: {
-        id: user.id, shop: user.shop}
-      },
-      entities: {
-        users: {
-          [user.id]: user
+    let preloadedState;
+    
+    if (shop) {
+      preloadedState = {
+        session: { currentUser: {
+          id: user.id, shop: user.shop}
         },
-        shops: {
-          [shop.id]: shop
+        entities: {
+          users: {
+            [user.id]: user
+          },
+          shops: {
+            [shop.id]: shop
+          },
+        }
+      };
+    } else {
+      preloadedState = {
+        session: { currentUser: {
+          id: user.id}
         },
-      }
-    };
+        entities: {
+          users: {
+            [user.id]: user
+          }
+        }
+      };
+    }
 
     store = configureStore(preloadedState);
     delete window.currentUser;

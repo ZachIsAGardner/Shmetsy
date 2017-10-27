@@ -9,7 +9,7 @@ const ShopsReducer = (oldState = {}, action) => {
   switch (action.type) {
 
     case RECEIVE_CURRENT_USER:
-      if (!action.user) {
+      if (!action.user || !action.user.shop) {
         return oldState;
       }
       const newShop = action.user.shop;
