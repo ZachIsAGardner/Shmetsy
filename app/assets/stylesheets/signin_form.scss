@@ -1,6 +1,11 @@
-.signin-form {
+.signin-form-container {
+  background: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   background: #ffffff;
-  border: 2px solid rgba(59, 57, 101, 0.5);
+  border: 1px solid var(--border);
   border-radius: 5px;
   box-shadow: 0px 3px 20px rgba(16, 9, 26, 0.5);
 
@@ -8,19 +13,90 @@
   top: 50%;
   left: 50%;
 
-  margin-top: -250px;
-  margin-left: -225px;
+  margin-top: -375px;
+  margin-left: -275px;
 
   width: 500px;
   height: 450px;
 }
 
-.signin-form > h2 {
-  padding-left: 25px;
-  border-bottom: 2px solid rgba(59, 57, 101, 0.5);
+.signin-form {
+  width: 100%;
+  height: 100%;
+
 }
 
+.signin-form > .heading {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 40px;
+  padding-bottom: 0;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.signin-form > .heading * {
+  color: black;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  text-decoration: none;
+
+  background: var(--background);
+
+  margin: 0;
+  padding: 10px;
+
+  border: 1px solid var(--border);
+  border-bottom: none;
+}
+
+.signin-form > .heading > .selected {
+  background: white;
+  box-shadow: 0 5px 0 0.1px white;
+}
+.signin-form > .heading > .unselected:hover {
+  text-decoration: underline;
+}
+
+.signin-form > .heading *:last-child {
+  border-left: none;
+
+}
+
+// ---
+
+.signin-form > .buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.signin-form > .buttons * {
+  width: 225px;
+  font-size: 14px;
+  padding: 8px;
+  color: white;
+
+  border: none;
+  border-radius: 4px;
+}
+.signin-form > .buttons *:first-child {
+  background: var(--blue);
+}
+.signin-form > .buttons *:last-child {
+  background: var(--red);
+  margin-top: 10px;
+}
+
+// ---
+
 .signin-form > form {
+  padding: 20px 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,20 +107,28 @@
   display: flex;
   flex-direction: column;
   width: 200px;
-  padding-left: 25px;
+  margin-bottom: 10px;
+}
+.signin-form > form > div > label {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.signin-form > form > div > input {
+  font-size: 12px;
+  width:  225px;
+  height: 25px;
 }
 
 .signin-form > form > input {
-  width: 200px;
-  margin-left: 25px;
-  background: #f45f48;
-  border: 2px solid rgba(59, 57, 101, 0.5);
-  border-radius: 5px;
-  font-size: 18px;
-  color: #ffffff;
-}
+  width: 225px;
 
-#form-link {
-  padding-top: 10px;
-  margin-left: 25px;
+  background: var(--orange);
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+
+  margin-top: 10px;
+
+  font-size: 14px;
+  color: white;
 }

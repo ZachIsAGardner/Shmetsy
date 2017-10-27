@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ListingForm extends React.Component {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createListing(this.props.listing);
+    this.props.formAction(this.props.listing);
   }
 
   handleInput(field) {
@@ -17,8 +19,11 @@ class ListingForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="listing-form">
+        <Link to={`/shops/${this.props.shopId}/manage/`}>Back to Listings</Link>
+        <h2>Add a new listing</h2>
         <form onSubmit={this.handleSubmit}>
           <section>
             <h3>Photos</h3>

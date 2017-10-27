@@ -16,11 +16,21 @@
 
 
 body {
-  background: #fff9f5;
+  background: var(--background);
   height: 100%;
+  margin: 0;
   font-family: sans-serif;
 }
 
 .app {
   min-height: calc(100vh - 200px);
+}
+
+:root {
+  --background: #fff9f5;
+  --border: #cccccc;
+
+  --orange:  #f27426;
+  --blue: #6c98ea;
+  --red: #ed524a;
 }

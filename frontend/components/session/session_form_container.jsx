@@ -7,11 +7,12 @@ import SessionForm from './session_form';
 const mapStateToProps = (state, ownProps) => {
   const loggedIn = (state.session.currentUser) ? true : false;
   const formType = (ownProps.location.pathname === "/signup") ? "signup" : "login";
-
+  const errors = Object.values(state.errors.session);
+  
   return {
     loggedIn,
     formType,
-    errors: Object.values(state.errors.session)
+    errors
   };
 };
 

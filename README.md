@@ -3,7 +3,8 @@
 TO DO:
 * all
 * styling
-* clear errors appropriately 
+* clear errors appropriately
+* Demo account
 
 QUESTION:
 
@@ -33,11 +34,3 @@ http://www.color-hex.com/
 https://www.hexcolortool.com/
 https://fonts.google.com/
 http://itsalwayssunny.wikia.com/wiki/Category:Items
-
-Colors:
-
-backgrounds lightest to darkest:
-* #f1f5f8
-
-fonts:
-* #f45f48

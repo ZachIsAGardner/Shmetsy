@@ -6,9 +6,10 @@ import { createListing } from '../../actions/listing_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let listing = {title: "", description: "", stock: 1};
-
+  const shopId = ownProps.match.params.shopId;
   return {
-    listing
+    listing,
+    shopId
   };
 };
 

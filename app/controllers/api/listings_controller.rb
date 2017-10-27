@@ -1,7 +1,6 @@
 class Api::ListingsController < ApplicationController
 
   def index
-
     if (params[:filterByShop])
       @listings = Listing.where(shop_id: params[:filterByShop])
     elsif (params[:filterByListing])
@@ -17,8 +16,12 @@ class Api::ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
 
+  def create
+    @listing = Listing.new(listing_params);
+  end
+
   private
   def listing_params
-    params.require(:listing).permit(:title, :description, :img_main)
+    params.require(:listing).permit(:img_main, :title, :description, :price, :quantity)
   end
 end

@@ -21,44 +21,67 @@ class SessionForm extends React.Component {
 
   render() {
     const altForm = (this.props.formType === "signup") ? "login" : "signup";
+    const currentForm = (this.props.formType === "signup") ? "Sign Up" : "Login";
 
-    const errorEls = this.props.errors.map((error) => {
+    const errorEls = this.props.errors.map((error, idx) => {
+      if (this.props.errors[0].length < 1) {
+        return;
+      }
       return (
-        <li>{error}</li>
+        <li key={idx}>{error}</li>
       );
     });
 
+    const heading = (altForm === "login") ? (
+      <div className="heading">
+        <Link className="unselected" to={`/${altForm}`}>Login</Link>
+        <h2 className="selected">Sign Up</h2>
+      </div>
+    ) : (
+      <div className="heading">
+        <h2 className="selected">Login</h2>
+        <Link className="unselected" to={`/${altForm}`}>Sign Up</Link>
+      </div>
+    );
+
     return (
-      <div className="signin-form">
+      <div className="signin-form-container">
+        <div className="signin-form">
 
-        <h2>{this.props.formType}</h2>
+          {heading}
 
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label>Username</label>
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.handleInput('username')}>
-            </input>
+          <div className="buttons">
+            <button>Sign In with Facebook</button>
+            <button>Sign In with Google</button>
           </div>
 
-          <div>
-            <label>Password</label>
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')}>
-            </input>
-          </div>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <label>Username</label>
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.handleInput('username')}>
+              </input>
+            </div>
 
-          <input type="submit"></input>
-        </form>
+            <div>
+              <label>Password</label>
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInput('password')}>
+              </input>
+            </div>
 
-        <Link id="form-link" to={`/${altForm}`}>link to {altForm}</Link>
-        <ul>
-          {errorEls}
-        </ul>
+            <input type="submit" value={currentForm}></input>
+          </form>
+
+          <ul>
+            {errorEls}
+          </ul>
+
+        </div>
       </div>
     );
   }
