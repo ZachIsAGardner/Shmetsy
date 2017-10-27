@@ -5,6 +5,7 @@ TO DO:
 * styling
 * clear errors appropriately
 * Demo account
+* Implement click outside of modal closes it
 
 QUESTION:
 

@@ -10,7 +10,7 @@ export const Header = (props) => {
     );
   } else {
     form = (
-      <button className="header-form" onClick={(e) => props.openModal("signup")}>Login</button>
+      <button className="header-form" onClick={(e) => props.openModal("login")}>Login</button>
     );
   }
 

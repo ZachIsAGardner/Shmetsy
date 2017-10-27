@@ -40,13 +40,13 @@ class SessionForm extends React.Component {
 
     const heading = (altForm === "login") ? (
       <div className="heading">
-        <button onClick={() => this.handleFormChange("login")}>Login</button>
+        <button className="unselected" onClick={() => this.handleFormChange("login")}>Login</button>
         <h2 className="selected">Sign Up</h2>
       </div>
     ) : (
       <div className="heading">
         <h2 className="selected">Login</h2>
-        <button onClick={() => this.handleFormChange("signup")}>Sign Up</button>
+        <button className="unselected" onClick={() => this.handleFormChange("signup")}>Sign Up</button>
 
       </div>
     );

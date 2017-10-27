@@ -1,3 +1,13 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 10;
+  background: rgba(0,0,0,0.7);
+}
+
 .signin-form-container {
   background: green;
   display: flex;
@@ -57,8 +67,10 @@
 .signin-form > .heading > .selected {
   background: white;
   box-shadow: 0 5px 0 0.1px white;
+  cursor: default;
 }
 .signin-form > .heading > .unselected:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -131,4 +143,8 @@
 
   font-size: 14px;
   color: white;
+}
+
+.signin-form > form > input:hover {
+  cursor: pointer;
 }

@@ -88,6 +88,7 @@
 
 .header-form:hover {
   cursor: pointer;
+  background: #efefef;
 }
 
 .header-right > a {
@@ -95,6 +96,21 @@
   margin-right: 20px;
 
   color: var(--orange);
+}
+
+.header-right > p {
+  background: white;
+  margin: auto;
+
+  color: var(--orange);
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: normal;
+  padding: 8px;
+}
+.header-right > p:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 #header-cart {
@@ -107,4 +123,8 @@
   padding: 8px;
   border: 1px solid var(--orange);
   border-radius: 5px;
+}
+
+#header-cart {
+  cursor: pointer;
 }
