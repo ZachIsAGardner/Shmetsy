@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import ShopManagerListingsContainer from './shop_manager_listings_container';
 
@@ -15,8 +16,8 @@ class ShopManagerShow extends React.Component {
     return (
       <div className="shop-manager">
         <aside className="shop-manager-sidebar">
-          <h2>{`Greetings, ${this.props.owner.username}`}</h2>
           <h3>Shop Manager</h3>
+          <Link to="/">Shmetsy Marketplace</Link>
         </aside>
 
         <main className="shop-manager-content-container">

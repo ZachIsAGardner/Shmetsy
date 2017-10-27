@@ -5,7 +5,7 @@
 
 .shop-manager-sidebar {
   background: white;
-  border-right: 1px solid #aaaaaa;
+  border-right: 1px solid #cccccc;
   height: 100%;
   width: 225px;
   position: fixed;
@@ -16,6 +16,8 @@
   margin-left: 225px;
 }
 
+// ---
+
 .shop-manager-listings-header {
   display: flex;
   justify-content: space-between;
@@ -23,12 +25,13 @@
 
   background: white;
   margin-top: 0;
-  padding: 15px;
-  border-bottom: 1px solid #aaaaaa;
+  padding: 0px 15px;
+  border-bottom: 1px solid #cccccc;
 }
 
 .shop-manager-listings-header > a {
-  margin: auto;
+  margin: auto 0;
+  margin-right: 20px;
   border-radius: 5px;
   text-decoration: none;
   background: #f45f48;
