@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ShopManagerListingsContainer from './shop_manager_listings_container';
+
 class ShopManagerShow extends React.Component {
   constructor(props) {
     super(props);
@@ -11,8 +13,9 @@ class ShopManagerShow extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>{`Greetings, ${this.props.shop.shopname}`}</h2>
+      <div className="shop-manager">
+        <h2>{`Greetings, ${this.props.owner.username}`}</h2>
+        <ShopManagerListingsContainer props={this.props}></ShopManagerListingsContainer>
       </div>
     );
   }

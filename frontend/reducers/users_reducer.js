@@ -7,20 +7,28 @@ const UsersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
+
     case RECEIVE_CURRENT_USER:
       if (!action.user) {
         return oldState;
       }
       const newUser = Object.assign({}, action.user);
       newUser.shop = newUser.shop.id || {};
-      return merge({}, { [newUser.id]: newUser });
+
+      const newState = Object.assign({}, oldState);
+      newState[newUser.id] = newUser;
+
+      return newState;
+
     case RECEIVE_SHOP:
       const newUser2 = Object.assign({}, action.shop.owner);
-      if (newUser2.shop) {
-        newUser2.shop = newUser2.shop.id;
-      }
-      
-      return merge({}, { [newUser2.id]: newUser2 });
+      newUser2.shop = action.shop.id;
+
+      const newState2 = Object.assign({}, oldState);
+      newState2[newUser2.id] = newUser2; 
+
+      return newState2;
+
     default:
       return oldState;
   }

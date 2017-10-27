@@ -2,6 +2,8 @@
 
 TO DO:
 * all
+* styling
+* clear errors appropriately 
 
 QUESTION:
 

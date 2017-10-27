@@ -5,12 +5,17 @@ import { endSession } from '../../actions/session_actions';
 import { Header } from './header';
 
 const mapStateToProps = (state) => {
-  let id;
+
+  let shop;
+  let currentUser;
   if (state.session.currentUser) {
-    id = state.session.currentUser.id;
+    currentUser = state.entities.users[state.session.currentUser.id];
+    shop = state.entities.shops[state.session.currentUser.shop];
   }
+
   return {
-    currentUser: state.entities.users[id]
+    currentUser,
+    shop
   };
 };
 

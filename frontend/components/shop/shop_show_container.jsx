@@ -7,7 +7,6 @@ import ShopShow from './shop_show';
 const mapStateToProps = (state, ownProps) => {
   let shop;
   let owner;
-  
   if (state.entities.shops[ownProps.match.params.shopId]) {
     shop = state.entities.shops[ownProps.match.params.shopId];
     owner = state.entities.users[shop.owner_id];
