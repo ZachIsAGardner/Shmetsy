@@ -39,7 +39,7 @@ Shop.create!(
   shopname: "Paddy's Pub",
   img_profile: "https://grizzlybomb.files.wordpress.com/2011/09/ham.jpg",
   img_banner: "http://www.itsalways.com/wp-content/uploads/2017/09/BQrBeCN.jpg",
-  description: ".",
+  description: "Paddy's pub: the worst bar in Philadelphia",
   sales: 4,
   location: "Philadelphia, PA",
   owner_id: User.find_by(username: "Frank").id
@@ -48,7 +48,7 @@ Shop.create!(
   shopname: "Badass",
   img_profile: "https://i.ytimg.com/vi/dATJN3QObrE/hqdefault.jpg",
   img_banner: "http://media-assets-04.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-77017-always_sunny--2x1--940.png",
-  description: ".",
+  description: "I will now light the pyrotechnics which are attached at the arms and back, and all over my pants. Totally and completely badass.",
   sales: 2,
   location: "Philadelphia, PA",
   owner_id: User.find_by(username: "Mac").id
@@ -113,7 +113,7 @@ Listing.create!(
 )
 Listing.create!(
   title: "Mac's Duster",
-  description: "It't not a jacket. It's a duster. It's like a jacket only it's longer, thicker, and for more bad-ass.",
+  description: "It't not a jacket. It's a duster. It's like a jacket only it's longer, thicker, and far more bad-ass.",
   img_main: "http://i.imgur.com/bZkpOzV.jpg",
   price: 65.00,
   stock: 1,
@@ -149,6 +149,51 @@ Listing.create!(
 )
 Listing.create!(
   title: "Project Badass Season 4",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 0,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 5",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 6",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 7",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 8",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 9",
   description: "Totally and completely badass.",
   img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
   price: 15.00,

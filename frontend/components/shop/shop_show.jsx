@@ -22,7 +22,7 @@ class ShopShow extends React.Component {
         <div className="shop-show">
 
           <section className="shop-banner" style={
-              {background: `url(${this.props.shop.img_banner})`}
+              {backgroundImage: `url(${this.props.shop.img_banner})`}
             } />
 
           <section className="shop-info">
@@ -32,12 +32,15 @@ class ShopShow extends React.Component {
               <div className="cover-image" style={
                   {backgroundImage: `url(${this.props.shop.img_profile})`}
                 } />
+
               <div className="shop-info-personal">
                 <h2>{this.props.shop.shopname}</h2>
                 <p>{this.props.shop.description}</p>
                 <div className="shop-info-personal-sub">
                   <p>{`${this.props.shop.location}`}</p>
+                  <p>|</p>
                   <p>{`${this.props.shop.sales} sales`}</p>
+                  <p>|</p>
                   <p>{`On Shmetsy since ${TimeUtil.readTime(this.props.shop.created_at).fullDate}`}</p>
                 </div>
               </div>
@@ -45,7 +48,9 @@ class ShopShow extends React.Component {
 
             <div className="shop-owner-profile">
               <h3>Shop Owner</h3>
-              <img src={this.props.owner.img_url}></img>
+              <div className="cover-image" style={
+                  {backgroundImage: `url(${this.props.owner.img_url})`}
+                } />
               <h3>{this.props.owner.username}</h3>
             </div>
           </section>

@@ -1,15 +1,21 @@
 .listing-show-shop {
   display: flex;
+  justify-content: center;
   margin: auto;
+
   margin-bottom: 15px;
 
   width: 1000px;
 }
 
-.shop-profile-image {
-  border-radius: 2px;
+.listing-show-shop * {
+  margin: auto;
+}
+
+.listing-show-shop > div > .cover-image {
+  border-radius: 4px;
   border: 1px solid #cccccc;
-  width: 150px;
+  width: 100px;
   height: 100px;
 }
 
@@ -34,7 +40,7 @@
 }
 
 .listing-show-info-images .cover-image {
-  border-radius: 2px;
+  border-radius: 4px;
   width: 550px;
   height: 650px;
 }
