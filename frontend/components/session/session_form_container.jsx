@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import { closeModal, openModal } from '../../actions/modal_actions';
 import { createUser, createSession } from '../../actions/session_actions';
+
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     action: (user) => dispatch(action(user)),
     closeModal: () => dispatch(closeModal()),
     openModal: (modal) => dispatch(openModal(modal))
+
   };
 };
 

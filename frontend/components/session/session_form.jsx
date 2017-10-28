@@ -10,7 +10,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.closeModal();
     this.props.action(this.state);
   }
 
@@ -23,6 +22,7 @@ class SessionForm extends React.Component {
   handleFormChange(form) {
     this.props.closeModal();
     this.props.openModal(form);
+
   }
 
   render() {

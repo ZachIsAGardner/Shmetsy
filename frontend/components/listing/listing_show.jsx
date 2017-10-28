@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import ListingIndexContainer from './listing_index_container';
 
@@ -33,7 +33,7 @@ class ListingShow extends React.Component{
           <section className="listing-show-info-sub">
 
             <div className="listing-show-info-images">
-              <div className="listing-show-image-main" style={{background: `url(${listing.img_main})`}}></div>
+              <div className="cover-image" style={{backgroundImage: `url(${listing.img_main})`}}></div>
             </div>
 
             <div className="listing-show-info-main">

@@ -33,12 +33,12 @@ const ListingIndexItem = ({ listing, type }) => {
         </section>
         <Link to={`/listings/${listing.id}/edit`}>Edit</Link>
       </div>
-    )
+    );
   }
 
   return (
     <li className={`listing-item-main-${type}`}>
-      <Link className="listing-image-link" to={`/listings/${listing.id}`} style={{background: `url(${listing.img_main})`}}/>
+      <Link className="cover-image" to={`/listings/${listing.id}`} style={{backgroundImage: `url(${listing.img_main})`}}/>
       <div className="listing-info">
         {info}
       </div>

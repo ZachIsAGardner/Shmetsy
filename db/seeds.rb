@@ -44,6 +44,15 @@ Shop.create!(
   location: "Philadelphia, PA",
   owner_id: User.find_by(username: "Frank").id
 )
+Shop.create!(
+  shopname: "Badass",
+  img_profile: "https://i.ytimg.com/vi/dATJN3QObrE/hqdefault.jpg",
+  img_banner: "http://media-assets-04.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-77017-always_sunny--2x1--940.png",
+  description: ".",
+  sales: 2,
+  location: "Philadelphia, PA",
+  owner_id: User.find_by(username: "Mac").id
+)
 
 # ---
 
@@ -76,29 +85,74 @@ Listing.create!(
   owner_id: User.find_by(username: "Frank").id
 )
 Listing.create!(
-  title: "Rum Ham 2",
-  description: "lazy haha lol wow! ruma ha m 2",
-  img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
-  price: 7.52,
-  stock: 2,
+  title: "Paddy's Egg",
+  description: "A hard boiled that has been dyed green.",
+  img_main: "http://vignette1.wikia.nocookie.net/itsalwayssunny/images/9/96/5x8_Paddys_Egg.png/revision/latest?cb=20110920232602",
+  price: 1.99,
+  stock: 230,
   shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
   owner_id: User.find_by(username: "Frank").id
 )
 Listing.create!(
-  title: "Rum Ham 3",
-  description: "lazy haha lol wow! ruma ha m 3",
-  img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
-  price: 7.53,
-  stock: 3,
-  shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
-  owner_id: User.find_by(username: "Frank").id
+  title: "Milksteak",
+  description: "Boiled over hard and garnished with raw jelly beans",
+  img_main: "https://www.wikihow.com/images/1/1a/MIlk_steak_with_jelly_beans_373.jpg",
+  price: 15.50,
+  stock: 6,
+  shop_id: Shop.find_by(shopname: "Greenman Productions").id,
+  owner_id: User.find_by(username: "Charlie").id
 )
 Listing.create!(
-  title: "Rum Ham 4",
-  description: "lazy haha lol wow! ruma ha m 4",
-  img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
-  price: 7.54,
-  stock: 4,
-  shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
-  owner_id: User.find_by(username: "Frank").id
+  title: "Grilled Charlie Sandwich",
+  description: "This is a great snack/meal if you don't have enough money in your budget this week for milksteak with a side of the finest jellybeans.",
+  img_main: "https://aseatenontv.files.wordpress.com/2013/04/img_1046.jpg",
+  price: 2.50,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Greenman Productions").id,
+  owner_id: User.find_by(username: "Charlie").id
+)
+Listing.create!(
+  title: "Mac's Duster",
+  description: "It't not a jacket. It's a duster. It's like a jacket only it's longer, thicker, and for more bad-ass.",
+  img_main: "http://i.imgur.com/bZkpOzV.jpg",
+  price: 65.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 1",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 2",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 3",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
+)
+Listing.create!(
+  title: "Project Badass Season 4",
+  description: "Totally and completely badass.",
+  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  price: 15.00,
+  stock: 1,
+  shop_id: Shop.find_by(shopname: "Badass").id,
+  owner_id: User.find_by(username: "Mac").id
 )

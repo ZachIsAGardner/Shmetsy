@@ -9,10 +9,13 @@ import MyModal from './myModal';
 import HeaderContainer from './header/header_container';
 import ShopManagerShowContainer from './shop/shop_manager_show_container';
 import SessionFormContainer from './session/session_form_container';
+
 import ShopShowContainer from './shop/shop_show_container';
+import Stipulations from './listing/stipulations';
 import ListingIndexContainer from './listing/listing_index_container';
 import ListingShowContainer from './listing/listing_show_container';
 import FeaturedListings from './listing/featured_listings';
+
 import Footer from './footer/footer';
 
 const App = (props) => {
@@ -25,11 +28,15 @@ const App = (props) => {
       </Switch>
 
       <div className="app">
-        <Route exact path="/" component={FeaturedListings} />
-
         <MyModal component={SessionFormContainer} modal={props.modal} closeModal={props.closeModal}/>
 
+        <Route exact path="/" component={FeaturedListings} />
         <Route exact path="/" render={() => (<ListingIndexContainer type="recomended"/>)} />
+
+        <div className="listing-search">
+          <Route exact path="/listings" component={Stipulations} />
+          <Route exact path="/listings" render={() => (<ListingIndexContainer type="index"/>)} />
+        </div>
 
         <Route exact path="/shops/:shopId" component={ShopShowContainer} />
         <Route path="/listings/:listingId" component={ListingShowContainer} />

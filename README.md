@@ -3,14 +3,11 @@
 TO DO:
 * all
 * styling
-* clear errors appropriately
 * Demo account
 * Implement click outside of modal closes it
 
-QUESTION:
-
-* Mysterious error
-* Where shop owner
+QUESTIONS:
+* help
 
 TO RUN:
 * npm install

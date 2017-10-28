@@ -27,19 +27,23 @@ export const Header = (props) => {
 
   return (
     <div className="header">
+      
+      <div className="header-contents">
 
-      <div className="header-left">
-        <Link to="/">Shmetsy</Link>
-        <div id="search-bar">
-          <input type=""></input>
-          <label>Search</label>
+        <div className="header-left">
+          <Link to="/">Shmetsy</Link>
+          <div id="search-bar">
+            <input type=""></input>
+            <label>Search</label>
+          </div>
         </div>
-      </div>
 
-      <div className="header-right">
-        {shop}
-        {form}
-        <div id="header-cart">cart</div>
+        <div className="header-right">
+          {shop}
+          {form}
+          <div id="header-cart">cart</div>
+        </div>
+
       </div>
 
     </div>

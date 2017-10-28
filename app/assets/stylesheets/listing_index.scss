@@ -3,13 +3,18 @@
   margin: auto;
 }
 
+.index {
+
+}
+
 [class^="listing-item-container"] {
   display: flex;
   flex-wrap: wrap;
 
-  margin-top: 25px;
+  width: 100%;
+  margin: auto;
 
-  width: 700px;
+  margin-top: 25px;
 }
 .listing-item-container-show {
   width: 400px;
@@ -37,6 +42,8 @@
 
   margin-left: 15px;
   margin-bottom: 15px;
+
+  transition: box-shadow 0.5s;
 }
 .listing-item-main-show {
   width: 180px;
@@ -50,6 +57,16 @@
   width: 220px;
   height: 310px;
 }
+.listing-item-main-index {
+  width: 310px;
+  height: 360px;
+}
+
+[class^="listing-item-main"]:hover {
+  transition: box-shadow 0.5s;
+  box-shadow: 0px 3px 20px rgba(16, 9, 26, 0.5);
+}
+
 
 [class^="listing-item-main"] > .listing-info > div {
   display: flex;
@@ -87,22 +104,22 @@
 
 // ---
 
-[class^="listing-item-main"] > .listing-image-link {
+[class^="listing-item-main"] > .cover-image {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  height: 150px;
-  width: 200px;
+  width: 100%;
+  height: 80%;
 }
-.listing-item-main-show > .listing-image-link {
-  width: 180px;
-  height: 180px;
+.listing-item-main-show > .cover-image {
+
 }
-.listing-item-main-sub > .listing-image-link {
-  width: 80px;
-  height: 80px;
+.listing-item-main-sub > .cover-image {
+  width: 80%;
+  height: 80%;
+  border-radius: 4px;
   margin: auto;
 }
-.listing-item-main-shop-manager > .listing-image-link {
+.listing-item-main-shop-manager > .cover-image {
   width: 100%;
   height: 200%;
   margin: auto;

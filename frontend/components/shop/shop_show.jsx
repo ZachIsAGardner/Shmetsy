@@ -21,18 +21,25 @@ class ShopShow extends React.Component {
 
         <div className="shop-show">
 
-          <section className="shop-banner" style={{background: `url(${this.props.shop.img_banner})`}} />
+          <section className="shop-banner" style={
+              {background: `url(${this.props.shop.img_banner})`}
+            } />
 
           <section className="shop-info">
-            <img src={this.props.shop.img_profile} alt="shop profile"></img>
 
-            <div className="shop-info-personal">
-              <h2>{this.props.shop.shopname}</h2>
-              <p>{this.props.shop.description}</p>
-              <div className="shop-info-personal-sub">
-                <p>{`${this.props.shop.location}`}</p>
-                <p>{`${this.props.shop.sales} sales`}</p>
-                <p>{`On Shmetsy since ${TimeUtil.readTime(this.props.shop.created_at).fullDate}`}</p>
+            <div className="shop-info-personal-container">
+
+              <div className="cover-image" style={
+                  {backgroundImage: `url(${this.props.shop.img_profile})`}
+                } />
+              <div className="shop-info-personal">
+                <h2>{this.props.shop.shopname}</h2>
+                <p>{this.props.shop.description}</p>
+                <div className="shop-info-personal-sub">
+                  <p>{`${this.props.shop.location}`}</p>
+                  <p>{`${this.props.shop.sales} sales`}</p>
+                  <p>{`On Shmetsy since ${TimeUtil.readTime(this.props.shop.created_at).fullDate}`}</p>
+                </div>
               </div>
             </div>
 

@@ -1,4 +1,5 @@
 import * as API_Util from '../util/session_api_util';
+import { closeModal } from './modal_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -20,6 +21,7 @@ const receiveErrors = (errors) => {
 export const createUser = (user) => {
   return (dispatch) => {
     return API_Util.createUser(user).then((user) => {
+      dispatch(closeModal());
       dispatch(receiveCurrentUser(user));
     }, (err) => {
       dispatch(receiveErrors(err.responseJSON));
@@ -30,6 +32,7 @@ export const createUser = (user) => {
 export const createSession = (user) => {
   return (dispatch) => {
     return API_Util.createSession(user).then((user) => {
+      dispatch(closeModal());
       dispatch(receiveCurrentUser(user));
     }, (err) => {
       dispatch(receiveErrors(err.responseJSON));
