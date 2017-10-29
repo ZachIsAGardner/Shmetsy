@@ -23,8 +23,8 @@ class ListingIndex extends React.Component {
     }
 
     const listingEls = this.props.listings.map((listing, idx) => {
-      if (idx >= 4 && this.props.type === "sub") {
-        if (idx === 4) {
+      if (idx >= 3 && this.props.type === "sub") {
+        if (idx === 3) {
           return <ListingIndexRemaining
             key={idx}
             count={this.props.listings.length}

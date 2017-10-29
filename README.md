@@ -15,6 +15,7 @@ QUESTIONS:
 * warning on edit refresh (good solution?)
 * why controller different from before (no saving involved)
 * why doesnt update immediatly on edit
+* multiple images
 
 TO RUN:
 * npm install

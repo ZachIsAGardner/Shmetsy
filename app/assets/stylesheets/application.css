@@ -30,14 +30,16 @@ body {
   --background: #fffbfa;
   --background-dark: #ffeceb;
   --border: #cccccc;
-  --border: #eeeeee;
+  --border-light: #eeeeee;
 
   --light-orange: #f59942;
   --orange:  #f27426;
   --dark-orange:  #f35c16;
   --blue: #6c98ea;
   --red: #ed524a;
-  --dark-gray: #51555c;
+  --dark-gray: #2b2d31;
+  --gray: #51555c;
   --light-gray: #706b6b;
   --super-light-gray: #a09d9c;
+  --super-duper-light-gray: #eeeeee;
 }

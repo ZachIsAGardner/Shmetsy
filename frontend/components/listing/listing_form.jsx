@@ -14,7 +14,6 @@ class ListingForm extends React.Component {
     }
   }
 
-
   componentWillReceiveProps() {
     this.setState(this.props.listing);
   }
@@ -24,7 +23,7 @@ class ListingForm extends React.Component {
     this.props.formAction(this.state);
     this.navigateToManage();
   }
-  
+
   navigateToManage(){
     this.props.history.push(`/shops/${this.props.shopId}/manage/`);
   }
@@ -49,14 +48,14 @@ class ListingForm extends React.Component {
 
           <section className="details">
             <h3>Details</h3>
-            <label>Title
+            <label className="title">Title
               <input
                 type="text"
                 value={title}
                 onChange={this.handleInput('title')}>
               </input>
             </label>
-            <label>Description
+            <label className="description">Description
               <textarea
                 value={description}
                 onChange={this.handleInput('description')}>
@@ -66,14 +65,14 @@ class ListingForm extends React.Component {
 
           <section className="inv-price">
             <h3>Inventory and Pricing</h3>
-            <label>Price
+            <label className="price">Price
               <input
                 type="text"
                 value={price}
                 onChange={this.handleInput('price')}>
               </input>
             </label>
-            <label>Stock
+            <label className="stock">Stock
               <input
                 type="text"
                 value={stock}
@@ -86,12 +85,17 @@ class ListingForm extends React.Component {
             <h3>Shipping</h3>
           </section>
 
-          <section className="submit">
-            <button>Cancel</button>
-            <button>Preview</button>
-            <button>Save as draft</button>
-            <input type="submit"></input>
-          </section>
+          <footer className="submit">
+              <div>
+                <button className="white-button">Cancel</button>
+              </div>
+              <div>
+                <button className="white-button">Preview</button>
+                <button className="white-button">Save as draft</button>
+                <button className="orange-button">Submit</button>
+              </div>
+
+          </footer>
 
         </form>
       </div>

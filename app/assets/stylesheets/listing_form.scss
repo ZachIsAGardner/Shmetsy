@@ -1,3 +1,133 @@
 .listing-form {
-  background: green;
+
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.listing-form a {
+  color: var(--orange);
+  text-decoration: none;
+}
+.listing-form a:hover {
+  text-decoration: underline;
+}
+
+.listing-form > h2 {
+  color: var(--dark-gray);
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.listing-form section {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 15px;
+  min-height: 250px;
+  margin: 25px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 4px;
+}
+
+.listing-form label {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.listing-form label * {
+  margin: 10px 0;
+}
+
+.listing-form .title input {
+  height: 25px;
+  width: 80%;
+}
+
+.listing-form .details textarea {
+  height: 200px;
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+
+  resize: none;
+}
+
+.listing-form .price {
+  justify-content: flex-start;
+}
+.listing-form .price input {
+  margin-left: 30px;
+  height: 25px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.listing-form .stock {
+  justify-content: flex-start;
+}
+.listing-form .stock input {
+  margin-left: 30px;
+  height: 25px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.listing-form .submit {
+  background: white;
+  border: 1px solid var(--border);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: calc(100vw - 225px);
+  left: 225px;
+  height: 25px;
+  padding: 15px;
+  padding-bottom: 40px;
+}
+
+.listing-form .submit > div:last-child {
+  margin-right: 50px;
+}
+
+.listing-form .submit > div * {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  color: var(--dark-gray);
+  font-size: 16px;
+
+  margin: 5px;
+  padding: 12px 15px;
+}
+
+
+.listing-form .submit > div *:last-child {
+  background: var(--orange);
+  border: 1px solid var(--dark-orange);
+  color: white;
+}
+
+.listing-form .submit > div *:first-child {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--dark-gray);
+}
+
+.listing-form .submit .white-button:hover {
+  cursor: pointer;
+  background: var(--super-duper-light-gray);
+}
+.listing-form .submit .orange-button:hover {
+  cursor: pointer;
+  background: var(--light-orange);
+  border: 1px solid var(--orange);
 }
