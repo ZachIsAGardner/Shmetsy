@@ -19,17 +19,20 @@ const mapStateToProps = (state, ownProps) => {
 
   if (ownProps.match.params.listingId) {
     listingId = ownProps.match.params.listingId;
-    const oldListing = state.entities.listings[ownProps.match.params.listingId];
-    listing = {
-      title: oldListing.title,
-      description: oldListing.description,
-      price: oldListing.price,
-      stock: oldListing.stock,
-      shop_id: oldListing.shop_id,
-      owner_id: oldListing.owner_id,
-      img_main: oldListing.img_main
-    };
-    debugger
+    let oldListing = state.entities.listings[ownProps.match.params.listingId];
+
+    if (oldListing) {
+      listing = {
+        id: oldListing.id,
+        title: oldListing.title,
+        description: oldListing.description,
+        price: oldListing.price,
+        stock: oldListing.stock,
+        shop_id: oldListing.shop_id,
+        owner_id: oldListing.owner_id,
+        img_main: oldListing.img_main
+      };
+    }
     formType = "edit";
   }
 

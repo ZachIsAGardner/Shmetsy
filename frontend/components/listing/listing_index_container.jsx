@@ -7,6 +7,7 @@ import { requestListingsByListing } from '../../actions/listing_actions.js';
 import ListingIndex from './listing_index';
 
 const mapStateToProps = (state, ownProps) => {
+
   return {
     listings: Object.values(state.entities.listings)
   };
@@ -14,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   let action;
-  
+
   if (ownProps.match.params.listingId) {
     action = () => dispatch(requestListingsByListing(ownProps.match.params.listingId));
   } else if (ownProps.match.params.shopId)  {

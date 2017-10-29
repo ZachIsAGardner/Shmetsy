@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_SHOP } from '../actions/shop_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_LISTINGS, RECEIVE_LISTING } from '../actions/listing_actions';
 
 const UsersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -30,6 +31,15 @@ const UsersReducer = (oldState = {}, action) => {
       newState2[newUser2.id] = newUser2;
 
       return newState2;
+
+    case RECEIVE_LISTINGS:
+      let listingOwners = Object.values(action.listings).map((listing) => listing.owner);
+      let uniqueUsers = {};
+      listingOwners.forEach((user) => {
+         uniqueUsers[user.id] = user;
+      });
+
+      return uniqueUsers;
 
     default:
       return oldState;

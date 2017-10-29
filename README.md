@@ -12,8 +12,9 @@ FIXED BUGS:
 
 QUESTIONS:
 * help
-* warning on edit refresh
+* warning on edit refresh (good solution?)
 * why controller different from before (no saving involved)
+* why doesnt update immediatly on edit
 
 TO RUN:
 * npm install

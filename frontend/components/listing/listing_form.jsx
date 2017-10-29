@@ -14,6 +14,7 @@ class ListingForm extends React.Component {
     }
   }
 
+
   componentWillReceiveProps() {
     this.setState(this.props.listing);
   }
@@ -21,6 +22,11 @@ class ListingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.formAction(this.state);
+    this.navigateToManage();
+  }
+  
+  navigateToManage(){
+    this.props.history.push(`/shops/${this.props.shopId}/manage/`);
   }
 
   handleInput(field) {
