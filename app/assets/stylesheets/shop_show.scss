@@ -36,10 +36,10 @@
 
 .shop-info-personal-container {
   display: flex;
-  background: green;
 }
 
 .shop-info-personal-container .cover-image {
+  border-radius: 4px;
   width: 200px;
   min-width: 200px;
   height: 200px;
@@ -48,16 +48,23 @@
 
 .shop-info-personal {
   display: flex;
+
   flex-direction: column;
-  background: pink;
+
   margin-left: 15px;
   width: 50%;
   min-width: 450px;
   height: 50%;
 }
+.shop-info-personal > h2 {
+  margin-bottom: 5px;
+}
+.shop-info-personal > p {
+  margin-top: 5px;
+}
+
 
 .shop-info-personal-sub {
-  background: blue;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -68,6 +75,11 @@
 .shop-owner-profile {
   display: flex;
   flex-direction: column;
+}
+
+.shop-owner-profile * {
+  margin: auto;
+  color: var(--dark-gray);
 }
 
 .shop-owner-profile > .cover-image {
@@ -81,7 +93,7 @@
 // ---
 
 .shop-reel {
-  background: #e0e7f0;
+  background: var(--background-dark);
   margin-top: 15px;
   height: 50px;
   width: 100%;

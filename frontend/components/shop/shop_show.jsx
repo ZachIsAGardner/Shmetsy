@@ -37,11 +37,11 @@ class ShopShow extends React.Component {
                 <h2>{this.props.shop.shopname}</h2>
                 <p>{this.props.shop.description}</p>
                 <div className="shop-info-personal-sub">
-                  <p>{`${this.props.shop.location}`}</p>
-                  <p>|</p>
-                  <p>{`${this.props.shop.sales} sales`}</p>
-                  <p>|</p>
-                  <p>{`On Shmetsy since ${TimeUtil.readTime(this.props.shop.created_at).fullDate}`}</p>
+                  <p className="light">{`${this.props.shop.location}`}</p>
+                  <p className="super-light">|</p>
+                  <p className="light">{`${this.props.shop.sales} sales`}</p>
+                  <p className="super-light">|</p>
+                  <p className="light">{`On Shmetsy since ${TimeUtil.readTime(this.props.shop.created_at).fullDate}`}</p>
                 </div>
               </div>
             </div>

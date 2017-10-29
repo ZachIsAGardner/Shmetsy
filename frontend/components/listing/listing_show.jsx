@@ -23,7 +23,7 @@ class ListingShow extends React.Component{
         <section className="listing-show-shop">
           <div className="row">
             <Link className="cover-image" to={`/shops/${shop.id}`} style={{backgroundImage: `url(${shop.img_profile})`}}></Link>
-            <h2 className="shop-profile-shopname">{shop.shopname}</h2>
+            <Link className="shop-profile-shopname" to={`/shops/${shop.id}`}>{shop.shopname}</Link>
           </div>
           <ListingIndexContainer type="sub" />
         </section>

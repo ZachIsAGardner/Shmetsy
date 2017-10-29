@@ -31,7 +31,7 @@ const ListingIndexItem = ({ listing, type }) => {
           <p>{`${listing.stock} in stock`}</p>
           <h3>{`$${listing.price}`}</h3>
         </section>
-        <Link to={`/listings/${listing.id}/edit`}>Edit</Link>
+        <Link to={`/shops/${listing.shop.id}/manage/addlisting/${listing.id}/edit`}>Edit</Link>
       </div>
     );
   }

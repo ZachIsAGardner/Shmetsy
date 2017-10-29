@@ -17,11 +17,19 @@ class Api::ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new(listing_params);
+    @listing = Listing.create!(listing_params);
+    render :show
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    @listing.update_attributes(listing_params)
+    render :show
   end
 
   private
+
   def listing_params
-    params.require(:listing).permit(:img_main, :title, :description, :price, :quantity)
+    params.require(:listing).permit(:img_main, :title, :description, :price, :stock, :owner_id, :shop_id)
   end
 end

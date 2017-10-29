@@ -1,8 +1,14 @@
 import React from 'react';
 
-const Footer = (props) => {
+const Footer = ({props}) => {
+  let type;
+  if (props.location.pathname.includes("manage")) {
+    type='manage';
+  } else {
+    type='full';
+  }
   return (
-    <div className='footer'>
+    <div className={`${type}-footer`}>
       <div className="footer-left">
         <h3>Shmetsy</h3>
         <p>Etsy? More like Shmetsy am I right?</p>

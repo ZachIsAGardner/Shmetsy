@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 
 import { RECEIVE_LISTING, RECEIVE_LISTINGS } from '../actions/listing_actions';
+import { RECEIVE_SHOP } from '../actions/shop_actions';
 
 
 

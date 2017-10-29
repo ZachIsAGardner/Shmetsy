@@ -20,6 +20,7 @@ class ShopManagerListings extends React.Component {
 
         <Route exact path="/shops/:shopId/manage/" render={() => (<ListingsHeader props={this.props}/>)}></Route>
         <Switch>
+          <Route path="/shops/:shopId/manage/addlisting/:listingId/edit" component={ListingFormContainer}></Route>
           <Route path="/shops/:shopId/manage/addlisting" component={ListingFormContainer}></Route>
           <Route path="/shops/:shopId/manage/" render={() => (<ListingIndexContainer type="shop-manager"/>)}></Route>
         </Switch>

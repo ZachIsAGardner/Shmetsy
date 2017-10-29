@@ -20,7 +20,15 @@
 }
 
 .shop-profile-shopname {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  
   padding-left: 20px;
+}
+.shop-profile-shopname:hover {
+  text-decoration: underline;
 }
 
 .row {
@@ -86,6 +94,8 @@
 .listing-show-info-sub > section > h3 {
   color: black;
 }
+
+
 
 // ---
 

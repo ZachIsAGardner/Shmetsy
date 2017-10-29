@@ -18,6 +18,9 @@ class ListingIndex extends React.Component {
     if (this.props.type === 'recomended') {
       listingMessage = "Some items you might be interested in...";
     }
+    if (this.props.type === 'shop') {
+      listingMessage = "Items";
+    }
 
     const listingEls = this.props.listings.map((listing, idx) => {
       if (idx >= 4 && this.props.type === "sub") {
@@ -36,7 +39,7 @@ class ListingIndex extends React.Component {
     });
 
     return (
-      <div className={this.props.type}>
+      <div className={`listing-index-${this.props.type}`}>
         <h2>{listingMessage}</h2>
         <ul className={`listing-item-container-${this.props.type}`}>
           {listingEls}

@@ -1,4 +1,4 @@
-.footer {
+[class$="-footer"]{
   margin-top: 50px;
   border-top: 1px solid #aaaaaa;
   background: white;
@@ -7,6 +7,9 @@
 
   display: flex;
   justify-content: space-between;
+}
+.manage-footer {
+  margin-left: 225px;
 }
 
 // ---

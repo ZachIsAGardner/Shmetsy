@@ -3,8 +3,8 @@
   margin: auto;
 }
 
-.index {
-
+[class^="listing-index"] > h2 {
+  text-align: center;
 }
 
 [class^="listing-item-container"] {
@@ -16,6 +16,7 @@
 
   margin-top: 25px;
 }
+
 .listing-item-container-show {
   width: 400px;
 }
@@ -49,9 +50,23 @@
   width: 180px;
   height: 180px;
 }
+.listing-item-main-shop {
+  width: 280px;
+  height: 280px;
+}
 .listing-item-main-sub {
   width: 110px;
   height: 90px;
+}
+a.listing-item-main-sub {
+  font-size: 20px;
+  text-decoration: none;
+}
+a.listing-item-main-sub > h3:first-child {
+  margin-bottom: 0;
+}
+a.listing-item-main-sub > h3:last-child {
+  margin-top: 0;
 }
 .listing-item-main-shop-manager {
   width: 220px;

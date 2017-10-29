@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     user.shop = (shop) ? shop.id : {};
 
     let preloadedState;
-
+  
     if (shop) {
       preloadedState = {
         session: { currentUser: {

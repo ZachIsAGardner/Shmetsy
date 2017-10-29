@@ -38,7 +38,9 @@
   background: var(--orange);
   padding: 15px;
   color: white;
+  transition: 0.25s;
 }
 .shop-manager-listings-header > a:hover {
-  background: #ff6f58;
+  transition: 0.25s;
+  background: var(--light-orange);
 }

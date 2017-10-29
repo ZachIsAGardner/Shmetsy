@@ -19,7 +19,6 @@ import FeaturedListings from './listing/featured_listings';
 import Footer from './footer/footer';
 
 const App = (props) => {
-
   return (
     <div>
       <Switch>
@@ -42,7 +41,7 @@ const App = (props) => {
         <Route path="/listings/:listingId" component={ListingShowContainer} />
       </div>
 
-      <Footer />
+      <Footer props={props}/>
     </div>
   );
 };

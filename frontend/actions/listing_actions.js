@@ -55,16 +55,16 @@ export const requestListing = (id) => {
 
 export const createListing = (listing) => {
   return (dispatch) => {
-    return API_Util.createListing(listing).then((listing) => {
-      dispatch(receiveListing(listing));
+    return API_Util.createListing(listing).then((newListing) => {
+      dispatch(receiveListing(newListing));
     });
   };
 };
 
 export const updateListing = (listing) => {
   return (dispatch) => {
-    return API_Util.updateListing(listing).then((listing) => {
-      dispatch(receiveListing(listing));
+    return API_Util.updateListing(listing).then((updatedListing) => {
+      dispatch(receiveListing(updatedListing));
     });
   };
 };
