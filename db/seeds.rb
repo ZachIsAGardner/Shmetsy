@@ -60,7 +60,7 @@ Listing.destroy_all
 Listing.create!(
   title: "Kitten Mittens",
   description: "Great for cats that are one legged, fat, skinny, or an in-between",
-  img_main: "https://vignette.wikia.nocookie.net/itsalwayssunny/images/e/e0/Kitten-mittons2.jpg/revision/latest?cb=20100708223709",
+  image: File.open("app/assets/images/Kitten-mittons2.jpg"),
   price: 20.10,
   stock: 7,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
@@ -69,7 +69,7 @@ Listing.create!(
 Listing.create!(
   title: "Fight Milk",
   description: "High in crowteen!",
-  img_main: "https://ih1.redbubble.net/image.313586213.3959/flat,900x900,070,f.u1.jpg",
+  image: File.open("app/assets/images/fight_milk.jpg"),
   price: 3.50,
   stock: 40,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
@@ -78,7 +78,7 @@ Listing.create!(
 Listing.create!(
   title: "Rum Ham",
   description: "Soaked in rum as well as having pineapple rings for eyes",
-  img_main: "https://i.ytimg.com/vi/DWG2t5jL69k/maxresdefault.jpg",
+  image: File.open("app/assets/images/rumham-1050x519.png"),
   price: 7.51,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
@@ -87,7 +87,7 @@ Listing.create!(
 Listing.create!(
   title: "Paddy's Egg",
   description: "A hard boiled that has been dyed green.",
-  img_main: "http://vignette1.wikia.nocookie.net/itsalwayssunny/images/9/96/5x8_Paddys_Egg.png/revision/latest?cb=20110920232602",
+  image:  File.open("app/assets/images/paddy_egg.jpg"),
   price: 1.99,
   stock: 230,
   shop_id: Shop.find_by(shopname: "Paddy's Pub").id,
@@ -96,7 +96,7 @@ Listing.create!(
 Listing.create!(
   title: "Milksteak",
   description: "Boiled over hard and garnished with raw jelly beans",
-  img_main: "https://www.wikihow.com/images/1/1a/MIlk_steak_with_jelly_beans_373.jpg",
+  image: File.open("app/assets/images/MIlk_steak_with_jelly_beans_373.jpg"),
   price: 15.50,
   stock: 6,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
@@ -105,7 +105,7 @@ Listing.create!(
 Listing.create!(
   title: "Grilled Charlie Sandwich",
   description: "This is a great snack/ meal if you don't have enough money in your budget this week for milksteak with a side of the finest jellybeans.",
-  img_main: "https://aseatenontv.files.wordpress.com/2013/04/img_1046.jpg",
+  image: File.open("app/assets/images/grilled_charlie.jpg"),
   price: 2.50,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Greenman Productions").id,
@@ -114,7 +114,7 @@ Listing.create!(
 Listing.create!(
   title: "Mac's Duster",
   description: "It's not a jacket. It's a duster. It's like a jacket only it's longer, thicker, and far more bad-ass.",
-  img_main: "http://i.imgur.com/bZkpOzV.jpg",
+  image: File.open("app/assets/images/duster.jpg"),
   price: 65.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -123,7 +123,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 1",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -132,7 +132,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 2",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -141,7 +141,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 3",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -150,7 +150,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 4",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 0,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -159,7 +159,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 5",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -168,7 +168,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 6",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -177,7 +177,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 7",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -186,7 +186,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 8",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
@@ -195,7 +195,7 @@ Listing.create!(
 Listing.create!(
   title: "Project Badass Season 9",
   description: "Totally and completely badass.",
-  img_main: "http://www.jomboyblog.com/uploads/8/2/0/3/82030176/always-sunny_orig.png",
+  image: File.open("app/assets/images/always-sunny_orig.png"),
   price: 15.00,
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,

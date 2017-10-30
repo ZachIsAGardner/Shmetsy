@@ -58,16 +58,17 @@ export const createListing = (listing) => {
     return API_Util.createListing(listing).then((newListing) => {
       dispatch(receiveListing(newListing));
     }, (err) => {
-      debugger
       console.log(err.responseJSON);
     });
   };
 };
 
-export const updateListing = (listing) => {
+export const updateListing = (listing, id) => {
   return (dispatch) => {
-    return API_Util.updateListing(listing).then((updatedListing) => {
+    return API_Util.updateListing(listing, id).then((updatedListing) => {
       dispatch(receiveListing(updatedListing));
+    }, (err) => {
+      console.log(err.responseJSON);
     });
   };
 };

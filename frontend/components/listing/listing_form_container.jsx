@@ -33,7 +33,8 @@ const mapStateToProps = (state, ownProps) => {
         shop_id: oldListing.shop_id,
         owner_id: oldListing.owner_id,
         img_main: oldListing.img_main,
-
+        image_file: oldListing.image_url,
+        image_url: oldListing.image_url
       };
     }
     formType = "edit";
@@ -52,7 +53,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let action = (ownProps.match.params.listingId) ? updateListing : createListing;
 
   return {
-    formAction: (listing) => dispatch(action(listing)),
+    formAction: (listing, id) => dispatch(action(listing, id)),
     requestListing: (id) => dispatch(requestListing(id))
   };
 };

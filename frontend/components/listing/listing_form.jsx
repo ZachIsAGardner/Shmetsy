@@ -23,6 +23,7 @@ class ListingForm extends React.Component {
     e.preventDefault();
 
     var formData = new FormData();
+    formData.append("listing[id]", this.state.id);
     formData.append("listing[title]", this.state.title);
     formData.append("listing[description]", this.state.description);
     formData.append("listing[price]", this.state.price);
@@ -31,7 +32,7 @@ class ListingForm extends React.Component {
     formData.append("listing[owner_id]", this.state.owner_id);
     formData.append("listing[image]", this.state.image_file);
 
-    this.props.formAction(formData);
+    this.props.formAction(formData, this.state.id);
     this.navigateToManage();
   }
 

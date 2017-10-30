@@ -23,10 +23,12 @@ export const createListing = (listing) => {
   });
 };
 
-export const updateListing = (listing) => {
+export const updateListing = (listing, id) => {
   return $.ajax({
+    url: `/api/listings/${id}`,
     method: "PATCH",
-    url: `/api/listings/${listing.id}`,
-    data: { listing }
+    contentType: false,
+    processData: false,
+    data: listing
   });
 };
