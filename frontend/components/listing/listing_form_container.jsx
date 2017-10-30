@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
     image_file: null,
     image_url: null,
   };
+  
   let listingId;
   let formType = "new";
 

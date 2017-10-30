@@ -12,6 +12,20 @@
   position: fixed;
 }
 
+.shop-manager-sidebar h3 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
+}
+
+.shop-manager-sidebar a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.shop-manager-sidebar a:hover {
+  text-decoration: underline;
+}
+
 .shop-manager-content-container {
   width: 100%;
   margin-left: 225px;

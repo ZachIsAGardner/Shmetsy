@@ -31,7 +31,7 @@ class ListingForm extends React.Component {
     formData.append("listing[shop_id]", this.state.shop_id);
     formData.append("listing[owner_id]", this.state.owner_id);
     formData.append("listing[image]", this.state.image_file);
-
+    debugger
     this.props.formAction(formData, this.state.id);
     this.navigateToManage();
   }
@@ -69,10 +69,10 @@ class ListingForm extends React.Component {
         <Link to={`/shops/${this.props.shopId}/manage/`}>Back to Listings</Link>
         <h2>Add a new listing</h2>
         <form onSubmit={this.handleSubmit}>
-          <section>
+          <section className="photos">
             <h3>Photos</h3>
             <input type="file" name="image-upload" onChange={this.handleImage()}></input>
-            <div className = "cover-image" style={
+            <div className="cover-image" style={
                 {backgroundImage: `url(${image_url})`}
               }></div>
           </section>

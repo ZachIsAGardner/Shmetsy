@@ -42,6 +42,14 @@
   margin: 10px 0;
 }
 
+.listing-form .photos .cover-image {
+  margin-top: 15px;
+  border: 1px solid var(--border);
+
+  width: 200px;
+  height: 200px;
+}
+
 .listing-form .title input {
   height: 25px;
   width: 80%;
