@@ -23,6 +23,7 @@
 
 .listing-index-cart {
   width: 100%;
+  border-right: 1px solid var(--border);
 }
 .listing-item-container-cart {
   flex-direction: column;
@@ -188,6 +189,5 @@ a.listing-item-main-sub > h3:last-child {
   width: 200px;
   min-width: 200px;
   height: 200px;
-  border: 1px solid var(--border);
   border-radius: 4px;
 }

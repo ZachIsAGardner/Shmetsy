@@ -1,11 +1,13 @@
 .cart {
   width: 55%;
+  min-width: 700px;
   margin: auto;
 }
 
 .cart-main {
   background: white;
   border: 1px solid var(--border);
+  padding: 15px;
   width: 100%;
 
   display: flex;
@@ -13,15 +15,15 @@
 }
 
 .checkout {
-  background: pink;
   height: 200px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  margin-left: 15px;
 }
 .checkout * {
-  margin: 0 auto;
+  margin: 5px auto;
 }
 
 .checkout button {
@@ -35,4 +37,8 @@
   height: 40px;
 
   display: block;
+}
+.checkout button:hover {
+  cursor: pointer;
+  background:var(--light-orange);
 }

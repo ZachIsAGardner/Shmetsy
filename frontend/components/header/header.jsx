@@ -1,12 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 export const Header = (props) => {
   let form;
+  let cart;
 
   if (props.currentUser) {
     form = (
-      <button className="header-form" onClick={(e) => props.endSession()}>Logout</button>
+      <button
+        className="header-form"
+        onClick={(e) => {
+          props.endSession();
+          props.history.push('/');
+        }
+      }>Logout</button>
+    );
+    cart = (
+      <Link to={`/cart`} id="header-cart">cart</Link>
     );
   } else {
     form = (
@@ -41,7 +51,7 @@ export const Header = (props) => {
         <div className="header-right">
           {shop}
           {form}
-          <Link to={`/cart`} id="header-cart">cart</Link>
+          {cart}
         </div>
 
       </div>
