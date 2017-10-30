@@ -57,6 +57,9 @@ export const createListing = (listing) => {
   return (dispatch) => {
     return API_Util.createListing(listing).then((newListing) => {
       dispatch(receiveListing(newListing));
+    }, (err) => {
+      debugger
+      console.log(err.responseJSON);
     });
   };
 };

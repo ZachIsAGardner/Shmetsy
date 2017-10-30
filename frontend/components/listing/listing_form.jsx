@@ -5,6 +5,7 @@ class ListingForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+
     this.state = this.props.listing;
   }
 
@@ -20,7 +21,17 @@ class ListingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.formAction(this.state);
+
+    var formData = new FormData();
+    formData.append("listing[title]", this.state.title);
+    formData.append("listing[description]", this.state.description);
+    formData.append("listing[price]", this.state.price);
+    formData.append("listing[stock]", this.state.stock);
+    formData.append("listing[shop_id]", this.state.shop_id);
+    formData.append("listing[owner_id]", this.state.owner_id);
+    formData.append("listing[image]", this.state.image_file);
+
+    this.props.formAction(formData);
     this.navigateToManage();
   }
 
@@ -34,9 +45,24 @@ class ListingForm extends React.Component {
     };
   }
 
+  handleImage() {
+    return (e) => {
+      let file = e.currentTarget.files[0];
+      let fileReader = new FileReader();
+      fileReader.onloadend = function() {
+        this.setState({ image_file: file, image_url: fileReader.result});
+      }.bind(this);
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+    };
+  }
+
   render() {
 
-    let { title, description, price, stock} = this.state || {};
+    let { title, description, price, stock, img_main, image_url} = this.state || {};
+
     return (
       <div className="listing-form">
         <Link to={`/shops/${this.props.shopId}/manage/`}>Back to Listings</Link>
@@ -44,6 +70,10 @@ class ListingForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <section>
             <h3>Photos</h3>
+            <input type="file" name="image-upload" onChange={this.handleImage()}></input>
+            <div className = "cover-image" style={
+                {backgroundImage: `url(${image_url})`}
+              }></div>
           </section>
 
           <section className="details">

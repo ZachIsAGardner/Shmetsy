@@ -104,7 +104,7 @@ Listing.create!(
 )
 Listing.create!(
   title: "Grilled Charlie Sandwich",
-  description: "This is a great snack/meal if you don't have enough money in your budget this week for milksteak with a side of the finest jellybeans.",
+  description: "This is a great snack/ meal if you don't have enough money in your budget this week for milksteak with a side of the finest jellybeans.",
   img_main: "https://aseatenontv.files.wordpress.com/2013/04/img_1046.jpg",
   price: 2.50,
   stock: 1,
@@ -113,7 +113,7 @@ Listing.create!(
 )
 Listing.create!(
   title: "Mac's Duster",
-  description: "It't not a jacket. It's a duster. It's like a jacket only it's longer, thicker, and far more bad-ass.",
+  description: "It's not a jacket. It's a duster. It's like a jacket only it's longer, thicker, and far more bad-ass.",
   img_main: "http://i.imgur.com/bZkpOzV.jpg",
   price: 65.00,
   stock: 1,

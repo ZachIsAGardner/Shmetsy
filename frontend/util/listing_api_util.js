@@ -15,9 +15,11 @@ export const fetchListing = (id) => {
 
 export const createListing = (listing) => {
   return $.ajax({
-    method: "POST",
     url: "/api/listings",
-    data: { listing }
+    method: "POST",
+    contentType: false,
+    processData: false,
+    data: listing
   });
 };
 

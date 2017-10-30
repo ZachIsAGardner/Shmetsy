@@ -38,7 +38,7 @@ const ListingIndexItem = ({ listing, type }) => {
 
   return (
     <li className={`listing-item-main-${type}`}>
-      <Link className="cover-image" to={`/listings/${listing.id}`} style={{backgroundImage: `url(${listing.img_main})`}}/>
+      <Link className="cover-image" to={`/listings/${listing.id}`} style={{backgroundImage: `url(${listing.image_url})`}}></Link>
       <div className="listing-info">
         {info}
       </div>

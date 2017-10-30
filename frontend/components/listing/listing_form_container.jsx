@@ -12,7 +12,9 @@ const mapStateToProps = (state, ownProps) => {
     stock: 1,
     shop_id: state.session.currentUser.shop,
     owner_id: state.session.currentUser.id,
-    img_main: "https://pbs.twimg.com/profile_images/507251035929190400/BDUL3Uzt_400x400.png"
+    img_main: "https://pbs.twimg.com/profile_images/507251035929190400/BDUL3Uzt_400x400.png",
+    image_file: null,
+    image_url: null,
   };
   let listingId;
   let formType = "new";
@@ -30,7 +32,8 @@ const mapStateToProps = (state, ownProps) => {
         stock: oldListing.stock,
         shop_id: oldListing.shop_id,
         owner_id: oldListing.owner_id,
-        img_main: oldListing.img_main
+        img_main: oldListing.img_main,
+
       };
     }
     formType = "edit";

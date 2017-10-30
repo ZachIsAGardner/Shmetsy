@@ -30,6 +30,6 @@ class Api::ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:img_main, :title, :description, :price, :stock, :owner_id, :shop_id)
+    params.require(:listing).permit(:image, :title, :description, :price, :stock, :owner_id, :shop_id)
   end
 end
