@@ -12,7 +12,11 @@ import * as BasicUtil from '../../util/basic_util';
 const mapStateToProps = (state, ownProps) => {
   const listings = Object.values(state.entities.listings).map((listing) => {
     let l = listing;
-    l['quantity'] = BasicUtil.count(state.session.currentUser.cart, l.id);
+    if (state.session.currentUser) {
+      l['quantity'] = BasicUtil.count(state.session.currentUser.cart, l.id);
+    } else {
+      l['quantity'] = 1;
+    }
     return l;
   });
 
