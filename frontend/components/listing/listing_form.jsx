@@ -31,7 +31,7 @@ class ListingForm extends React.Component {
     formData.append("listing[shop_id]", this.state.shop_id);
     formData.append("listing[owner_id]", this.state.owner_id);
     formData.append("listing[image]", this.state.image_file);
-    debugger
+
     this.props.formAction(formData, this.state.id);
     this.navigateToManage();
   }

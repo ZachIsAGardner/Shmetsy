@@ -7,6 +7,7 @@ import { closeModal } from '../actions/modal_actions';
 import MyModal from './myModal';
 
 import HeaderContainer from './header/header_container';
+import CartContainer from './cart/cart_container';
 import ShopManagerShowContainer from './shop/shop_manager_show_container';
 import SessionFormContainer from './session/session_form_container';
 
@@ -27,6 +28,9 @@ const App = (props) => {
       </Switch>
 
       <div className="app">
+
+        <Route path="/cart" component={CartContainer} />
+
         <MyModal component={SessionFormContainer} modal={props.modal} closeModal={props.closeModal}/>
 
         <Route exact path="/" component={FeaturedListings} />

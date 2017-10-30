@@ -6,8 +6,27 @@ import { RECEIVE_LISTINGS } from '../actions/listing_actions';
 
 const ShopsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
+  let newState = ({}, oldState);
 
   switch (action.type) {
+    case RECEIVE_SHOP:
+      const newShop2 = Object.assign({}, action.shop);
+      newShop2.owner_id = action.shop.owner.id;
+
+      newState[newShop2.id] = newShop2;
+
+      return newState;
+
+    case RECEIVE_LISTINGS:
+      newState = Object.assign({}, oldState);
+
+      let listingShops = Object.values(action.listings).map((listing) => listing.shop);
+
+      listingShops.forEach((shop) => {
+        newState[shop.id] = shop;
+      });
+
+      return newState;
 
     case RECEIVE_CURRENT_USER:
       if (!action.user || !action.user.shop) {
@@ -15,28 +34,10 @@ const ShopsReducer = (oldState = {}, action) => {
       }
       const newShop = action.user.shop;
 
-      const newState = Object.assign({}, oldState);
+      newState = Object.assign({}, oldState);
       newState[newShop.id] = newShop;
 
       return newState;
-
-    case RECEIVE_SHOP:
-      const newShop2 = Object.assign({}, action.shop);
-      newShop2.owner_id = action.shop.owner.id;
-
-      const newState2 = Object.assign({}, oldState);
-      newState2[newShop2.id] = newShop2;
-
-      return newState2;
-
-    case RECEIVE_LISTINGS:
-      let listingShops = Object.values(action.listings).map((listing) => listing.shop);
-      let uniqueShops = {};
-      listingShops.forEach((shop) => {
-         uniqueShops[shop.id] = shop;
-      });
-
-      return uniqueShops;
 
     default:
       return oldState;

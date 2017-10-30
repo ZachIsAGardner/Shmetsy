@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :shops, only: [:show];
     resources :listings
+    resources :cartings
+    post '/listings/:listing_id/purchase', to: 'listings#purchase'
   end
 end

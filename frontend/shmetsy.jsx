@@ -14,15 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
     const user = window.currentUser;
+
     const shop = user.shop;
     user.shop = (shop) ? shop.id : {};
 
+    let listings = {};
+    user.cart_items.forEach((listing) => {
+      listings[listing.id] = listing;
+    });
+
     let preloadedState;
-  
+
     if (shop) {
       preloadedState = {
         session: { currentUser: {
-          id: user.id, shop: user.shop}
+          id: user.id, shop: user.shop, cart: user.cart_items.map((listing) => listing.id)
+          }
         },
         entities: {
           users: {
@@ -30,13 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           shops: {
             [shop.id]: shop
-          },
+          }
         }
       };
     } else {
       preloadedState = {
         session: { currentUser: {
-          id: user.id}
+          id: user.id, cart: user.cart
+          }
         },
         entities: {
           users: {

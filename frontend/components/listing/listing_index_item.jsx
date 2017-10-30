@@ -34,6 +34,14 @@ const ListingIndexItem = ({ listing, type }) => {
         <Link to={`/shops/${listing.shop.id}/manage/addlisting/${listing.id}/edit`}>Edit</Link>
       </div>
     );
+  } else if (type === "cart") {
+    info = (
+      <div>
+        <h3>{listing.title}</h3>
+        <p>{`Quantity: ${listing.quantity}`}</p>
+        <h3>{`$${listing.price * listing.quantity}`}</h3>
+      </div>
+    );
   }
 
   return (

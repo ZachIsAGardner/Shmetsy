@@ -27,7 +27,7 @@ export const Header = (props) => {
 
   return (
     <div className="header">
-      
+
       <div className="header-contents">
 
         <div className="header-left">
@@ -41,7 +41,7 @@ export const Header = (props) => {
         <div className="header-right">
           {shop}
           {form}
-          <div id="header-cart">cart</div>
+          <Link to={`/cart`} id="header-cart">cart</Link>
         </div>
 
       </div>

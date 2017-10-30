@@ -41,6 +41,14 @@ export const requestListingsByListing = (id) => {
   };
 };
 
+export const requestListingsByCart = () => {
+  return (dispatch) => {
+    return API_Util.fetchListings({filterByCart: true}).then((listings) => {
+      dispatch(receiveListings(listings));
+    });
+  };
+};
+
 //requestrelevantlistings
 
 //requestfeaturedlistings

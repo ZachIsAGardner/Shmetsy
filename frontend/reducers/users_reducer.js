@@ -33,13 +33,14 @@ const UsersReducer = (oldState = {}, action) => {
       return newState2;
 
     case RECEIVE_LISTINGS:
+
+      const newState3 = Object.assign({}, oldState);
       let listingOwners = Object.values(action.listings).map((listing) => listing.owner);
-      let uniqueUsers = {};
       listingOwners.forEach((user) => {
-         uniqueUsers[user.id] = user;
+         newState3[user.id] = user;
       });
 
-      return uniqueUsers;
+      return newState3;
 
     default:
       return oldState;

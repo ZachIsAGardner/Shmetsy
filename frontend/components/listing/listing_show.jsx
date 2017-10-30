@@ -6,10 +6,15 @@ import ListingIndexContainer from './listing_index_container';
 class ListingShow extends React.Component{
   constructor(props) {
     super(props);
+    this.handleAddToCart = this.handleAddToCart.bind(this);
   }
 
   componentDidMount() {
     this.props.requestListing();
+  }
+
+  handleAddToCart() {
+    this.props.addListingToCart();
   }
 
   render() {
@@ -39,7 +44,7 @@ class ListingShow extends React.Component{
             <div className="listing-show-info-main">
               <h3>{listing.title}</h3>
               <h3>{`$${listing.price}`}</h3>
-              <button>Add to Cart</button>
+              <button onClick={this.handleAddToCart}>Add to Cart</button>
             </div>
 
           </section>
@@ -60,7 +65,6 @@ class ListingShow extends React.Component{
               <ListingIndexContainer type="show" />
             </aside>
           </div>
-
 
         </section>
       </div>

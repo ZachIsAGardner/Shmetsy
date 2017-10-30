@@ -14,4 +14,11 @@ class Listing < ApplicationRecord
     foreign_key: :owner_id,
     class_name: "User"
 
+  has_many :cartings,
+    primary_key: :id,
+    foreign_key: :listing_id,
+    class_name: 'Carting'
+
+  has_many :cart_users, through: :cartings, source: :user
+
 end

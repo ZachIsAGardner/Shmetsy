@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { ADD_LISTING_TO_CART } from '../actions/cart_actions';
 
 const sessionReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -15,7 +16,16 @@ const sessionReducer = (oldState = {}, action) => {
         }
       }
       return merge({}, { currentUser });
+
+    case ADD_LISTING_TO_CART:
+      const newState = Object.assign({}, oldState);
+      if (!newState.currentUser['cart']) {
+        newState.currentUser['cart'] = [];
+      }
+      newState.currentUser['cart'].push(action.listing.id);
+      return newState;
     default:
+
       return oldState;
   }
 };

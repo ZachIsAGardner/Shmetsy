@@ -4,9 +4,17 @@ import { withRouter } from 'react-router-dom';
 import { requestListings } from '../../actions/listing_actions.js';
 import { requestListingsByShop } from '../../actions/listing_actions.js';
 import { requestListingsByListing } from '../../actions/listing_actions.js';
+import { requestListingsByCart } from '../../actions/listing_actions.js';
 import ListingIndex from './listing_index';
 
+import * as BasicUtil from '../../util/basic_util';
+
 const mapStateToProps = (state, ownProps) => {
+  const listings = Object.values(state.entities.listings).map((listing) => {
+    let l = listing;
+    l['quantity'] = BasicUtil.count(state.session.currentUser.cart, l.id);
+    return l;
+  });
 
   return {
     listings: Object.values(state.entities.listings)
@@ -16,7 +24,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   let action;
 
-  if (ownProps.match.params.listingId) {
+  if (ownProps.type === "cart") {
+    action = () => dispatch(requestListingsByCart());
+  } else if (ownProps.match.params.listingId) {
     action = () => dispatch(requestListingsByListing(ownProps.match.params.listingId));
   } else if (ownProps.match.params.shopId)  {
     action = () => dispatch(requestListingsByShop(ownProps.match.params.shopId));
