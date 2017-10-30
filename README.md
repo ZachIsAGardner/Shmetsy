@@ -34,6 +34,8 @@ PUSHING TO HEROKU:
 * heroku run rake db:migrate (if pending migrations)
 * heroku run rake db:seed
 
+* heroku reset (if problems)
+
 Helpful Websites:
 
 http://www.color-hex.com/

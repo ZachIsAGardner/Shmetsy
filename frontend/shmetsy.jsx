@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       preloadedState = {
         session: { currentUser: {
-          id: user.id, cart: user.cart
+          id: user.id, cart: user.cart_items.map((listing) => listing.id)
           }
         },
         entities: {

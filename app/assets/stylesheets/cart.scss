@@ -1,0 +1,38 @@
+.cart {
+  width: 55%;
+  margin: auto;
+}
+
+.cart-main {
+  background: white;
+  border: 1px solid var(--border);
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout {
+  background: pink;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.checkout * {
+  margin: 0 auto;
+}
+
+.checkout button {
+  background:var(--orange);
+  border-radius: 3px;
+  border: 0px;
+
+  color: white;
+  font-size: 16px;
+  width: 260px;
+  height: 40px;
+
+  display: block;
+}
