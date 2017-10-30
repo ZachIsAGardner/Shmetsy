@@ -42,3 +42,22 @@
   cursor: pointer;
   background:var(--light-orange);
 }
+
+#remove-button {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 1px;
+  color: var(--border);
+
+  width: 60px;
+  min-width: 60px;
+  height: 25px;
+
+  text-align: center;
+}
+#remove-button:hover {
+  cursor: pointer;
+  border: 1px solid var(--super-light-gray);
+  color: var(--super-light-gray);
+  text-decoration: underline;
+}

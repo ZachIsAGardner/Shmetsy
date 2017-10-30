@@ -45,8 +45,8 @@ const ListingIndexItem = ({ listing, type, deleteCarting }) => {
         <div className="shop">
           <div className="cover-image" style={{backgroundImage: `url(${listing.shop.img_profile})`}}></div>
           <Link to={`/shops/${listing.shop.id}`}>{listing.shop.shopname}</Link>
-          <button onClick={() => deleteCarting(listing.id)}>x</button>
         </div>
+        <button id ="remove-button" onClick={() => deleteCarting(listing.id)}>remove</button>
       </div>
     );
   }

@@ -4,11 +4,12 @@ import { Link, Redirect } from 'react-router-dom';
 export const Header = (props) => {
   let form;
   let cart;
+  let demo;
 
   if (props.currentUser) {
     form = (
       <button
-        className="header-form"
+        className="orange-clear-button"
         onClick={(e) => {
           props.endSession();
           props.history.push('/');
@@ -16,22 +17,31 @@ export const Header = (props) => {
       }>Logout</button>
     );
     cart = (
-      <Link to={`/cart`} id="header-cart">cart</Link>
+      <Link to={`/cart`} className="orange-clear-button">Cart</Link>
     );
   } else {
     form = (
-      <button className="header-form" onClick={(e) => props.openModal("login")}>Login</button>
+      <button className="orange-clear-button" onClick={(e) => props.openModal("login")}>Login</button>
+    );
+    demo = (
+      <button
+        className="orange-clear-button"
+        onClick={(e) => {
+          props.createSession({username: "Charlie", password: "waytres124"});
+          props.history.push('/');
+        }
+      }>Demo</button>
     );
   }
 
   let shop;
   if (props.currentUser && props.shop) {
     shop = (
-      <Link to={`/shops/${props.shop.id}/manage`}>{ props.shop.shopname }</Link>
+      <Link className="orange-link" to={`/shops/${props.shop.id}/manage`}>{ props.shop.shopname }</Link>
     );
   } else {
     shop = (
-      <p>Sell on Shmetsy</p>
+      <p className="orange-link" >Sell on Shmetsy</p>
     );
   }
 
@@ -51,6 +61,7 @@ export const Header = (props) => {
         <div className="header-right">
           {shop}
           {form}
+          {demo}
           {cart}
         </div>
 

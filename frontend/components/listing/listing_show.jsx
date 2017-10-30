@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import * as BasicUtil from '../../util/basic_util';
 import ListingIndexContainer from './listing_index_container';
 
 class ListingShow extends React.Component{
@@ -21,6 +22,7 @@ class ListingShow extends React.Component{
 
     const listing = this.props.listing;
     const shop = this.props.listing.shop || {};
+    const price = this.props.listing.price || 0;
 
     return (
       <div className="listing-show">
@@ -43,7 +45,7 @@ class ListingShow extends React.Component{
 
             <div className="listing-show-info-main">
               <h3>{listing.title}</h3>
-              <h3>{`$${listing.price}`}</h3>
+              <h3>{BasicUtil.moneyify(price)}</h3>
               <button onClick={this.handleAddToCart}>Add to Cart</button>
             </div>
 

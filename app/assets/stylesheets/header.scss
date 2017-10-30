@@ -75,15 +75,18 @@
 
 // ---
 
+
 .header-right {
   display: flex;
   padding-right: 50px;
 }
 
-.header-form {
+.orange-clear-button {
   background: white;
   margin: auto;
+  margin-left: 10px;
 
+  text-decoration: none;
   color: var(--orange);
   font-size: 16px;
   font-family: sans-serif;
@@ -93,46 +96,18 @@
   border: 1px solid var(--orange);
   border-radius: 5px;
 }
-
-.header-form:hover {
+.orange-clear-button:hover {
   cursor: pointer;
-  background: #efefef;
+  background: var(--background);
 }
 
-.header-right > a {
-  margin: auto;
-  margin-right: 20px;
 
+.orange-link {
+  margin: auto;
+  text-decoration: none;
   color: var(--orange);
 }
-
-.header-right > p {
-  background: white;
-  margin: auto;
-
-  color: var(--orange);
-  font-size: 16px;
-  font-family: sans-serif;
-  font-weight: normal;
-  padding: 8px;
-}
-.header-right > p:hover {
+.orange-link:hover {
+  cursor: pointer;
   text-decoration: underline;
-  cursor: pointer;
-}
-
-#header-cart {
-  margin: auto;
-  margin-left: 20px;
-
-  font-size: 16px;
-  color: var(--orange);
-
-  padding: 8px;
-  border: 1px solid var(--orange);
-  border-radius: 5px;
-}
-
-#header-cart {
-  cursor: pointer;
 }

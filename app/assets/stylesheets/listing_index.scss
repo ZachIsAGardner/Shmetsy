@@ -142,6 +142,10 @@ a.listing-item-main-sub > h3:last-child {
 .listing-item-main-cart .shop > a {
   margin: auto;
   margin-left: 5px;
+  text-decoration: none;
+}
+.listing-item-main-cart .shop > a:hover {
+  text-decoration: underline;
 }
 
 .listing-item-main-shop-manager > .listing-info {
