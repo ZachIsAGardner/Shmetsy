@@ -11,6 +11,7 @@ const sessionReducer = (oldState = {}, action) => {
       let currentUser = null;
       if (action.user) {
         currentUser = {id: action.user.id};
+        currentUser["cart"] = action.user.cart_items.map((listing) => listing.id);
         if (action.user.shop) {
           currentUser["shop"] = action.user.shop.id;
         }
