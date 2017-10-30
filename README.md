@@ -12,9 +12,8 @@ FIXED BUGS:
 
 QUESTIONS:
 * help
-* warning on edit refresh (good solution?)
-* why controller different from before (no saving involved)
-* why doesnt update immediatly on edit
+* Implement click outside of modal closes it
+
 * multiple images
 
 TO RUN:

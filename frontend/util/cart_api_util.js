@@ -4,3 +4,10 @@ export const createCarting = (id) => {
     url: `/api/listings/${id}/purchase`,
   });
 };
+
+export const deleteCarting = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/listings/${id}/remove`
+  });
+};

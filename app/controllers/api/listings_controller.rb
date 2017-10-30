@@ -40,6 +40,17 @@ class Api::ListingsController < ApplicationController
     end
   end
 
+  def remove
+    @listing = Listing.find(params[:listing_id])
+    @cartings = current_user.cartings.where(listing_id: params[:listing_id])
+
+    if @cartings.destroy_all
+      render :show
+    else
+      render json: @carting.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def listing_params

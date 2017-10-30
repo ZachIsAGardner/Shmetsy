@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import * as TimeUtil from '../../util/time_util';
 import * as BasicUtil from '../../util/basic_util';
 
-const ListingIndexItem = ({ listing, type }) => {
+const ListingIndexItem = ({ listing, type, deleteCarting }) => {
 
   let info;
   const price = BasicUtil.moneyify(listing.price);
@@ -45,6 +45,7 @@ const ListingIndexItem = ({ listing, type }) => {
         <div className="shop">
           <div className="cover-image" style={{backgroundImage: `url(${listing.shop.img_profile})`}}></div>
           <Link to={`/shops/${listing.shop.id}`}>{listing.shop.shopname}</Link>
+          <button onClick={() => deleteCarting(listing.id)}>x</button>
         </div>
       </div>
     );

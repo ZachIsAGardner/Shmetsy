@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :shops, only: [:show];
     resources :listings
-    resources :cartings
     post '/listings/:listing_id/purchase', to: 'listings#purchase'
+    delete '/listings/:listing_id/remove', to: 'listings#remove'
   end
 end
