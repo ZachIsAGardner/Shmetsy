@@ -1,0 +1,84 @@
+.review-form {
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.review-form > form {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 25px;
+
+  font-size: 12px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form > label {
+  margin-bottom: 5px;
+}
+
+.review-form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form .body textarea {
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+  resize: vertical;
+  outline: none;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+.review-form .rating {
+  margin-top: 10px;
+}
+.review-form .rating > div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+.review-form .rating > div span {
+  margin-right: 20px;
+}
+
+.review-form .orange-button {
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+// ---
+
+.full,
+.empty {
+  transition: 0.35s;
+}
+.full:hover,
+.empty:hover {
+  cursor: pointer;
+}
+
+.full {
+  transform: scale(1.15);
+}
+.full #heart-shape,
+.full #heart-shape:before,
+.full #heart-shape:after {
+  background: var(--red);
+}
+
+.empty #heart-shape,
+.empty #heart-shape:before,
+.empty #heart-shape:after {
+  background: var(--super-light-red);
+}

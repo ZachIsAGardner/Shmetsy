@@ -18,24 +18,43 @@ class ReviewForm extends React.Component {
     };
   }
 
+  handleRating(newRating) {
+    return (e) => {
+      this.setState({rating: newRating});
+    };
+  }
+
   render() {
+
+    let ratingEls = [];
+    for (let i = 1; i < 6; i++) {
+      const klass = (i <= this.state.rating) ? "full" : "empty";
+      ratingEls.push(
+        <span key={i} className={klass} onClick={this.handleRating(i)}>
+          <div id="heart-shape"></div>
+        </span>
+      );
+    }
+
     return(
       <div className="review-form">
         <label>Leave a review?</label>
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.body}
-            onChange={this.handleInput('body')}>
-          </input>
-          
-          <input
-            type="number"
-            value={this.state.rating}
-            onChange={this.handleInput('rating')}>
-          </input>
+          <label className="body">Your thoughts?
+            <textarea
+              placeholder="Say something nice."
+              value={this.state.body}
+              onChange={this.handleInput('body')}>
+            </textarea>
+          </label>
 
-          <input type="submit"></input>
+          <label className="rating">How would you rate this item?
+            <div className="shapes-container">
+              {ratingEls}
+            </div>
+          </label>
+
+          <input className="orange-button" type="submit"></input>
         </form>
       </div>
     );

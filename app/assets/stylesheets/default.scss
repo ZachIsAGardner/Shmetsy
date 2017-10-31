@@ -39,3 +39,48 @@
   background: var(--light-orange);
   cursor: pointer;
 }
+
+// ---
+
+$border: 0px;
+$size: 20px;
+
+#heart-shape{
+  position: relative;
+
+  width: $size;
+  height: $size;
+  transform: rotate(45deg);
+
+  border: $border solid black;
+  border-radius: $size/50;
+  border-left-color: transparent;
+  border-top-color: transparent;
+
+  background: var(--red);
+}
+#heart-shape:before,
+#heart-shape:after{
+  content: '';
+  position: absolute;
+
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+
+  border: $border solid black;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+
+  background: var(--red);
+}
+#heart-shape:after{
+  top: -$size/2;
+  right: -$border;
+  transform: rotate(45deg);
+}
+#heart-shape:before{
+  bottom: -$border;
+  left: -$size/2;
+  transform: rotate(-45deg);
+}
