@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
     reviews.push(newReview);
   });
 
-  const currentUserId = state.session.currentUser.id;
+  const currentUserId = (state.session.currentUser) ? state.session.currentUser.id : {};
 
   return {
     reviews,

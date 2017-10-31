@@ -8,11 +8,13 @@ const mapStateToProps = (state, ownProps) => {
   let listingId = parseInt(ownProps.match.params.listingId);
   const listing = state.entities.listings[listingId] || {};
   const shop = state.entities.shops[listing.shop_id] || {};
+  const loggedIn = (state.session.currentUser) ? true : false;
 
   return {
     listing,
     shop,
     listingId,
+    loggedIn
   };
 };
 

@@ -28,6 +28,8 @@ class ListingShow extends React.Component{
     const shopImage = shop.img_profile || '';
     const listingImage = listing.image_url || '';
 
+    const reviewForm = (this.props.loggedIn) ? <ReviewFormContainer /> : <div></div>;
+
     return (
       <div className="listing-show">
 
@@ -63,7 +65,7 @@ class ListingShow extends React.Component{
               </div>
               <div className="listing-show-reviews">
                 <ReviewIndexContainer />
-                <ReviewFormContainer />
+                {reviewForm}
               </div>
             </section>
 
