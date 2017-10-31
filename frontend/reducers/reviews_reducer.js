@@ -4,7 +4,6 @@ const ReviewsReducer = (oldState = {}, action) => {
 
   Object.freeze(oldState);
   let newState;
-
   switch (action.type) {
     case RECEIVE_REVIEWS:
       newState = {};

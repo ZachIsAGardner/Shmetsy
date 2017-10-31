@@ -40,7 +40,8 @@
 .review-form .rating {
   margin-top: 10px;
 }
-.review-form .rating > div {
+
+.shapes-container {
   display: flex;
   flex-direction: row;
   margin-top: 5px;
@@ -48,8 +49,8 @@
   padding: 10px;
 }
 
-.review-form .rating > div span {
-  margin-right: 20px;
+.shapes-container span {
+  margin-right: 22px;
 }
 
 .review-form .orange-button {
@@ -63,8 +64,8 @@
 .empty {
   transition: 0.35s;
 }
-.full:hover,
-.empty:hover {
+.rating .full:hover,
+.rating .empty:hover {
   cursor: pointer;
 }
 

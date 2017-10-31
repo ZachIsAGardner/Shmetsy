@@ -34,9 +34,14 @@ class ListingIndex extends React.Component {
         }
         return;
       } else {
-        return <ListingIndexItem key={listing.id} listing={listing} type={this.props.type} deleteCarting={this.props.deleteCarting}/>;
+        return <ListingIndexItem
+          key={listing.id}
+          listing={listing}
+          type={this.props.type}
+          requestReviews={this.props.requestReviews}
+          deleteCarting={this.props.deleteCarting}/>;
       }
-    });
+    }, this);
 
     return (
       <div className={`listing-index-${this.props.type}`}>

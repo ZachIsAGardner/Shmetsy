@@ -49,18 +49,18 @@ export const createReview = (review) => {
   };
 };
 
-// export const requestReview = (reviewId) => {
-//   return (dispatch) => {
-//     return API_Util.fetchReview(reviewId).then((review) => {
-//       dispatch(receiveReview(review));
-//     });
-//   };
-// };
-//
-// export const deleteReview = (reviewId) => {
-//   return (dispatch) => {
-//     return API_Util.removeReview(reviewId).then((review) => {
-//       dispatch(removeReview(review));
-//     });
-//   };
-// };
+export const requestReview = (reviewId) => {
+  return (dispatch) => {
+    return API_Util.fetchReview(reviewId).then((review) => {
+      dispatch(receiveReview(review));
+    });
+  };
+};
+
+export const deleteReview = (reviewId) => {
+  return (dispatch) => {
+    return API_Util.removeReview(reviewId).then((review) => {
+      dispatch(removeReview(review));
+    });
+  };
+};

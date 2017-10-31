@@ -6,6 +6,7 @@ import { requestListingsByShop } from '../../actions/listing_actions.js';
 import { requestListingsByListing } from '../../actions/listing_actions.js';
 import { requestListingsByCart } from '../../actions/listing_actions.js';
 import { deleteCarting } from '../../actions/cart_actions';
+import { requestReviewsByListing } from '../../actions/review_actions';
 import ListingIndex from './listing_index';
 
 import * as BasicUtil from '../../util/basic_util';
@@ -44,7 +45,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     requestListings: action,
-    deleteCarting: (id) => dispatch(deleteCarting(id))
+    deleteCarting: (id) => dispatch(deleteCarting(id)),
+    requestReviews: (id) => dispatch(requestReviewsByListing(id))
   };
 };
 

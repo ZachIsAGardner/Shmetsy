@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as BasicUtil from '../../util/basic_util';
 
-const ListingIndexItem = ({ listing, type, deleteCarting }) => {
+const ListingIndexItem = ({ listing, type, deleteCarting, requestReviews}) => {
 
   let info;
   const price = BasicUtil.moneyify(listing.price);
@@ -54,7 +54,7 @@ const ListingIndexItem = ({ listing, type, deleteCarting }) => {
 
   return (
     <li className={`listing-item-main-${type}`}>
-      <Link className="cover-image" to={`/listings/${listing.id}`} style={{backgroundImage: `url(${listing.image_url})`}}></Link>
+      <Link className="cover-image" onClick={() => requestReviews(listing.id)} to={`/listings/${listing.id}`} style={{backgroundImage: `url(${listing.image_url})`}}></Link>
       <div className="listing-info">
         {info}
       </div>

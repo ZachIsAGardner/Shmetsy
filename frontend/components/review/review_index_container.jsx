@@ -13,8 +13,11 @@ const mapStateToProps = (state) => {
     reviews.push(newReview);
   });
 
+  const currentUserId = state.session.currentUser.id;
+
   return {
-    reviews
+    reviews,
+    currentUserId
   };
 };
 
@@ -24,6 +27,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     requestReviewsByListing: () => {
       return dispatch(requestReviewsByListing(listingId));
     },
+    deleteReview: (id) => dispatch(deleteReview(id))
   };
 };
 
