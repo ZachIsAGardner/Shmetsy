@@ -7,7 +7,6 @@ import configureStore from './store/store';
 import * as SessionUtil from './util/session_api_util';
 import * as ShopUtil from './util/shop_api_util';
 import * as ListingUtil from './util/listing_api_util';
-import * as ReadTime from './util/time_util';
 //test
 
 document.addEventListener('DOMContentLoaded', () => {

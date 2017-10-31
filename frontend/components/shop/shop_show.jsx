@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as TimeUtil from '../../util/time_util';
+import * as BasicUtil from '../../util/basic_util';
 
 import ListingIndexContainer from '../listing/listing_index_container';
 
@@ -41,7 +41,7 @@ class ShopShow extends React.Component {
                   <p className="super-light">|</p>
                   <p className="light">{`${this.props.shop.sales} sales`}</p>
                   <p className="super-light">|</p>
-                  <p className="light">{`On Shmetsy since ${TimeUtil.readTime(this.props.shop.created_at).fullDate}`}</p>
+                  <p className="light">{`On Shmetsy since ${BasicUtil.timeify(this.props.shop.created_at).fullDate}`}</p>
                 </div>
               </div>
             </div>

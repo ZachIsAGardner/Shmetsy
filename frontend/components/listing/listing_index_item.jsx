@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as TimeUtil from '../../util/time_util';
 import * as BasicUtil from '../../util/basic_util';
 
 const ListingIndexItem = ({ listing, type, deleteCarting }) => {
@@ -10,7 +9,7 @@ const ListingIndexItem = ({ listing, type, deleteCarting }) => {
   const price = BasicUtil.moneyify(listing.price);
   const shop = listing.shop || {};
   const stock = listing.stock;
-  
+
   if (type === "recomended") {
     info = (
       <div>
@@ -30,7 +29,7 @@ const ListingIndexItem = ({ listing, type, deleteCarting }) => {
     info = (
       <div>
         <h3>{listing.title}</h3>
-        <p>{`Updated on ${TimeUtil.readTime(listing.updated_at).fullDate}`}</p>
+        <p>{`Updated on ${BasicUtil.timeify(listing.updated_at).fullDate}`}</p>
         <section className="listing-item-section">
           <p>{`${stock} in stock`}</p>
           <h3>{price}</h3>

@@ -62,7 +62,8 @@ class ListingForm extends React.Component {
 
   render() {
 
-    let { title, description, price, stock, img_main, image_url} = this.state || {};
+    let { title, description, price, stock} = this.state || {};
+    let image_url = this.state.image_url || "";
 
     return (
       <div className="listing-form">

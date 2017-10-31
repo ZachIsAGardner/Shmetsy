@@ -61,13 +61,12 @@ class ListingShow extends React.Component{
                 <p>{listing.description}</p>
               </div>
               <div className="listing-show-reviews">
-                <h3>Reviews</h3>
                 <ReviewIndexContainer />
               </div>
             </section>
 
             <aside>
-
+              <ListingIndexContainer type="show" />
             </aside>
           </div>
 
