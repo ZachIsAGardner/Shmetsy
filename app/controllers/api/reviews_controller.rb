@@ -1,14 +1,19 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    if (params[:filterByListing])
+      @reviews = Review.where(listing_id: params[:filterByListing])
+    else
+      @reviews = Review.all
+    end
+
     render :index
   end
 
   def create
     @review = Review.new(review_params)
-
-    if (@review)
+    
+    if @review.save
       render :show
     else
       render json: @review.errors.full_messages, status: 422

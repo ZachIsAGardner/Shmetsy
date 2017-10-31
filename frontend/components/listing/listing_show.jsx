@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as BasicUtil from '../../util/basic_util';
 import ListingIndexContainer from './listing_index_container';
 import ReviewIndexContainer from '../review/review_index_container';
+import ReviewFormContainer from '../review/review_form_container';
 
 class ListingShow extends React.Component{
   constructor(props) {
@@ -62,6 +63,7 @@ class ListingShow extends React.Component{
               </div>
               <div className="listing-show-reviews">
                 <ReviewIndexContainer />
+                <ReviewFormContainer />
               </div>
             </section>
 

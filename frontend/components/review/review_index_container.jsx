@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import ReviewIndex from './review_index';
-import { requestReviews, deleteReview } from '../../actions/review_actions';
+import { requestReviewsByListing, deleteReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state) => {
   let reviews = [];
@@ -17,13 +18,13 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const listingId = parseInt(ownProps.match.params.listingId);
   return {
-    requestReviews: () => {
-      return dispatch(requestReviews());
+    requestReviewsByListing: () => {
+      return dispatch(requestReviewsByListing(listingId));
     },
-
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReviewIndex));

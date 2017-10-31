@@ -27,20 +27,27 @@ const removeReview = (review) => {
 
 export const requestReviews = () => {
   return (dispatch) => {
-    return API_Util.fetchReviews()
-    .then((reviews) => {
+    return API_Util.fetchReviews().then((reviews) => {
       dispatch(receiveReviews(reviews));
     });
   };
 };
 
-// export const requestReviewsByListing = (listingId) => {
-//   return (dispatch) => {
-//     return API_Util.fetchReviews(listingId).then((reviews) => {
-//       dispatch(receiveReviews(reviews));
-//     });
-//   };
-// };
+export const requestReviewsByListing = (listingId) => {
+  return (dispatch) => {
+    return API_Util.fetchReviews({filterByListing: listingId}).then((reviews) => {
+      dispatch(receiveReviews(reviews));
+    });
+  };
+};
+
+export const createReview = (review) => {
+  return (dispatch) => {
+    return API_Util.createReview(review).then((createdReview) => {
+      dispatch(receiveReview(createdReview));
+    });
+  };
+};
 
 // export const requestReview = (reviewId) => {
 //   return (dispatch) => {

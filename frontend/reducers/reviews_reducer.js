@@ -7,7 +7,7 @@ const ReviewsReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_REVIEWS:
-      newState = Object.assign({}, oldState);
+      newState = {};
       Object.values(action.reviews).forEach((review) => {
         let newReview = Object.assign({}, review);
         delete newReview['user'];

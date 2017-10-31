@@ -1,10 +1,13 @@
-.cover-image {
+[class^="cover-image"] {
   width: 100px;
   height: 100px;
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.cover-image-circle {
+  border-radius: 500px;
 }
 
 .light {

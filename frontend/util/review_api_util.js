@@ -1,13 +1,14 @@
-export const fetchReviews = () => {
+export const fetchReviews = (filter) => {
   return $.ajax ({
     method: "GET",
     url: "/api/reviews",
+    data: filter
   });
 };
 
 export const createReview = (review) => {
   return $.ajax ({
-    method: "CREATE",
+    method: "POST",
     url: "/api/reviews",
     data: { review }
   });

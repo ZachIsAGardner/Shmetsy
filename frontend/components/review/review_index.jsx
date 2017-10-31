@@ -8,7 +8,7 @@ class ReviewIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestReviews();
+    this.props.requestReviewsByListing();
   }
 
   render() {
@@ -17,14 +17,17 @@ class ReviewIndex extends React.Component {
       return (
         <li key={review.id} className="review">
           <div className="reviewer">
-            <div className="cover-image" style={{ backgroundImage: `url(${reviewerImage})`}}></div>
+            <div className="cover-image-circle" style={{ backgroundImage: `url(${reviewerImage})`}}></div>
+            <p>Reviewed by</p>
             <p>{review.user.username}</p>
           </div>
           <div className="review-main">
-            <div>{review.rating}</div>
+            <div>{`${review.rating}/5`}</div>
             <p>{review.body}</p>
           </div>
-          <p>{BasicUtil.timeify(review.created_at).fullDate}</p>
+          <div className="review-time">
+            <p>{BasicUtil.timeify(review.created_at).fullDate}</p>
+          </div>
         </li>
       );
     });
