@@ -11,18 +11,21 @@ import ListingIndex from './listing_index';
 import * as BasicUtil from '../../util/basic_util';
 
 const mapStateToProps = (state, ownProps) => {
-  const listings = Object.values(state.entities.listings).map((listing) => {
-    let l = listing;
+  let listings = [];
+  Object.values(state.entities.listings).forEach((listing) => {
+    let l = Object.assign({}, listing);
     if (state.session.currentUser) {
       l['quantity'] = BasicUtil.count(state.session.currentUser.cart, l.id);
     } else {
       l['quantity'] = 1;
     }
-    return l;
+
+    l['shop'] = state.entities.shops[l.shop_id];
+    listings.push(l);
   });
 
   return {
-    listings: Object.values(state.entities.listings)
+    listings
   };
 };
 

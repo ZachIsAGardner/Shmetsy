@@ -6,16 +6,18 @@ import { addListingToCart } from '../../actions/cart_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let listingId = parseInt(ownProps.match.params.listingId);
+  const listing = state.entities.listings[listingId] || {};
+  const shop = state.entities.shops[listing.shop_id] || {};
 
   return {
-    listing: state.entities.listings[listingId] || {},
+    listing,
+    shop,
     listingId,
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   let listingId = ownProps.match.params.listingId;
-
   return {
     requestListing: () => dispatch(requestListing(listingId)),
     addListingToCart: () => dispatch(addListingToCart(listingId))

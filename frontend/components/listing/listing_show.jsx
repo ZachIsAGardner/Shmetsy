@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as BasicUtil from '../../util/basic_util';
 import ListingIndexContainer from './listing_index_container';
+import ReviewIndexContainer from '../review/review_index_container';
 
 class ListingShow extends React.Component{
   constructor(props) {
@@ -20,17 +21,18 @@ class ListingShow extends React.Component{
   }
 
   render() {
-
     const listing = this.props.listing;
-    const shop = this.props.listing.shop || {};
+    const shop = this.props.shop;
     const price = this.props.listing.price || 0;
+    const shopImage = shop.img_profile || '';
+    const listingImage = listing.image_url || '';
 
     return (
       <div className="listing-show">
 
         <section className="listing-show-shop">
           <div className="row">
-            <Link className="cover-image" to={`/shops/${shop.id}`} style={{backgroundImage: `url(${shop.img_profile})`}}></Link>
+            <Link className="cover-image" to={`/shops/${shop.id}`} style={{backgroundImage: `url(${shopImage})`}}></Link>
             <Link className="shop-profile-shopname" to={`/shops/${shop.id}`}>{shop.shopname}</Link>
           </div>
           <ListingIndexContainer type="sub" />
@@ -41,7 +43,7 @@ class ListingShow extends React.Component{
           <section className="listing-show-info-sub">
 
             <div className="listing-show-info-images">
-              <div className="cover-image" style={{backgroundImage: `url(${listing.image_url})`}}></div>
+              <div className="cover-image" style={{backgroundImage: `url(${listingImage})`}}></div>
             </div>
 
             <div className="listing-show-info-main">
@@ -60,12 +62,12 @@ class ListingShow extends React.Component{
               </div>
               <div className="listing-show-reviews">
                 <h3>Reviews</h3>
-                <p>reviews will go here</p>
+                <ReviewIndexContainer />
               </div>
             </section>
 
             <aside>
-              <ListingIndexContainer type="show" />
+
             </aside>
           </div>
 

@@ -8,12 +8,14 @@ const ListingIndexItem = ({ listing, type, deleteCarting }) => {
 
   let info;
   const price = BasicUtil.moneyify(listing.price);
-
+  const shop = listing.shop || {};
+  const stock = listing.stock;
+  
   if (type === "recomended") {
     info = (
       <div>
         <h3>{listing.title}</h3>
-        <Link to={`/shops/${listing.shop.id}`}>{listing.shop.shopname}</Link>
+        <Link to={`/shops/${shop.id}`}>{shop.shopname}</Link>
         <h3>{price}</h3>
       </div>
     );
@@ -30,10 +32,10 @@ const ListingIndexItem = ({ listing, type, deleteCarting }) => {
         <h3>{listing.title}</h3>
         <p>{`Updated on ${TimeUtil.readTime(listing.updated_at).fullDate}`}</p>
         <section className="listing-item-section">
-          <p>{`${listing.stock} in stock`}</p>
+          <p>{`${stock} in stock`}</p>
           <h3>{price}</h3>
         </section>
-        <Link to={`/shops/${listing.shop.id}/manage/addlisting/${listing.id}/edit`}>Edit</Link>
+        <Link to={`/shops/${shop.id}/manage/addlisting/${listing.id}/edit`}>Edit</Link>
       </div>
     );
   } else if (type === "cart") {
@@ -43,8 +45,8 @@ const ListingIndexItem = ({ listing, type, deleteCarting }) => {
         <p>{`Quantity: ${listing.quantity}`}</p>
         <h3>{`${BasicUtil.moneyify(listing.price * listing.quantity)}`}</h3>
         <div className="shop">
-          <div className="cover-image" style={{backgroundImage: `url(${listing.shop.img_profile})`}}></div>
-          <Link to={`/shops/${listing.shop.id}`}>{listing.shop.shopname}</Link>
+          <div className="cover-image" style={{backgroundImage: `url(${shop.img_profile})`}}></div>
+          <Link to={`/shops/${shop.id}`}>{shop.shopname}</Link>
         </div>
         <button id ="remove-button" onClick={() => deleteCarting(listing.id)}>remove</button>
       </div>

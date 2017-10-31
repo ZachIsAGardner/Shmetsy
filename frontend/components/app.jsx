@@ -36,10 +36,7 @@ const App = (props) => {
         <Route exact path="/" component={FeaturedListings} />
         <Route exact path="/" render={() => (<ListingIndexContainer type="recomended"/>)} />
 
-        <div className="listing-search">
-          <Route exact path="/listings" component={Stipulations} />
-          <Route exact path="/listings" render={() => (<ListingIndexContainer type="index"/>)} />
-        </div>
+      
 
         <Route exact path="/shops/:shopId" component={ShopShowContainer} />
         <Route path="/listings/:listingId" component={ListingShowContainer} />

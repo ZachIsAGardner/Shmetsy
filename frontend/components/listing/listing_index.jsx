@@ -29,7 +29,7 @@ class ListingIndex extends React.Component {
             key={idx}
             count={this.props.listings.length}
             type="sub"
-            shop={this.props.listings[0].shop}>
+            shop={listing.shop}>
           </ListingIndexRemaining>;
         }
         return;

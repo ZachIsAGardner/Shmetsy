@@ -13,13 +13,26 @@ const ListingsReducer = (oldState = {}, action) => {
     case ADD_LISTING_TO_CART:
       newState = Object.assign({}, oldState);
       newState[action.listing.id] = action.listing;
+
+      delete newState[action.listing.id]['owner'];
+      delete newState[action.listing.id]['shop'];
       return newState;
+
     case RECEIVE_LISTINGS:
-      return action.listings;
+      newState = {};
+      let newListings = Object.values(action.listings).map((listing) => {
+        let newListing = Object.assign({}, listing);
+        newState[newListing.id] = newListing;
+        delete newState[newListing.id]['owner'];
+        delete newState[newListing.id]['shop'];
+      });
+      return newState;
+
     case REMOVE_LISTING_FROM_CART:
       newState = Object.assign({}, oldState);
       delete newState[action.listing.id];
       return newState;
+
     default:
       return oldState;
   }
