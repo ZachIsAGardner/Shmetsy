@@ -2,19 +2,25 @@
 
 TO DO:
 * all
-* styling
-* Demo account
 * Implement click outside of modal closes it
+* quantity for cart add
+
+<!-- --- -->
 
 FIXED BUGS:
 * Creating a listing was not working. Traced every step of the redux cycle. Problem was there was not a create view. Rather than make a whole new create view, I just reused the show view in the listings controller. I had also set the work for stock to quantity in the controller.  
 
+<!-- --- -->
 
 QUESTIONS:
 * help
 * Implement click outside of modal closes it
+* do something once ajax completes (pushing to history)
+* Snap to top of page or wherever
 
 * multiple images
+
+<!-- --- -->
 
 TO RUN:
 * npm install
@@ -26,6 +32,8 @@ TO RUN:
 
 * Navigate to http://localhost:3000
 
+<!-- --- -->
+
 PUSHING TO HEROKU:
 * git push heroku master
 
@@ -34,6 +42,8 @@ PUSHING TO HEROKU:
 * heroku run rake db:seed
 
 * heroku reset (if problems)
+
+<!-- --- -->
 
 Helpful Websites:
 

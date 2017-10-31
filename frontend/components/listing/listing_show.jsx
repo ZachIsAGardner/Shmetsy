@@ -16,6 +16,7 @@ class ListingShow extends React.Component{
 
   handleAddToCart() {
     this.props.addListingToCart();
+    this.props.history.push("/cart");
   }
 
   render() {
@@ -46,7 +47,7 @@ class ListingShow extends React.Component{
             <div className="listing-show-info-main">
               <h3>{listing.title}</h3>
               <h3>{BasicUtil.moneyify(price)}</h3>
-              <button onClick={this.handleAddToCart}>Add to Cart</button>
+              <button className="orange-button"onClick={this.handleAddToCart}>Add to Cart</button>
             </div>
 
           </section>

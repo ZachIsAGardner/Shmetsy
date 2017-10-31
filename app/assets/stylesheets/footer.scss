@@ -1,6 +1,6 @@
 [class$="-footer"]{
   margin-top: 50px;
-  border-top: 1px solid #aaaaaa;
+  border-top: 1px solid var(--border);
   background: white;
 
   height: 100px;
@@ -23,7 +23,7 @@
 }
 
 .footer-left > h3 {
-  font-family: sans-serif;
+  font-family: serif;
   color: var(--orange);
   font-size: 26px;
   font-weight: normal;

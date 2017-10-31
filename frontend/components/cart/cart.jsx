@@ -14,7 +14,9 @@ class Cart extends React.Component {
     let total = 0;
     if (this.props.cart[0]) {
       this.props.cart.forEach((item) => {
-        total += item.price;
+        if (item) {
+         total += item.price;
+        }
       });
     }
 

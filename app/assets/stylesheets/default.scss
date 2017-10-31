@@ -17,3 +17,22 @@
 .center-content {
   margin: auto;
 }
+
+.orange-button {
+  background: var(--orange);
+  border-radius: 3px;
+  border: 0px;
+
+  color: white;
+  font-size: 16px;
+  width: 260px;
+  height: 40px;
+
+  display: block;
+  margin: 0 auto;
+}
+
+.orange-button:hover {
+  background: var(--light-orange);
+  cursor: pointer;
+}

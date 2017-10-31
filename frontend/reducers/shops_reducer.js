@@ -6,10 +6,12 @@ import { RECEIVE_LISTINGS } from '../actions/listing_actions';
 
 const ShopsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  let newState = ({}, oldState);
+  let newState = Object.assign({}, oldState);
 
   switch (action.type) {
     case RECEIVE_SHOP:
+
+      newState = Object.assign({}, oldState);
       const newShop2 = Object.assign({}, action.shop);
       newShop2.owner_id = action.shop.owner.id;
 

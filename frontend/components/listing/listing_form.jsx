@@ -123,7 +123,7 @@ class ListingForm extends React.Component {
               <div>
                 <button className="white-button">Preview</button>
                 <button className="white-button">Save as draft</button>
-                <button className="orange-button">Submit</button>
+                <button className="submit-orange-button">Submit</button>
               </div>
 
           </footer>
