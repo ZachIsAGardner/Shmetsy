@@ -8,10 +8,6 @@ class ReviewIndex extends React.Component {
     this.handleDeleteReview = this.handleDeleteReview.bind(this);
   }
 
-  componentDidMount() {
-    this.props.requestReviewsByListing();
-  }
-
   handleDeleteReview(id) {
     return () => this.props.deleteReview(id);
   }

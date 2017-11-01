@@ -11,9 +11,10 @@ import * as ListingUtil from './util/listing_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+  let preloadedState = {};
+
   if (window.currentUser) {
     const user = window.currentUser;
-
     const shop = user.shop;
     user.shop = (shop) ? shop.id : {};
 
@@ -21,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     user.cart_items.forEach((listing) => {
       listings[listing.id] = listing;
     });
-
-    let preloadedState;
 
     if (shop) {
       preloadedState = {
@@ -52,13 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       };
     }
-
-    store = configureStore(preloadedState);
     delete window.currentUser;
-  } else {
-    store = configureStore();
   }
-
+  
+  store = configureStore(preloadedState);
   //test
   window.getState = store.getState;
   window.dispatch = store.dispatch;

@@ -1,0 +1,14 @@
+.listing-item-container-cart .shop {
+  display: flex;
+}
+
+.listing-item-main-shop {
+  width: 280px;
+  height: 280px;
+}
+
+.listing-item-main-cart .shop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

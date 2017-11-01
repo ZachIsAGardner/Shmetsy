@@ -16,6 +16,10 @@ class ListingShow extends React.Component{
     this.props.requestListing();
   }
 
+  componentDidUpdate() {
+    this.props.requestReviews();
+  }
+
   handleAddToCart() {
     if (this.props.loggedIn) {
       this.props.addListingToCart();

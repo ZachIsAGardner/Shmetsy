@@ -31,14 +31,17 @@ body {
   --background-dark: #ffeceb;
   --border: #cccccc;
   --border-light: #eeeeee;
+  
+  --red: #ed524a;
+  --light-red: #f28d8d;
+  --super-light-red: #fad2d1;
 
   --light-orange: #f59942;
   --orange:  #f27426;
   --dark-orange:  #f35c16;
+
   --blue: #6c98ea;
-  --red: #ed524a;
-  --light-red: #f28d8d;
-  --super-light-red: #fad2d1;
+
   --dark-gray: #2b2d31;
   --gray: #51555c;
   --light-gray: #706b6b;

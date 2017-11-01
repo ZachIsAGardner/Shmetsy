@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
+import SearchContainer from './search_container';
+
 export const Header = (props) => {
   let form;
   let cart;
@@ -52,10 +54,7 @@ export const Header = (props) => {
 
         <div className="header-left">
           <Link to="/">Shmetsy</Link>
-          <div id="search-bar">
-            <input type=""></input>
-            <label>Search</label>
-          </div>
+          <SearchContainer />
         </div>
 
         <div className="header-right">

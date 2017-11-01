@@ -7,6 +7,10 @@ class ReviewForm extends React.Component {
     this.state = this.props.review;
   }
 
+  componentWillReceiveProps() {
+    this.setState(this.props.review);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state);

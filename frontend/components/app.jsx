@@ -12,7 +12,7 @@ import ShopManagerShowContainer from './shop/shop_manager_show_container';
 import SessionFormContainer from './session/session_form_container';
 
 import ShopShowContainer from './shop/shop_show_container';
-import Stipulations from './listing/stipulations';
+import StipulationsContainer from './listing/stipulations_container';
 import ListingIndexContainer from './listing/listing_index_container';
 import ListingShowContainer from './listing/listing_show_container';
 import FeaturedListings from './listing/featured_listings';
@@ -36,7 +36,10 @@ const App = (props) => {
         <Route exact path="/" component={FeaturedListings} />
         <Route exact path="/" render={() => (<ListingIndexContainer type="recomended"/>)} />
 
-      
+        <div className="search-page">
+          <Route path="/search" component={StipulationsContainer} />
+          <Route path="/search" render={() => (<ListingIndexContainer type="search" />)} />
+        </div>
 
         <Route exact path="/shops/:shopId" component={ShopShowContainer} />
         <Route path="/listings/:listingId" component={ListingShowContainer} />

@@ -18,7 +18,7 @@ const ListingIndexItem = ({ listing, type, deleteCarting, requestReviews}) => {
         <h3>{price}</h3>
       </div>
     );
-  } else if (type === "shop" || type === "show"){
+  } else if (type === "shop" || type === "show" || type === "search"){
     info = (
       <div>
         <h3>{listing.title}</h3>
@@ -54,7 +54,7 @@ const ListingIndexItem = ({ listing, type, deleteCarting, requestReviews}) => {
 
   return (
     <li className={`listing-item-main-${type}`}>
-      <Link className="cover-image" onClick={() => requestReviews(listing.id)} to={`/listings/${listing.id}`} style={{backgroundImage: `url(${listing.image_url})`}}></Link>
+      <Link className="cover-image" to={`/listings/${listing.id}`} style={{backgroundImage: `url(${listing.image_url})`}}></Link>
       <div className="listing-info">
         {info}
       </div>

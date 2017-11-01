@@ -5,6 +5,7 @@ import ReviewForm from './review_form';
 import { createReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
+
   let review = {body: "", rating: 5};
   review['user_id'] = state.session.currentUser.id;
   review['listing_id'] = ownProps.match.params.listingId;

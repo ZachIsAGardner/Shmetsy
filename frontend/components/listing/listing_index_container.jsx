@@ -25,8 +25,11 @@ const mapStateToProps = (state, ownProps) => {
     listings.push(l);
   });
 
+  let searchQuery = ownProps.location.search.split("=")[1];
+
   return {
-    listings
+    listings,
+    searchQuery
   };
 };
 

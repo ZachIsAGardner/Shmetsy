@@ -1,0 +1,33 @@
+.search-page {
+  display: flex;
+  width: 85%;
+  margin: auto;
+}
+
+.stipulations {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 15px;
+
+  width: 250px;
+  min-width: 250px;
+
+  height: 900px;
+}
+
+.stipulations > div {
+  border-top: 1px solid var(--border);
+  padding: 15px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 200px;
+}
+
+.stipulations > div form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100px;
+}

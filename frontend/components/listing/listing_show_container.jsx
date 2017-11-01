@@ -4,6 +4,7 @@ import ListingShow from './listing_show';
 import { requestListing } from '../../actions/listing_actions';
 import { addListingToCart } from '../../actions/cart_actions';
 import { openModal } from '../../actions/modal_actions';
+import { requestReviewsByListing } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let listingId = parseInt(ownProps.match.params.listingId);
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let listingId = ownProps.match.params.listingId;
   return {
     requestListing: () => dispatch(requestListing(listingId)),
+    requestReviews: () => dispatch(requestReviewsByListing(listingId)),
     addListingToCart: () => dispatch(addListingToCart(listingId)),
     openModal: (modal) => dispatch(openModal(modal))
   };

@@ -9,7 +9,9 @@ class ListingIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestListings();
+    if (this.props.type !== "search") {
+      this.props.requestListings();
+    }
   }
 
   render() {
@@ -22,7 +24,7 @@ class ListingIndex extends React.Component {
       listingMessage = "Items";
     }
 
-    const listingEls = this.props.listings.map((listing, idx) => {
+    let listingEls = this.props.listings.map((listing, idx) => {
       if (idx >= 3 && this.props.type === "sub") {
         if (idx === 3) {
           return <ListingIndexRemaining
@@ -42,6 +44,15 @@ class ListingIndex extends React.Component {
           deleteCarting={this.props.deleteCarting}/>;
       }
     }, this);
+
+    if (listingEls.length <= 0 && this.props.type === "search") {
+      listingEls = (
+        <div className="invalid-search">
+          <h3>Sorry, we couldn't find any results for</h3>
+          <h3>{this.props.searchQuery}</h3>
+        </div>
+      );
+    }
 
     return (
       <div className={`listing-index-${this.props.type}`}>
