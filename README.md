@@ -17,11 +17,10 @@ FIXED BUGS:
 
 QUESTIONS:
 * help
-* turn off rails server
-* Implement click outside of modal closes it
 * do something once ajax completes (pushing to history)
 * Snap to top of page or wherever
 * Weird listings amount in chrome debugger (150 x null)
+* errors for listings and reviews
 
 * multiple images
 

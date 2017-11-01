@@ -14,6 +14,10 @@
  *= require_self
  */
 
+button,
+input {
+  outline: none;
+}
 
 body {
   background: var(--background);
@@ -29,9 +33,10 @@ body {
 :root {
   --background: #fffbfa;
   --background-dark: #ffeceb;
+  --border-dark: #aaaaaa;
   --border: #cccccc;
   --border-light: #eeeeee;
-  
+
   --red: #ed524a;
   --light-red: #f28d8d;
   --super-light-red: #fad2d1;
