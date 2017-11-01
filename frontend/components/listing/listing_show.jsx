@@ -17,8 +17,12 @@ class ListingShow extends React.Component{
   }
 
   handleAddToCart() {
-    this.props.addListingToCart();
-    this.props.history.push("/cart");
+    if (this.props.loggedIn) {
+      this.props.addListingToCart();
+      this.props.history.push("/cart");
+    } else {
+      this.props.openModal("login");
+    }
   }
 
   render() {

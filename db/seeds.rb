@@ -22,6 +22,21 @@ User.create!(
   password: "magnumdong",
   img_url: "https://img.maximummedia.ie/joe_ie/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtam9lLm1heGltdW1tZWRpYS5pZS5zMy5hbWF6b25hd3MuY29tXFxcL3dwLWNvbnRlbnRcXFwvdXBsb2Fkc1xcXC8yMDE3XFxcLzA0XFxcLzI0MTExNTA0XFxcL0ZyYW5rLVJleW5vbGRzLVBJQy5wbmdcIixcIndpZHRoXCI6NjQ3LFwiaGVpZ2h0XCI6MzQwLFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cuam9lLmllXFxcL2Fzc2V0c1xcXC9pbWFnZXNcXFwvam9lXFxcL25vLWltYWdlLnBuZz92PTRcIn0iLCJoYXNoIjoiYTYwNTcyNDk1YTA0OGE0OTAzNjgxOTNjNjEwNzg4YjExYzM1ODA4NiJ9/frank-reynolds-pic.png"
 )
+User.create!(
+  username: "Dennis",
+  password: "perfection",
+  img_url: "https://consequenceofsound.files.wordpress.com/2017/01/screen-shot-2017-01-03-at-10-15-20-pm.png?w=807"
+)
+User.create!(
+  username: "Dee",
+  password: "diecricket",
+  img_url: "https://uproxx.files.wordpress.com/2015/09/dee-always-sunny.jpg?quality=100&w=650"
+)
+User.create!(
+  username: "Cricket",
+  password: "deeisgood",
+  img_url: "http://i.imgur.com/rnSYvPv.png"
+)
 
 # ---
 
@@ -200,4 +215,68 @@ Listing.create!(
   stock: 1,
   shop_id: Shop.find_by(shopname: "Badass").id,
   owner_id: User.find_by(username: "Mac").id
+)
+
+# ---
+
+Review.destroy_all
+Review.create!(
+  user_id: User.find_by(username: "Mac").id,
+  listing_id: Listing.find_by(title: "Rum Ham").id,
+  body: "Where's the rum ham?",
+  rating: 1
+)
+Review.create!(
+  user_id: User.find_by(username: "Charlie").id,
+  listing_id: Listing.find_by(title: "Paddy's Egg").id,
+  body: "It would be better if it was blue.",
+  rating: 2
+)
+Review.create!(
+  user_id: User.find_by(username: "Mac").id,
+  listing_id: Listing.find_by(title: "Paddy's Egg").id,
+  body: "No Charlie, the egg must be green.",
+  rating: 4
+)
+Review.create!(
+  user_id: User.find_by(username: "Dennis").id,
+  listing_id: Listing.find_by(title: "Paddy's Egg").id,
+  body: "This is just a terrible idea.",
+  rating: 1
+)
+Review.create!(
+  user_id: User.find_by(username: "Dee").id,
+  listing_id: Listing.find_by(title: "Kitten Mittens").id,
+  body: "Charlie my cat's stuck in the wall can you help me?",
+  rating: 3
+)
+Review.create!(
+  user_id: User.find_by(username: "Cricket").id,
+  listing_id: Listing.find_by(title: "Kitten Mittens").id,
+  body: "DEE I LOVE YOU",
+  rating: 5
+)
+Review.create!(
+  user_id: User.find_by(username: "Frank").id,
+  listing_id: Listing.find_by(title: "Mac's Duster").id,
+  body: "BURN THE DUSTER!",
+  rating: 1
+)
+Review.create!(
+  user_id: User.find_by(username: "Charlie").id,
+  listing_id: Listing.find_by(title: "Project Badass Season 1").id,
+  body: "Mac's trying really hard to impress us. I think he might be in love with us?",
+  rating: 2
+)
+Review.create!(
+  user_id: User.find_by(username: "Dennis").id,
+  listing_id: Listing.find_by(title: "Project Badass Season 1").id,
+  body: "He's Totally in love with us.",
+  rating: 2
+)
+Review.create!(
+  user_id: User.find_by(username: "Dennis").id,
+  listing_id: Listing.find_by(title: "Milksteak").id,
+  body: "Milksteak is not real thing Charlie",
+  rating: 1
 )

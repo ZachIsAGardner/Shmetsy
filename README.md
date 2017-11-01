@@ -4,6 +4,9 @@ TO DO:
 * all
 * Implement click outside of modal closes it
 * quantity for cart add
+* you can enter text for price in listing create
+* edit review
+* 
 
 <!-- --- -->
 

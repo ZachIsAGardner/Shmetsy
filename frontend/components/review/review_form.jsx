@@ -10,6 +10,7 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state);
+    this.setState({body: "", rating: 5});
   }
 
   handleInput(field) {
