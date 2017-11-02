@@ -22,6 +22,7 @@ class ShopManagerShow extends React.Component {
           <Link to="/">Shmetsy Marketplace</Link>
           <Link to={`/shops/${this.props.shop.id}/manage/listings`}>Listings</Link>
           <Link to={`/shops/${this.props.shop.id}/manage/settings`}>Settings</Link>
+          <Link to={`/shops/${this.props.shop.id}`}>Shop Page</Link>
         </aside>
 
         <main className="shop-manager-content-container">

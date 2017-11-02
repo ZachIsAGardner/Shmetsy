@@ -7,11 +7,11 @@ const mapStateToProps = (state, ownProps) => {
   let formType = "new";
   let shop = {
       shopname: "",
+      location: "Earth",
       description: "",
       sales: 0,
-      location: "",
       owner_id: state.session.currentUser.id,
-      img_banner: 'http://weknowyourdreams.com/images/white/white-11.jpg',
+      img_banner: null,
       img_profile: 'https://paos.org/global_graphics/default-store-350x350.jpg',
       image_file: null,
       image_url: null,
