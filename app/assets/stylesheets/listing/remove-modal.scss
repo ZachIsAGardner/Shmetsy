@@ -1,7 +1,53 @@
 .remove-modal {
+  display: flex;
+  flex-direction: column;
+
   background: white;
   border: 1px solid var(--border);
-  margin: auto;
-  width: 500px;
-  height: 600px;
+  border-radius: 4px;
+  position: fixed;
+
+  width: 400px;
+  height: 400px;
+
+  top: 50%;
+  left: 50%;
+
+  margin-top: -250px;
+  margin-left: -200px;
+
+}
+
+.remove-modal p:first-of-type {
+  text-align: center;
+
+  padding: 30px 15px;
+
+  margin-top: 0;
+  margin-bottom: auto;
+  font-size: 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+
+}
+
+.remove-modal p:last-of-type {
+  padding: 15px;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+.remove-modal .buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  height: 75px;
+  border-top: 1px solid var(--border);
+}
+
+.remove-modal .buttons * {
+  margin: auto 0;
+  margin-right: 10px;
+  font-size: 14px;
+  width: 80px;
 }

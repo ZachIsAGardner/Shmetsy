@@ -17,13 +17,28 @@ class RemoveListing extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Are you sure?</h2>
-        <button onClick={this.handleSubmit}></button>
+      <div className="remove-modal">
+        <p>{`Are you sure about deleting '${this.props.listing.title}'?`}</p>
+        <p>Keep in mind this will permanantly delete your item from the Shmetsy marketplace.</p>
+        <div className="buttons">
+          <button className="clear-button" onClick={this.props.closeModal}>Cancel</button>
+          <button className="orange-button" onClick={this.handleSubmit}>Remove</button>
+        </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+
+  let listingId = parseInt(ownProps.modal.split(':')[1]);
+  let listing = state.entities.listings[listingId];
+
+  return {
+    listingId,
+    listing
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -31,4 +46,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(RemoveListing);
+export default connect(mapStateToProps, mapDispatchToProps)(RemoveListing);

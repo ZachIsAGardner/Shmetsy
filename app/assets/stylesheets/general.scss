@@ -21,18 +21,35 @@
   margin: auto;
 }
 
+// ---
+
+.clear-button,
 .orange-button {
-  background: var(--orange);
   border-radius: 3px;
   border: 0px;
 
-  color: white;
   font-size: 16px;
   width: 260px;
   height: 40px;
 
   display: block;
   margin: 0 auto;
+}
+
+.clear-button {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--dark-gray);
+}
+.orange-button {
+  background: var(--orange);
+  border: 1px solid var(--orange);
+  color: white;
+}
+
+.clear-button:hover {
+  background: var(--super-duper-light-gray);
+  cursor: pointer;
 }
 
 .orange-button:hover {

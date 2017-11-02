@@ -47,7 +47,7 @@ class ListingIndexItem extends React.Component {
               <div>Settings</div>
               <div className={"options-modal"}>
                 <Link className="gray-button" to={`/shops/${shop.id}/manage/listings/addlisting/${this.props.listing.id}/edit`}>Edit</Link>
-                <button className="gray-button" onClick={() => this.props.openModal(`removeListing:${this.props.listing.id}`)}>Remove</button>
+                <p className="gray-button" onClick={() => this.props.openModal(`removeListing:${this.props.listing.id}`)}>Remove</p>
               </div>
             </button>
           </div>

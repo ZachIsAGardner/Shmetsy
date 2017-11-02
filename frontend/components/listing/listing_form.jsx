@@ -113,10 +113,6 @@ class ListingForm extends React.Component {
             </label>
           </section>
 
-          <section className="shipping">
-            <h3>Shipping</h3>
-          </section>
-
           <footer className="submit">
               <div>
                 <button className="white-button">Cancel</button>
