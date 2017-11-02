@@ -5,7 +5,7 @@ const ListingsHeader = ({props}) => {
   return (
     <header className="shop-manager-listings-header">
       <h2>Listings</h2>
-      <Link to={`/shops/${props.shop.id}/manage/addlisting`}>Add Listing</Link>
+      <Link to={`/shops/${props.shop.id}/manage/listings/addlisting`}>Add Listing</Link>
     </header>
   );
 };

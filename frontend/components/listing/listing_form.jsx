@@ -37,7 +37,7 @@ class ListingForm extends React.Component {
   }
 
   navigateToManage(){
-    this.props.history.push(`/shops/${this.props.shopId}/manage/`);
+    this.props.history.push(`/shops/${this.props.shopId}/manage/listings`);
   }
 
   handleInput(field) {
@@ -67,7 +67,7 @@ class ListingForm extends React.Component {
 
     return (
       <div className="listing-form">
-        <Link to={`/shops/${this.props.shopId}/manage/`}>Back to Listings</Link>
+        <Link to={`/shops/${this.props.shopId}/manage/listings`}>Back to Listings</Link>
         <h2>Add a new listing</h2>
         <form onSubmit={this.handleSubmit}>
           <section className="photos">

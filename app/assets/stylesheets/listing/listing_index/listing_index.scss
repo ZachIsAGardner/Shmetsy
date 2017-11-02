@@ -34,11 +34,23 @@
 
   transition: box-shadow 0.5s;
 }
-[class^="listing-item-main"] a {
-  text-decoration: none;
+[class^="listing-item-main"] .buttons {
+  display: flex;
 }
-[class^="listing-item-main"] a:hover {
+
+[class^="listing-item-main"] .gray-button {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: normal;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+[class^="listing-item-main"] .gray-button:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 [class^="listing-item-main"]:hover {
@@ -95,4 +107,50 @@
   margin-left: 5px;
   font-style: italic;
   color: var(--gray);
+}
+
+// ---
+
+.options-modal {
+  display: none;
+}
+
+.cog-button {
+  background: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: var(--border-light)
+}
+.cog-button:hover {
+  cursor: pointer;
+  background: var(--background);
+}
+
+.cog-button:focus-within {
+  border: 1px solid var(--border-dark);
+  color: var(--border-dark);
+}
+
+.cog-button:focus-within .options-modal {
+  position: absolute;
+  background: white;
+  border: 1px solid var(--border-dark);
+  color: var(--border-dark);
+  border-radius: 4px;
+
+  padding: 5px;
+
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 14px;
+}
+.cog-button:focus-within .options-modal * {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+}
+.cog-button:focus-within .options-modal *:hover {
+
 }
