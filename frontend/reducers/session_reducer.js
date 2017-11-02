@@ -2,12 +2,14 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { ADD_LISTING_TO_CART, REMOVE_LISTING_FROM_CART } from '../actions/cart_actions';
+import { GIVE_SESSION_SHOP } from '../actions/shop_actions';
 
 const sessionReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
 
   switch (action.type) {
+
     case RECEIVE_CURRENT_USER:
       let currentUser = null;
       if (action.user) {
@@ -29,17 +31,18 @@ const sessionReducer = (oldState = {}, action) => {
 
     case REMOVE_LISTING_FROM_CART:
       newState = Object.assign({}, oldState);
-
       const callback = (el) => {
         return (val) => el !== val;
       };
-
       newState.currentUser.cart = newState.currentUser.cart.filter(callback(action.listing.id));
+      return newState;
 
+    case GIVE_SESSION_SHOP:
+      newState = Object.assign({}, oldState);
+      newState.currentUser['shop'] = action.shop.id;
       return newState;
 
     default:
-
       return oldState;
   }
 };

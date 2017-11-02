@@ -15,8 +15,15 @@
  */
 
 button,
-input {
+input,
+textarea {
   outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 body {
@@ -33,7 +40,7 @@ body {
 :root {
   --background: #fffbfa;
   --background-dark: #ffeceb;
-  --border-dark: #aaaaaa;
+  --border-dark: #888888;
   --border: #cccccc;
   --border-light: #eeeeee;
 

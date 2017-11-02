@@ -33,7 +33,6 @@ class Stipulations extends React.Component {
   }
 
   componentDidMount() {
-
     this.setState({low: undefined, high: undefined});
     this.props.updateFilter('title', this.state.title);
     this.props.requestListings();
@@ -48,33 +47,29 @@ class Stipulations extends React.Component {
 
           <label>Price ($)</label>
 
-          <label>Any Price
-            <input type="checkbox" onClick={this.handleAnyPrice}></input>
-          </label>
+          <button onClick={this.handleAnyPrice}>Any Price</button>
+
+          <label>Custom Price</label>
 
           <form onSubmit={this.handleCustomPrice}>
 
-            <label>Custom Price
-              <input type="checkbox"></input>
-            </label>
+            <input
+              placeholder="Low"
+              type="number"
+              value={this.state.low}
+              onChange={this.handleInput('low')}>
+            </input>
 
-            <label>Low
-              <input
-                type="number"
-                value={this.state.low}
-                onChange={this.handleInput('low')}>
-              </input>
-            </label>
+            <p>to</p>
 
-            <label>High
-              <input
-                type="number"
-                value={this.state.high}
-                onChange={this.handleInput('high')}>
-              </input>
-            </label>
+            <input
+              placeholder="High"
+              type="number"
+              value={this.state.high}
+              onChange={this.handleInput('high')}>
+            </input>
 
-            <input type="submit"></input>
+            <input type="submit" value=">"></input>
           </form>
 
         </div>

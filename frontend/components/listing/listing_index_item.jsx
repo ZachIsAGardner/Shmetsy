@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import * as BasicUtil from '../../util/basic_util';
+import * as DocUtil from '../../util/doc_util';
 
-const ListingIndexItem = ({ listing, type, deleteCarting, requestReviews}) => {
+const ListingIndexItem = ({ listing, type, deleteCarting }) => {
 
   let info;
   const price = BasicUtil.moneyify(listing.price);
@@ -54,7 +55,7 @@ const ListingIndexItem = ({ listing, type, deleteCarting, requestReviews}) => {
 
   return (
     <li className={`listing-item-main-${type}`}>
-      <Link className="cover-image" to={`/listings/${listing.id}`} style={{backgroundImage: `url(${listing.image_url})`}}></Link>
+      <Link className="cover-image" to={`/listings/${listing.id}`} onClick={(DocUtil.scrollToTop)} style={{backgroundImage: `url(${listing.image_url})`}}></Link>
       <div className="listing-info">
         {info}
       </div>

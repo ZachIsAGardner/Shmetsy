@@ -25,9 +25,55 @@
   height: 200px;
 }
 
+.stipulations > div button {
+  color: white;
+  background: var(--orange);
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+}
+.stipulations > div button:hover {
+  background: var(--light-orange);
+  cursor: pointer;
+}
+
 .stipulations > div form {
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
+  flex-direction: row;
   height: 100px;
+  width: 210px;
+}
+
+.stipulations > div form p {
+  margin-top: 14px;
+
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.stipulations > div form input {
+  width: 35px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.stipulations > div form input:focus {
+  border: 1px solid var(--border-dark);
+}
+
+.stipulations > div form input:last-child {
+  width: 52px;
+  height: 42px;
+  color: white;
+
+  background: var(--orange);
+  border: 1px solid var(--orange);
+}
+.stipulations > div form input:last-child:hover {
+  background: var(--light-orange);
+  border: 1px solid var(--light-orange);
+  cursor: pointer;
 }

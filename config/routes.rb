@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resource :user, only: [:create]
     resource :session, only: [:create, :destroy, :show]
-    resources :shops, only: [:show];
+    resources :shops, only: [:show, :create];
     resources :listings
     resources :reviews
     post '/listings/:listing_id/purchase', to: 'listings#purchase'

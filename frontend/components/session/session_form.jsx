@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {username: "", password: ""};
+    this.state = {username: "", password: "", img_url: "https://s3.amazonaws.com/cdn.roosterteeth.com/default/original/user_profile_female.jpg"};
   }
 
   handleSubmit(e) {
@@ -60,8 +60,7 @@ class SessionForm extends React.Component {
           {heading}
 
           <div className="buttons">
-            <button>Sign In with Facebook</button>
-            <button>Sign In with Google</button>
+
           </div>
 
           <form onSubmit={this.handleSubmit}>

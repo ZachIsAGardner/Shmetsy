@@ -1,0 +1,48 @@
+.shop-create {
+  width: 70%;
+  min-width: 70%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.shop-create form {
+  background: white;
+  width: 500px;
+  padding: 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.shop-create form div {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.shop-create form div input,
+.shop-create form div textarea {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.shop-create form div input {
+  width: 70%;
+}
+
+.shop-create form div textarea {
+  width: 80%;
+  resize: vertical;
+  min-height: 100px;
+  max-height: 200px;
+}
+
+.shop-create .orange-button {
+  margin-top: 15px;
+}

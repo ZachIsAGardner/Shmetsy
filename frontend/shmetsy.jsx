@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     delete window.currentUser;
   }
-  
+
   store = configureStore(preloadedState);
   //test
   window.getState = store.getState;

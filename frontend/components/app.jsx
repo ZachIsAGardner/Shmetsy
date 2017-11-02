@@ -8,6 +8,7 @@ import MyModal from './myModal';
 
 import HeaderContainer from './header/header_container';
 import CartContainer from './cart/cart_container';
+import CreateShopContainer from './shop/create_shop_container';
 import ShopManagerShowContainer from './shop/shop_manager_show_container';
 import SessionFormContainer from './session/session_form_container';
 
@@ -29,6 +30,7 @@ const App = (props) => {
 
       <div className="app">
 
+        <Route path="/create_shop" component={CreateShopContainer}></Route>
         <Route path="/cart" component={CartContainer} />
 
         <MyModal component={SessionFormContainer} modal={props.modal} closeModal={props.closeModal}/>

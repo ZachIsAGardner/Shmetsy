@@ -37,13 +37,14 @@ export const Header = (props) => {
   }
 
   let shop;
+  let shopAction = (props.currentUser) ? (e) => props.history.push("/create_shop") : (e) => props.openModal("login");
   if (props.currentUser && props.shop) {
     shop = (
       <Link className="orange-link" to={`/shops/${props.shop.id}/manage`}>{ props.shop.shopname }</Link>
     );
   } else {
     shop = (
-      <p className="orange-link" >Sell on Shmetsy</p>
+      <p className="orange-link" onClick={shopAction}>Sell on Shmetsy</p>
     );
   }
 
