@@ -122,16 +122,16 @@
   color: white;
 }
 
-.listing-form .submit > div *:first-child {
-  background: var(--white);
-  border: 1px solid var(--border);
-  color: var(--dark-gray);
-}
-
-.listing-form .submit .white-button:hover {
-  cursor: pointer;
-  background: var(--super-duper-light-gray);
-}
+// .listing-form .submit > div *:first-child {
+//   background: var(--white);
+//   border: 1px solid var(--border);
+//   color: var(--dark-gray);
+// }
+//
+// .listing-form .submit .white-button:hover {
+//   cursor: pointer;
+//   background: var(--super-duper-light-gray);
+// }
 .listing-form .submit .submit-orange-button:hover {
   cursor: pointer;
   background: var(--light-orange);

@@ -64,11 +64,11 @@ class ListingForm extends React.Component {
 
     let { title, description, price, stock} = this.state || {};
     let image_url = this.state.image_url || "";
-
+    let message = (this.props.formType === "new") ? 'Add a new listing' : 'Edit listing';
     return (
       <div className="listing-form">
         <Link to={`/shops/${this.props.shopId}/manage/listings`}>Back to Listings</Link>
-        <h2>Add a new listing</h2>
+        <h2>{message}</h2>
         <form onSubmit={this.handleSubmit}>
           <section className="photos">
             <h3>Photos</h3>
@@ -115,11 +115,8 @@ class ListingForm extends React.Component {
 
           <footer className="submit">
               <div>
-                <button className="white-button">Cancel</button>
               </div>
               <div>
-                <button className="white-button">Preview</button>
-                <button className="white-button">Save as draft</button>
                 <button className="submit-orange-button">Submit</button>
               </div>
 

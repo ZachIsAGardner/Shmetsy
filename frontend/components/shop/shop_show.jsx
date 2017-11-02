@@ -15,15 +15,17 @@ class ShopShow extends React.Component {
   }
 
   render() {
-    let banner;
-    if (this.props.shop.img_banner) {
-      banner = (
-        <section className="shop-banner" style={
-            {backgroundImage: `url(${this.props.shop.img_banner})`}
-          } />
-      );
-    }
     if (this.props.shop) {
+
+      let banner;
+      if (this.props.shop.img_banner) {
+        banner = (
+          <section className="shop-banner" style={
+              {backgroundImage: `url(${this.props.shop.img_banner})`}
+            } />
+          );
+        }
+
       return (
 
         <div className="shop-show">
