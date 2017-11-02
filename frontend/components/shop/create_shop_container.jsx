@@ -12,7 +12,11 @@ const mapStateToProps = (state, ownProps) => {
       location: "",
       owner_id: state.session.currentUser.id,
       img_banner: 'http://weknowyourdreams.com/images/white/white-11.jpg',
-      img_profile: 'https://paos.org/global_graphics/default-store-350x350.jpg'
+      img_profile: 'https://paos.org/global_graphics/default-store-350x350.jpg',
+      image_file: null,
+      image_url: null,
+      banner_file: null,
+      banner_url: null
     };
 
     if (ownProps.match.params.shopId) {
@@ -29,7 +33,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   let action = (ownProps.match.params.shopId) ? editShop : createShop;
   return {
-    shopAction: (shop) => dispatch(action(shop))
+    shopAction: (shop, id) => dispatch(action(shop, id))
   };
 };
 

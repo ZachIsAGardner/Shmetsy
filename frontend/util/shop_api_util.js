@@ -9,14 +9,14 @@ export const createShop = (shop) => {
   return $.ajax({
     method: "POST",
     url: 'api/shops/',
-    data: { shop }
+    data: {shop}
   });
 };
 
-export const editShop = (shop) => {
+export const editShop = (shop, id) => {
   return $.ajax({
     method: "PATCH",
-    url: `api/shops/${shop.id}`,
-    data: { shop }
+    url: `api/shops/${id}`,
+    data: {shop}
   });
 };

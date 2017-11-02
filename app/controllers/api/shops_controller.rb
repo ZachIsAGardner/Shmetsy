@@ -2,6 +2,7 @@ class Api::ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    render :show
   end
 
   def create
@@ -25,6 +26,6 @@ class Api::ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:shopname, :description, :sales, :location, :owner_id, :img_profile, :img_banner)
+    params.require(:shop).permit(:banner, :image, :shopname, :description, :sales, :location, :owner_id, :img_profile, :img_banner)
   end
 end

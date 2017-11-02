@@ -34,9 +34,9 @@ export const createShop = (shop) => {
   };
 };
 
-export const editShop = (shop) => {
+export const editShop = (shop, id) => {
   return (dispatch) => {
-    return API_Util.editShop(shop).then((editedShop) => {
+    return API_Util.editShop(shop, id).then((editedShop) => {
       dispatch(receiveShop(editedShop));
     });
   };

@@ -35,7 +35,7 @@ const App = (props) => {
         <Route path="/create_shop" component={CreateShopContainer}></Route>
         <Route path="/cart" component={CartContainer} />
 
-        <MyModal component={(props.modal === "login") ? SessionFormContainer : RemoveListing} modal={props.modal} closeModal={props.closeModal}/>
+        <MyModal component={(props.modal === "login" || props.modal === "signup") ? SessionFormContainer : RemoveListing} modal={props.modal} closeModal={props.closeModal}/>
 
         <Route exact path="/" component={FeaturedListings} />
         <Route exact path="/" render={() => (<ListingIndexContainer type="recomended"/>)} />

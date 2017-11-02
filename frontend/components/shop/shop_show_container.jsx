@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   let owner;
   if (state.entities.shops[ownProps.match.params.shopId]) {
     shop = state.entities.shops[ownProps.match.params.shopId];
-    owner = state.entities.users[shop.owner_id];
+    owner = state.entities.users[shop.owner_id] || state.entities.users[shop.owner.id];
   }
 
   return {

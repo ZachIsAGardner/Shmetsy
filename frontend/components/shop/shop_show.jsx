@@ -16,7 +16,6 @@ class ShopShow extends React.Component {
 
   render() {
     if (this.props.shop) {
-
       return (
 
         <div className="shop-show">

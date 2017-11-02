@@ -4,7 +4,12 @@ class CreateShop extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleImage = this.handleImage.bind(this);
     this.state = this.props.shop;
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps.shop);
   }
 
   handleInput(field) {
@@ -13,14 +18,30 @@ class CreateShop extends React.Component {
     };
   }
 
+  handleImage(field) {
+    return (e) => {
+      let file = e.currentTarget.files[0];
+      let fileReader = new FileReader();
+      fileReader.onloadend = function() {
+        this.setState({ [`${field}_file`]: file, [`${field}_url`]: fileReader.result});
+      }.bind(this);
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+    };
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.shopAction(this.state);
+
+    this.props.shopAction(this.state, this.state.id);
     this.props.history.push("/");
   }
 
   render() {
     const submitValue = (this.props.formType === "edit") ? "Save Changes" : "Create your shop!";
+    const banner = this.state.banner_url || '';
 
     return (
       <div className="shop-create">
