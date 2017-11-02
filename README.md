@@ -6,6 +6,7 @@ TO DO:
 * quantity for cart add
 * you can enter text for price in listing create
 * edit review
+* cannot edit a gif 
 
 
 <!-- --- -->
@@ -46,7 +47,8 @@ PUSHING TO HEROKU:
 * heroku run rake db:migrate (if pending migrations)
 * heroku run rake db:seed
 
-* heroku reset (if problems)
+* heroku restart (if problems)
+* rake db:schema:load
 
 <!-- --- -->
 

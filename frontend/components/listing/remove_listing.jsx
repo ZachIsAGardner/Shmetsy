@@ -18,7 +18,7 @@ class RemoveListing extends React.Component {
   render() {
     return (
       <div className="remove-modal">
-        <p>{`Are you sure about deleting '${this.props.listing.title}'?`}</p>
+        <p>{`Are you sure you want to delete '${this.props.listing.title}'?`}</p>
         <p>Keep in mind this will permanantly delete your item from the Shmetsy marketplace.</p>
         <div className="buttons">
           <button className="clear-button" onClick={this.props.closeModal}>Cancel</button>
