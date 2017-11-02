@@ -40,7 +40,7 @@ class ListingIndex extends React.Component {
           key={listing.id}
           listing={listing}
           type={this.props.type}
-          requestReviews={this.props.requestReviews}
+          openModal={this.props.openModal}
           deleteCarting={this.props.deleteCarting}/>;
       }
     }, this);

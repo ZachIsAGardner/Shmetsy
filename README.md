@@ -20,7 +20,8 @@ QUESTIONS:
 * do something once ajax completes (pushing to history)
 * Snap to top of page or wherever
 * Weird listings amount in chrome debugger (150 x null)
-* errors for listings and reviews
+* "1 items in your cart"
+* application-b2593fb7941ed482246d118f25d2a2877be29ba16797cab5adb91a73e0cad03a.js:5 Warning: A component is changing an uncontrolled input of type text to be controlled. Input elements should not switch from uncontrolled to controlled (or vice versa).
 
 * multiple images
 

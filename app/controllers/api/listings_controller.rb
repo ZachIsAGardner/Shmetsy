@@ -35,6 +35,15 @@ class Api::ListingsController < ApplicationController
     render :show
   end
 
+  def destroy
+    @listing = Listing.find(params[:id])
+    if @listing.destroy
+      render :show
+    else
+      render json: @listing.errors.full_messages, status: 422
+    end
+  end
+
   def purchase
     @listing = Listing.find(params[:listing_id])
     @carting = current_user.cartings.new(listing: @listing)

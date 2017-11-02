@@ -15,11 +15,13 @@ class CreateShop extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createShop(this.state);
+    this.props.shopAction(this.state);
     this.props.history.push("/");
   }
 
   render() {
+    const submitValue = (this.props.formType === "edit") ? "Save Changes" : "Create your shop!";
+
     return (
       <div className="shop-create">
         <form onSubmit={this.handleSubmit}>
@@ -45,7 +47,7 @@ class CreateShop extends React.Component {
             </textarea>
           </div>
 
-          <input className="orange-button" type="submit" value="Create your Shop!"></input>
+          <input className="orange-button" type="submit" value={submitValue}></input>
         </form>
       </div>
     );

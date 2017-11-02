@@ -32,3 +32,10 @@ export const updateListing = (listing, id) => {
     data: listing
   });
 };
+
+export const deleteListing = (id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/listings/${id}`
+  });
+};

@@ -15,7 +15,7 @@ export default function myModal({ modal, component: Component, closeModal }) {
   if (modal) {
     content = (
       <div className="modal-backdrop" onClick={checkClickOutside(closeModal)}>
-        <Component modal={modal} />
+        <Component modal={modal} closeModal={closeModal} />
       </div>
     );
   } else {

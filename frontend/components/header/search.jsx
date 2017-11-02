@@ -4,16 +4,17 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.filter;
+
+    const { high, low } = this.props.filter;
+    this.state = {title: "", high, low};
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
-    this.setState({low: undefined, high: undefined});
     this.props.updateFilter('title', this.state.title);
-    this.props.updateFilter('low', this.state.low);
-    this.props.updateFilter('high', this.state.high);
+    this.props.updateFilter('low', undefined);
+    this.props.updateFilter('high', undefined);
 
     this.props.requestListings();
 
@@ -31,6 +32,7 @@ class SearchBar extends React.Component {
     return (
       <div className="search-bar">
         <form onSubmit={this.handleSubmit}>
+
           <input
             type="text"
             value={this.state.title}

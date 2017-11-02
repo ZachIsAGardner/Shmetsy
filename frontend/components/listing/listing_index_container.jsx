@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import { openModal } from '../../actions/modal_actions';
 import { requestListings } from '../../actions/listing_actions.js';
 import { requestListingsByShop } from '../../actions/listing_actions.js';
 import { requestListingsByListing } from '../../actions/listing_actions.js';
@@ -49,7 +50,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     requestListings: action,
     deleteCarting: (id) => dispatch(deleteCarting(id)),
-    requestReviews: (id) => dispatch(requestReviewsByListing(id))
+    openModal: (modal, listingId) => dispatch(openModal(modal, listingId))
   };
 };
 

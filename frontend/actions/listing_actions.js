@@ -2,6 +2,7 @@ import * as API_Util from '../util/listing_api_util';
 
 export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
 export const RECEIVE_LISTING = 'RECEIVE_LISTING';
+export const REMOVE_LISTING = 'REMOVE_LISTING';
 
 const receiveListings = (listings) => {
   return {
@@ -13,6 +14,13 @@ const receiveListings = (listings) => {
 const receiveListing = (listing) => {
   return {
     type: RECEIVE_LISTING,
+    listing
+  };
+};
+
+const removeListing = (listing) => {
+  return {
+    type: REMOVE_LISTING,
     listing
   };
 };
@@ -85,6 +93,14 @@ export const updateListing = (listing, id) => {
       dispatch(receiveListing(updatedListing));
     }, (err) => {
       console.log(err.responseJSON);
+    });
+  };
+};
+
+export const deleteListing = (id) => {
+  return (dispatch) => {
+    return API_Util.deleteListing(id).then((deletedListing) => {
+      dispatch(removeListing(deletedListing));
     });
   };
 };

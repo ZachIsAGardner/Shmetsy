@@ -11,6 +11,7 @@ import CartContainer from './cart/cart_container';
 import CreateShopContainer from './shop/create_shop_container';
 import ShopManagerShowContainer from './shop/shop_manager_show_container';
 import SessionFormContainer from './session/session_form_container';
+import RemoveListing from './listing/remove_listing';
 
 import ShopShowContainer from './shop/shop_show_container';
 import StipulationsContainer from './listing/stipulations_container';
@@ -21,6 +22,7 @@ import FeaturedListings from './listing/featured_listings';
 import Footer from './footer/footer';
 
 const App = (props) => {
+
   return (
     <div>
       <Switch>
@@ -33,7 +35,7 @@ const App = (props) => {
         <Route path="/create_shop" component={CreateShopContainer}></Route>
         <Route path="/cart" component={CartContainer} />
 
-        <MyModal component={SessionFormContainer} modal={props.modal} closeModal={props.closeModal}/>
+        <MyModal component={(props.modal === "login") ? SessionFormContainer : RemoveListing} modal={props.modal} closeModal={props.closeModal}/>
 
         <Route exact path="/" component={FeaturedListings} />
         <Route exact path="/" render={() => (<ListingIndexContainer type="recomended"/>)} />

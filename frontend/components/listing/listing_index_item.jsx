@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import * as BasicUtil from '../../util/basic_util';
 import * as DocUtil from '../../util/doc_util';
 
-const ListingIndexItem = ({ listing, type, deleteCarting }) => {
+const ListingIndexItem = ({ listing, type, deleteCarting, openModal }) => {
 
   let info;
   const price = BasicUtil.moneyify(listing.price);
@@ -36,6 +36,7 @@ const ListingIndexItem = ({ listing, type, deleteCarting }) => {
           <h3>{price}</h3>
         </section>
         <Link to={`/shops/${shop.id}/manage/addlisting/${listing.id}/edit`}>Edit</Link>
+        <button onClick={() => openModal(`removeListing:${listing.id}`)}>remove</button>
       </div>
     );
   } else if (type === "cart") {

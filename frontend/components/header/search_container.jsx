@@ -6,8 +6,7 @@ import { requestListingsByFilter } from '../../actions/listing_actions';
 import Search from './search';
 
 const mapStateToProps = (state, ownProps) => {
-  let filter = {low: undefined, high: undefined};
-  filter['title'] = ownProps.location.search.split("=")[1];
+  let filter = {title: ownProps.location.search.split("=")[1]};
   return {
     filter
   };

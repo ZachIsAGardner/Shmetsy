@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 
-import { createShop } from '../../actions/shop_actions';
+import { createShop, editShop } from '../../actions/shop_actions';
 import CreateShop from './create_shop';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  let formType = "new";
   let shop = {
       shopname: "",
       description: "",
@@ -14,14 +15,21 @@ const mapStateToProps = (state) => {
       img_profile: 'https://paos.org/global_graphics/default-store-350x350.jpg'
     };
 
+    if (ownProps.match.params.shopId) {
+      formType = "edit";
+      shop = state.entities.shops[ownProps.match.params.shopId];
+    }
+
   return {
-    shop
+    shop,
+    formType
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  let action = (ownProps.match.params.shopId) ? editShop : createShop;
   return {
-    createShop: (shop) => dispatch(createShop(shop))
+    shopAction: (shop) => dispatch(action(shop))
   };
 };
 

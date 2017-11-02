@@ -13,6 +13,15 @@ class Api::ShopsController < ApplicationController
     end
   end
 
+  def update
+    @shop = Shop.find(params[:id])
+    if @shop && @shop.update_attributes(shop_params)
+      render :show
+    else
+      render json: ["Invalid shop parameters"], status: 422
+    end
+  end
+
   private
 
   def shop_params
