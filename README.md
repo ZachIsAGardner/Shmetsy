@@ -155,7 +155,7 @@ export const timeify = (date) => {
 
 Users can search for items based on the title of the item.
 
-![search]()
+![search](https://github.com/ZachIsAGardner/Shmetsy/blob/master/docs/readme/Screen%20Shot%202017-11-03%20at%2011.58.00%20AM.png)
 
 Users can also further filter their search by price range.
 
