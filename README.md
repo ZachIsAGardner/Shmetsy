@@ -1,60 +1,150 @@
-# README
+# Shmesty
 
-TO DO:
-* all
-* Implement click outside of modal closes it
-* quantity for cart add
-* you can enter text for price in listing create
-* edit review
-* cannot edit a gif 
+[Shmesty](https://shmetsy.herokuapp.com/) is an app where users can post and purchase items.
+
+### Technologies used
+
+* Paperclip and AWS are included in the app in order to upload images and display them throughout the app.
+
+Features
+------
+
+### Cart
+
+* Users can add and remove listings to and from their cart and proceed to checkout once they're finished shopping.
+
+![cart](/Users/zacharygardner/Desktop/Shmetsy/docs/readme/Screen Shot 2017-11-03 at 9.53.55 AM.png)
+
+* All prices are displayed appropriately in USD
+
+```javascript
+export const moneyify = (number) => {
+  let result = '';
+  result += number.toString();
+  let dollars = result.split(".")[0];
+  let cents = result.split(".")[1] || '';
+  cents = (cents + "00").slice(0, 2);
+
+  return `$${dollars}.${cents}`;
+};
+```
 
 
-<!-- --- -->
+* Cart actions are included within the listings controller using custom routes. Eliminating the requirement of making a whole new controller for carts.
 
-FIXED BUGS:
-* Creating a listing was not working. Traced every step of the redux cycle. Problem was there was not a create view. Rather than make a whole new create view, I just reused the show view in the listings controller. I had also set the work for stock to quantity in the controller.  
+```javascript
+def purchase
+  @listing = Listing.find(params[:listing_id])
+  @carting = current_user.cartings.new(listing: @listing)
 
-<!-- --- -->
+  if @carting.save
+    render :show
+  else
+    render json: ['Could not add item to cart'], status: 422
+  end
+end
 
-QUESTIONS:
-* help
-* do something once ajax completes (pushing to history)
-* Snap to top of page or wherever
-* Weird listings amount in chrome debugger (150 x null)
-* "1 items in your cart"
-* application-b2593fb7941ed482246d118f25d2a2877be29ba16797cab5adb91a73e0cad03a.js:5 Warning: A component is changing an uncontrolled input of type text to be controlled. Input elements should not switch from uncontrolled to controlled (or vice versa).
+def remove
+  @listing = Listing.find(params[:listing_id])
+  @cartings = current_user.cartings.where(listing_id: params[:listing_id])
 
-* multiple images
+  if @cartings.destroy_all
+    render :show
+  else
+    render json: ['Could not remove item from cart'], status: 422
+  end
+end
+```
 
-<!-- --- -->
+### Reviews
 
-TO RUN:
-* npm install
-* bundle install
-* bundle exec rails db:drop db:setup
+* Users can leave reviews on listings which are comprised of a body and rating.
 
-* rails server
-* webpack --watch
+![review-form](/Users/zacharygardner/Desktop/Shmetsy/docs/readme/Screen Shot 2017-11-03 at 9.09.33 AM.png)
 
-* Navigate to http://localhost:3000
+```javascript
+render() {
 
-<!-- --- -->
+  let ratingEls = [];
+  for (let i = 1; i < 6; i++) {
+    const klass = (i <= this.state.rating) ? "full" : "empty";
+    ratingEls.push(
+      <span key={i} className={klass} onClick={this.handleRating(i)}>
+        <div id="heart-shape"></div>
+      </span>
+    );
+  }
 
-PUSHING TO HEROKU:
-* git push heroku master
+  return(
+    <div className="review-form">
+      <label>Leave a review?</label>
+      <form onSubmit={this.handleSubmit}>
+        <label className="body">Your thoughts?
+          <textarea
+            placeholder="Say something nice."
+            value={this.state.body}
+            onChange={this.handleInput('body')}>
+          </textarea>
+        </label>
 
-* (seeding heroku database)
-* heroku run rake db:migrate (if pending migrations)
-* heroku run rake db:seed
+        <label className="rating">How would you rate this item?
+          <div className="shapes-container">
+            {ratingEls}
+          </div>
+        </label>
 
-* heroku restart (if problems)
-* rake db:schema:load
+        <input className="orange-button" type="submit"></input>
+      </form>
+    </div>
+  );
+}
+```
 
-<!-- --- -->
+* Reviews are displayed with their rating styled and their review date displayed in month-day-year format.
 
-Helpful Websites:
+```javascript
+return (
+  <li key={review.id} className="review">
+    <div className="reviewer">
+      <div
+        className="cover-image-circle"
+        style={{ backgroundImage: `url(${reviewerImage})`}}>
+      </div>
+      <p>Reviewed by</p>
+      <p>{review.user.username}</p>
+    </div>
 
-* http://www.color-hex.com/
-* https://www.hexcolortool.com/
-* https://fonts.google.com/
-* http://itsalwayssunny.wikia.com/wiki/Category:Items
+    <div className="review-main">
+      <div className="shapes-container">
+        {ratingEls}
+      </div>
+      <p>{review.body}</p>
+      {deleteButton}
+    </div>
+
+    <div className="review-time">
+      <p>{BasicUtil.timeify(review.created_at).fullDate}</p>
+    </div>
+  </li>
+);
+}, this);
+```
+
+```javascript
+export const timeify = (date) => {
+
+  const splitDate = date.split("T")[0].split("-");
+  const day = splitDate[2];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const month = months[splitDate[1] - 1];
+  const year = splitDate[0];
+  const fullDate = `${month} ${day}, ${year}`;
+
+  return {
+    day,
+    month,
+    year,
+    fullDate
+  };
+};
+```

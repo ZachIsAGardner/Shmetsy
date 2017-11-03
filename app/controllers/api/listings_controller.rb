@@ -62,7 +62,7 @@ class Api::ListingsController < ApplicationController
     if @cartings.destroy_all
       render :show
     else
-      render json: @carting.errors.full_messages, status: 422
+      render json: ['Could not remove item from cart'], status: 422
     end
   end
 
