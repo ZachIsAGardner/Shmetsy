@@ -9,10 +9,10 @@ export const count = (arr, val) => {
 };
 
 export const moneyify = (number) => {
-  let result = '';
-  result += number.toString();
-  let dollars = result.split(".")[0];
-  let cents = result.split(".")[1] || '';
+  let str = '';
+  str += number.toString();
+  let dollars = str.split(".")[0];
+  let cents = str.split(".")[1] || '';
   cents = (cents + "00").slice(0, 2);
 
   return `$${dollars}.${cents}`;

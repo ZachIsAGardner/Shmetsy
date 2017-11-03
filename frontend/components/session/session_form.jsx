@@ -22,11 +22,9 @@ class SessionForm extends React.Component {
   handleFormChange(form) {
     this.props.closeModal();
     this.props.openModal(form);
-
   }
 
   render() {
-
     const altForm = (this.props.formType === "signup") ? "login" : "signup";
     const currentForm = (this.props.formType === "signup") ? "Sign Up" : "Login";
     const errorEls = this.props.errors.map((error, idx) => {

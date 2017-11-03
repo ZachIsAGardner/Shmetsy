@@ -4,25 +4,25 @@
 
 ### Technologies used
 
-* Paperclip and AWS are included in the app in order to upload images and display them throughout the app.
+Paperclip and AWS are included in the app in order to upload images and display them throughout the app.
 
-Features
+Key Features
 ------
 
 ### Cart
 
-* Users can add and remove listings to and from their cart and proceed to checkout once they're finished shopping.
+Users can add and remove listings to and from their cart and proceed to checkout once they're finished shopping.
 
 ![cart](https://github.com/ZachIsAGardner/Shmetsy/blob/master/docs/readme/Screen%20Shot%202017-11-03%20at%209.53.55%20AM.png)
 
-* All prices are displayed appropriately in USD
+All prices are displayed appropriately in USD
 
 ```javascript
 export const moneyify = (number) => {
-  let result = '';
-  result += number.toString();
-  let dollars = result.split(".")[0];
-  let cents = result.split(".")[1] || '';
+  let str = '';
+  str += number.toString();
+  let dollars = str.split(".")[0];
+  let cents = str.split(".")[1] || '';
   cents = (cents + "00").slice(0, 2);
 
   return `$${dollars}.${cents}`;
@@ -30,7 +30,9 @@ export const moneyify = (number) => {
 ```
 
 
-* Cart actions are included within the listings controller using custom routes. Eliminating the requirement of making a whole new controller for carts.
+Cart actions are included within the listings controller using custom routes. Eliminating the requirement of making a whole new controller for carts.
+
+Items are removed based on name regardless of quantity.
 
 ```javascript
 def purchase
@@ -58,7 +60,7 @@ end
 
 ### Reviews
 
-* Users can leave reviews on listings which are comprised of a body and rating.
+Users can leave reviews on listings which are comprised of a body and a rating.
 
 ![review-form](https://github.com/ZachIsAGardner/Shmetsy/blob/master/docs/readme/Screen%20Shot%202017-11-03%20at%209.09.33%20AM.png)
 
@@ -100,7 +102,7 @@ render() {
 }
 ```
 
-* Reviews are displayed with their rating styled and their review date displayed in month-day-year format.
+Reviews are displayed with their rating styled and their review date displayed in month-day-year format.
 
 ```javascript
 return (
@@ -148,3 +150,55 @@ export const timeify = (date) => {
   };
 };
 ```
+
+### Search
+
+Users can search for items based on the title of the item.
+
+![search]()
+
+Users can also further filter their search by price range.
+
+```javascript
+render() {
+  return (
+    <div className="stipulations">
+      <h4>All categories</h4>
+
+      <div className="price-stip">
+
+        <label>Price ($)</label>
+        <button onClick={this.handleAnyPrice}>Any Price</button>
+
+        <label>Custom Price</label>
+        <form onSubmit={this.handleCustomPrice}>
+
+          <input
+            placeholder="Low"
+            type="number"
+            value={this.state.low}
+            onChange={this.handleInput('low')}>
+          </input>
+
+          <p>to</p>
+
+          <input
+            placeholder="High"
+            type="number"
+            value={this.state.high}
+            onChange={this.handleInput('high')}>
+          </input>
+
+          <input type="submit" value=">"></input>
+        </form>
+
+      </div>
+
+    </div>
+  );
+}
+```
+
+### Planned Features
+* Categories
+* Favorites

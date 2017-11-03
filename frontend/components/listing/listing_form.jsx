@@ -65,6 +65,7 @@ class ListingForm extends React.Component {
     let { title, description, price, stock} = this.state || {};
     let image_url = this.state.image_url || "";
     let message = (this.props.formType === "new") ? 'Add a new listing' : 'Edit listing';
+
     return (
       <div className="listing-form">
         <Link to={`/shops/${this.props.shopId}/manage/listings`}>Back to Listings</Link>
@@ -72,7 +73,11 @@ class ListingForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <section className="photos">
             <h3>Photos</h3>
-            <input type="file" name="image-upload" onChange={this.handleImage()}></input>
+            <input type="file"
+              name="image-upload"
+              onChange={this.handleImage()}>
+            </input>
+
             <div className="cover-image" style={
                 {backgroundImage: `url(${image_url})`}
               }></div>
@@ -87,6 +92,7 @@ class ListingForm extends React.Component {
                 onChange={this.handleInput('title')}>
               </input>
             </label>
+
             <label className="description">Description
               <textarea
                 value={description}
@@ -104,6 +110,7 @@ class ListingForm extends React.Component {
                 onChange={this.handleInput('price')}>
               </input>
             </label>
+
             <label className="stock">Stock
               <input
                 type="text"
@@ -119,9 +126,7 @@ class ListingForm extends React.Component {
               <div>
                 <button className="submit-orange-button">Submit</button>
               </div>
-
           </footer>
-
         </form>
       </div>
     );

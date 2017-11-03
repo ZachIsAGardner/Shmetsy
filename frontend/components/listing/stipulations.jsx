@@ -46,11 +46,9 @@ class Stipulations extends React.Component {
         <div className="price-stip">
 
           <label>Price ($)</label>
-
           <button onClick={this.handleAnyPrice}>Any Price</button>
 
           <label>Custom Price</label>
-
           <form onSubmit={this.handleCustomPrice}>
 
             <input
