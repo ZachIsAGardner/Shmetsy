@@ -283,6 +283,6 @@ Review.create!(
 Review.create!(
   user_id: User.find_by(username: "Dennis").id,
   listing_id: Listing.find_by(title: "Milksteak").id,
-  body: "Milksteak is not real thing Charlie",
+  body: "Milksteak is not a real thing Charlie",
   rating: 1
 )
