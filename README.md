@@ -13,7 +13,7 @@ Features
 
 * Users can add and remove listings to and from their cart and proceed to checkout once they're finished shopping.
 
-![cart](/Users/zacharygardner/Desktop/Shmetsy/docs/readme/Screen Shot 2017-11-03 at 9.53.55 AM.png)
+![cart](https://github.com/ZachIsAGardner/Shmetsy/blob/master/docs/readme/Screen%20Shot%202017-11-03%20at%209.53.55%20AM.png)
 
 * All prices are displayed appropriately in USD
 
@@ -60,7 +60,7 @@ end
 
 * Users can leave reviews on listings which are comprised of a body and rating.
 
-![review-form](/Users/zacharygardner/Desktop/Shmetsy/docs/readme/Screen Shot 2017-11-03 at 9.09.33 AM.png)
+![review-form](https://github.com/ZachIsAGardner/Shmetsy/blob/master/docs/readme/Screen%20Shot%202017-11-03%20at%209.09.33%20AM.png)
 
 ```javascript
 render() {
