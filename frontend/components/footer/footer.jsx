@@ -15,11 +15,11 @@ const Footer = ({props}) => {
       </div>
 
       <div className="footer-right">
-        <p>Terms of Use</p>
-        <p>Privacy</p>
+        <p></p>
+        <p></p>
       </div>
     </div>
-  )
+  );
 };
 
 export default Footer;
