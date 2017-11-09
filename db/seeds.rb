@@ -15,7 +15,7 @@ User.create!(
 User.create!(
   username: "Mac",
   password: "2badass4u",
-  img_url: "http://jivetshirts.com/wp-content/uploads/2013/03/beer-deer-sunny-t-shirt1.png"
+  img_url: "https://jivetshirts.com/wp-content/uploads/2013/03/beer-deer-sunny-t-shirt1.png"
 )
 User.create!(
   username: "Frank",
@@ -35,7 +35,7 @@ User.create!(
 User.create!(
   username: "Cricket",
   password: "deeisgood",
-  img_url: "http://i.imgur.com/rnSYvPv.png"
+  img_url: "https://i.imgur.com/rnSYvPv.png"
 )
 
 # ---
@@ -43,8 +43,8 @@ User.create!(
 Shop.destroy_all
 Shop.create!(
   shopname: "Greenman Productions",
-  img_profile: "http://vignette1.wikia.nocookie.net/itsalwayssunny/images/8/81/Greeman.jpg/revision/latest?cb=20100221015952",
-  img_banner: "http://i.imgur.com/gWq7eNS.png",
+  img_profile: "https://vignette1.wikia.nocookie.net/itsalwayssunny/images/8/81/Greeman.jpg/revision/latest?cb=20100221015952",
+  img_banner: "https://i.imgur.com/gWq7eNS.png",
   image: 'https://s3.us-east-2.amazonaws.com/shmetsy-seeds/Greeman.jpg',
   banner: 'https://s3.us-east-2.amazonaws.com/shmetsy-seeds/greenman_banner.png',
   description: "Green Man is saving your life right now, bro. Just go with the flow.",
@@ -55,7 +55,7 @@ Shop.create!(
 Shop.create!(
   shopname: "Paddy's Pub",
   img_profile: "https://grizzlybomb.files.wordpress.com/2011/09/ham.jpg",
-  img_banner: "http://www.itsalways.com/wp-content/uploads/2017/09/BQrBeCN.jpg",
+  img_banner: "https://www.itsalways.com/wp-content/uploads/2017/09/BQrBeCN.jpg",
   image: 'https://s3.us-east-2.amazonaws.com/shmetsy-seeds/paddy_profile.jpg',
   banner: 'https://s3.us-east-2.amazonaws.com/shmetsy-seeds/paddy_banner.jpg',
   description: "Paddy's pub: the worst bar in Philadelphia",
@@ -66,7 +66,7 @@ Shop.create!(
 Shop.create!(
   shopname: "Badass",
   img_profile: "https://i.ytimg.com/vi/dATJN3QObrE/hqdefault.jpg",
-  img_banner: "http://media-assets-04.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-77017-always_sunny--2x1--940.png",
+  img_banner: "https://media-assets-04.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-77017-always_sunny--2x1--940.png",
   image: 'https://s3.us-east-2.amazonaws.com/shmetsy-seeds/badass_profile.jpg',
   banner: 'https://s3.us-east-2.amazonaws.com/shmetsy-seeds/badass_banner.png',
   description: "I will now light the pyrotechnics which are attached at the arms and back, and all over my pants. Totally and completely badass.",
